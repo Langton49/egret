@@ -1,0 +1,5 @@
+.env
+.gitCodes.txt
+*.csv
+venv/
+training/__pycache__/
