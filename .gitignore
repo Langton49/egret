@@ -2,4 +2,7 @@
 .gitCodes.txt
 *.csv
 venv/
-training/__pycache__/
+training_two/data_cache/
+training_two/model_output/
+training_two/satellite_timeseries/
+
