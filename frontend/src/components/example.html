@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Egret Soundscape</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --sky-top: #0a1628;
+  --sky-mid: #152642;
+  --sky-low: #1e3a5f;
+  --horizon: #2d5a7b;
+  --water: #1a3d5c;
+  --accent-warm: #e8c87a;
+  --accent-glow: rgba(232, 200, 122, 0.15);
+  --text-primary: #e8e0d4;
+  --text-secondary: rgba(232, 224, 212, 0.6);
+  --text-dim: rgba(232, 224, 212, 0.35);
+  --panel-bg: rgba(10, 22, 40, 0.85);
+  --panel-border: rgba(232, 200, 122, 0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: var(--sky-top);
+}
+
+.hero {
+  position: relative;
+  width: 100%; height: 100vh;
+  overflow: hidden;
+  cursor: default;
+  user-select: none;
+}
+
+/* ── Sky gradient ── */
+.sky {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    180deg,
+    var(--sky-top) 0%,
+    var(--sky-mid) 30%,
+    var(--sky-low) 55%,
+    var(--horizon) 72%,
+    #3a7a8c 82%,
+    #4a9a8a 90%,
+    #2d5a5a 100%
+  );
+}
+
+/* ── Stars ── */
+.stars {
+  position: absolute; inset: 0;
+  opacity: 0.6;
+}
+.star {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkle var(--dur) ease-in-out infinite alternate;
+}
+@keyframes twinkle {
+  0% { opacity: 0.2; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ── Cloud layers ── */
+.clouds {
+  position: absolute; inset: 0;
+  pointer-events: none;
+}
+.cloud {
+  position: absolute;
+  background: rgba(200, 210, 230, 0.04);
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: drift linear infinite;
+}
+@keyframes drift {
+  0% { transform: translateX(-20%); }
+  100% { transform: translateX(120vw); }
+}
+
+/* ── Silhouettes ── */
+.silhouettes {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 45%;
+  pointer-events: none;
+}
+
+.tree-line {
+  position: absolute;
+  bottom: 0; left: -5%; right: -5%;
+}
+
+/* ── Water ── */
+.water {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 18%;
+  background: linear-gradient(180deg, 
+    rgba(26, 61, 92, 0.0) 0%,
+    rgba(26, 61, 92, 0.4) 20%,
+    rgba(15, 40, 65, 0.7) 100%
+  );
+  overflow: hidden;
+}
+
+.water-shimmer {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    rgba(232, 200, 122, 0.02) 2px,
+    transparent 4px
+  );
+  animation: shimmer 8s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0%, 100% { opacity: 0.3; transform: scaleX(1); }
+  50% { opacity: 0.7; transform: scaleX(1.02); }
+}
+
+/* ── Grain overlay ── */
+.grain {
+  position: absolute; inset: 0;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+}
+
+/* ── Vignette ── */
+.vignette {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, transparent 50%, rgba(0,0,0,0.4) 100%);
+  pointer-events: none;
+}
+
+/* ── Title ── */
+.title-block {
+  position: absolute;
+  top: 8vh; left: 6vw;
+  z-index: 10;
+  animation: fadeUp 1.5s ease-out 0.3s both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.title-block h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.title-block h1 em {
+  font-style: italic;
+  color: var(--accent-warm);
+  font-weight: 300;
+}
+.title-block .subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: clamp(0.85rem, 1.3vw, 1.1rem);
+  color: var(--text-secondary);
+  margin-top: 1.2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Stats bar ── */
+.stats-bar {
+  position: absolute;
+  bottom: 5vh; left: 6vw;
+  display: flex; gap: 3.5rem;
+  z-index: 10;
+  animation: fadeUp 1.5s ease-out 0.8s both;
+}
+.stat {
+  display: flex; flex-direction: column;
+}
+.stat-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  color: var(--accent-warm);
+  line-height: 1;
+}
+.stat-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 0.35rem;
+}
+
+/* ── Bird icons ── */
+.bird-layer {
+  position: absolute; inset: 0;
+  z-index: 5;
+}
+
+.bird-icon {
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  animation: birdFloat var(--float-dur, 4s) ease-in-out infinite alternate;
+  animation-delay: var(--float-delay, 0s);
+}
+@keyframes birdFloat {
+  0% { transform: translate(0, 0) rotate(var(--tilt-a, 0deg)); }
+  100% { transform: translate(var(--dx, 3px), var(--dy, -5px)) rotate(var(--tilt-b, 2deg)); }
+}
+
+.bird-icon svg {
+  width: var(--bird-size, 28px);
+  height: var(--bird-size, 28px);
+  fill: none;
+  stroke: rgba(232, 224, 212, 0.45);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 0 0px transparent);
+}
+
+.bird-icon:hover svg {
+  stroke: var(--accent-warm);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 12px rgba(232, 200, 122, 0.4));
+}
+
+.bird-icon .glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.bird-icon:hover .glow {
+  opacity: 1;
+}
+
+/* Wing twitch */
+.bird-icon .wing-l, .bird-icon .wing-r {
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+.bird-icon.twitch .wing-l { transform: rotate(-8deg); }
+.bird-icon.twitch .wing-r { transform: rotate(8deg); }
+
+/* ── Dim neighbors ── */
+.bird-layer.has-hover .bird-icon:not(:hover) svg {
+  opacity: 0.25;
+  transition: opacity 0.4s ease;
+}
+.bird-layer.has-hover .bird-icon:hover svg {
+  opacity: 1;
+}
+
+/* ── Info Panel ── */
+.info-panel {
+  position: fixed;
+  z-index: 100;
+  width: 280px;
+  background: var(--panel-bg);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 1.4rem;
+  opacity: 0;
+  transform: translateY(8px) scale(0.97);
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 1px rgba(232,200,122,0.1);
+}
+.info-panel.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.info-panel .species-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+.info-panel .species-latin {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 0.15rem;
+}
+
+.info-panel .divider {
+  width: 100%;
+  height: 1px;
+  background: var(--panel-border);
+  margin: 0.9rem 0;
+}
+
+.info-panel .metrics {
+  display: flex; flex-direction: column; gap: 0.55rem;
+}
+.info-panel .metric-row {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.info-panel .metric-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+}
+.info-panel .metric-value {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+.info-panel .metric-value.up { color: #7dd3a8; }
+.info-panel .metric-value.down { color: #e88a7a; }
+.info-panel .metric-value.moderate { color: var(--accent-warm); }
+
+.info-panel .insight {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-top: 0.3rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--panel-border);
+}
+.info-panel .insight::before {
+  content: '✦ ';
+  color: var(--accent-warm);
+  font-size: 0.65rem;
+}
+
+/* ── Audio indicator ── */
+.audio-indicator {
+  position: absolute;
+  bottom: 5vh; right: 6vw;
+  display: flex; align-items: center; gap: 0.6rem;
+  z-index: 10;
+  animation: fadeUp 1.5s ease-out 1.2s both;
+}
+.audio-bars {
+  display: flex; align-items: flex-end; gap: 2px; height: 16px;
+}
+.audio-bar {
+  width: 2px;
+  background: var(--accent-warm);
+  border-radius: 1px;
+  opacity: 0.4;
+  transition: height 0.2s ease, opacity 0.2s ease;
+}
+.audio-indicator.active .audio-bar {
+  opacity: 0.8;
+  animation: barPulse 0.6s ease-in-out infinite alternate;
+}
+.audio-bar:nth-child(1) { height: 4px; animation-delay: 0s; }
+.audio-bar:nth-child(2) { height: 8px; animation-delay: 0.1s; }
+.audio-bar:nth-child(3) { height: 12px; animation-delay: 0.05s; }
+.audio-bar:nth-child(4) { height: 6px; animation-delay: 0.15s; }
+.audio-bar:nth-child(5) { height: 10px; animation-delay: 0.08s; }
+@keyframes barPulse {
+  0% { transform: scaleY(0.5); }
+  100% { transform: scaleY(1.3); }
+}
+.audio-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .title-block { top: 5vh; left: 5vw; }
+  .stats-bar { left: 5vw; gap: 2rem; }
+  .info-panel { width: 240px; padding: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero" id="hero">
+  <!-- Sky -->
+  <div class="sky"></div>
+  
+  <!-- Stars -->
+  <div class="stars" id="stars"></div>
+  
+  <!-- Clouds -->
+  <div class="clouds">
+    <div class="cloud" style="top:8%;width:400px;height:80px;animation-duration:120s;animation-delay:-20s;"></div>
+    <div class="cloud" style="top:15%;width:300px;height:60px;animation-duration:90s;animation-delay:-50s;"></div>
+    <div class="cloud" style="top:22%;width:500px;height:70px;animation-duration:150s;animation-delay:-80s;"></div>
+    <div class="cloud" style="top:5%;width:250px;height:50px;animation-duration:110s;animation-delay:-30s;"></div>
+  </div>
+  
+  <!-- Silhouettes -->
+  <div class="silhouettes">
+    <svg class="tree-line" viewBox="0 0 1600 500" preserveAspectRatio="none" style="height:100%;opacity:0.9;">
+      <defs>
+        <linearGradient id="silGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0d1f2d" stop-opacity="0.0"/>
+          <stop offset="30%" stop-color="#0d1f2d" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#091520" stop-opacity="1"/>
+        </linearGradient>
+      </defs>
+      <!-- Far treeline -->
+      <path d="M0,350 Q50,280 80,310 Q100,250 130,290 Q160,230 200,280 Q230,240 260,270 Q290,220 330,260 Q360,210 400,250 Q430,200 470,240 Q500,190 540,230 Q570,200 600,220 Q640,180 680,220 Q710,190 750,210 Q780,170 820,200 Q860,160 900,200 Q940,170 980,190 Q1020,150 1060,180 Q1100,140 1140,170 Q1180,150 1220,160 Q1260,130 1300,160 Q1340,140 1380,155 Q1420,130 1460,150 Q1500,135 1540,145 Q1570,130 1600,140 L1600,500 L0,500 Z" fill="url(#silGrad)"/>
+      <!-- Near vegetation (marsh grasses) -->
+      <path d="M0,420 Q30,400 60,415 Q90,395 120,410 Q150,390 180,405 Q210,385 240,400 Q280,380 320,395 Q360,375 400,390 Q440,370 480,385 Q520,365 560,380 Q600,360 640,378 Q680,355 720,373 Q760,350 800,370 Q840,355 880,368 Q920,350 960,365 Q1000,345 1040,360 Q1080,340 1120,358 Q1160,342 1200,355 Q1240,338 1280,352 Q1320,335 1360,348 Q1400,332 1440,345 Q1480,330 1520,342 Q1560,328 1600,338 L1600,500 L0,500 Z" fill="#091520" opacity="0.95"/>
+    </svg>
+  </div>
+  
+  <!-- Water -->
+  <div class="water">
+    <div class="water-shimmer"></div>
+  </div>
+  
+  <!-- Grain -->
+  <div class="grain"></div>
+  
+  <!-- Vignette -->
+  <div class="vignette"></div>
+  
+  <!-- Bird layer -->
+  <div class="bird-layer" id="birdLayer"></div>
+  
+  <!-- Title -->
+  <div class="title-block">
+    <h1>The <em>Egret</em><br>Soundscape</h1>
+    <div class="subtitle">Mississippi Delta Ecological Observatory</div>
+  </div>
+  
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-value">349</span>
+      <span class="stat-label">Species Tracked</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">1.08M</span>
+      <span class="stat-label">Observations</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">2020–25</span>
+      <span class="stat-label">Monitoring Period</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">90K km²</span>
+      <span class="stat-label">Coverage Area</span>
+    </div>
+  </div>
+  
+  <!-- Audio indicator -->
+  <div class="audio-indicator" id="audioIndicator">
+    <div class="audio-bars">
+      <div class="audio-bar"></div>
+      <div class="audio-bar"></div>
+      <div class="audio-bar"></div>
+      <div class="audio-bar"></div>
+      <div class="audio-bar"></div>
+    </div>
+    <span class="audio-label">Hover a bird to listen</span>
+  </div>
+  
+  <!-- Info Panel -->
+  <div class="info-panel" id="infoPanel">
+    <div class="species-name" id="panelName"></div>
+    <div class="species-latin" id="panelLatin"></div>
+    <div class="divider"></div>
+    <div class="metrics" id="panelMetrics"></div>
+    <div class="insight" id="panelInsight"></div>
+  </div>
+</div>
+
+<script>
+// ── Bird species data ──
+const birds = [
+  {
+    name: "Great Egret", latin: "Ardea alba",
+    trend: "+8%", trendDir: "up", stress: "Moderate", stressClass: "moderate",
+    lastSeen: "3 days ago", order: "Pelecaniformes",
+    insight: "Population expanding into restored wetland corridors north of Barataria Bay.",
+    x: 0.62, y: 0.38, size: 34, type: "heron"
+  },
+  {
+    name: "Roseate Spoonbill", latin: "Platalea ajaja",
+    trend: "+12%", trendDir: "up", stress: "Low", stressClass: "up",
+    lastSeen: "1 day ago", order: "Pelecaniformes",
+    insight: "Breeding colony density highest recorded since 2020 monitoring began.",
+    x: 0.35, y: 0.52, size: 30, type: "wader"
+  },
+  {
+    name: "Brown Pelican", latin: "Pelecanus occidentalis",
+    trend: "-3%", trendDir: "down", stress: "Elevated", stressClass: "down",
+    lastSeen: "Today", order: "Pelecaniformes",
+    insight: "Coastal erosion reducing nesting substrate near Chandeleur Islands.",
+    x: 0.78, y: 0.45, size: 36, type: "seabird"
+  },
+  {
+    name: "Prothonotary Warbler", latin: "Protonotaria citrea",
+    trend: "+5%", trendDir: "up", stress: "Low", stressClass: "up",
+    lastSeen: "2 days ago", order: "Passeriformes",
+    insight: "Cavity nest availability stable in bottomland hardwood remnants.",
+    x: 0.22, y: 0.35, size: 22, type: "songbird"
+  },
+  {
+    name: "Clapper Rail", latin: "Rallus crepitans",
+    trend: "-11%", trendDir: "down", stress: "High", stressClass: "down",
+    lastSeen: "5 days ago", order: "Gruiformes",
+    insight: "Salt marsh conversion accelerating in core habitat zones; urgent priority.",
+    x: 0.48, y: 0.62, size: 24, type: "rail"
+  },
+  {
+    name: "Black Skimmer", latin: "Rynchops niger",
+    trend: "-6%", trendDir: "down", stress: "Elevated", stressClass: "down",
+    lastSeen: "Today", order: "Charadriiformes",
+    insight: "Sandbar nesting sites increasingly ephemeral due to wave action.",
+    x: 0.88, y: 0.58, size: 28, type: "seabird"
+  },
+  {
+    name: "Seaside Sparrow", latin: "Ammospiza maritima",
+    trend: "+2%", trendDir: "up", stress: "Moderate", stressClass: "moderate",
+    lastSeen: "1 day ago", order: "Passeriformes",
+    insight: "Spartina marsh extent stable in western delta; sentinel species for marsh health.",
+    x: 0.15, y: 0.55, size: 20, type: "songbird"
+  },
+  {
+    name: "Osprey", latin: "Pandion haliaetus",
+    trend: "+15%", trendDir: "up", stress: "Low", stressClass: "up",
+    lastSeen: "Today", order: "Accipitriformes",
+    insight: "Nesting platforms and channel markers supporting strong population recovery.",
+    x: 0.55, y: 0.25, size: 32, type: "raptor"
+  },
+  {
+    name: "Tricolored Heron", latin: "Egretta tricolor",
+    trend: "-4%", trendDir: "down", stress: "Moderate", stressClass: "moderate",
+    lastSeen: "2 days ago", order: "Pelecaniformes",
+    insight: "Foraging habitat quality declining in areas with high turbidity increase.",
+    x: 0.42, y: 0.42, size: 26, type: "heron"
+  },
+  {
+    name: "Least Tern", latin: "Sternula antillarum",
+    trend: "+1%", trendDir: "up", stress: "High", stressClass: "down",
+    lastSeen: "4 days ago", order: "Charadriiformes",
+    insight: "Human disturbance at nesting sites remains primary threat despite stable counts.",
+    x: 0.72, y: 0.65, size: 22, type: "seabird"
+  },
+  {
+    name: "Wood Stork", latin: "Mycteria americana",
+    trend: "+7%", trendDir: "up", stress: "Moderate", stressClass: "moderate",
+    lastSeen: "3 days ago", order: "Ciconiiformes",
+    insight: "Range expansion northward consistent with warming trend in winter foraging zones.",
+    x: 0.30, y: 0.30, size: 32, type: "wader"
+  },
+  {
+    name: "Northern Harrier", latin: "Circus hudsonius",
+    trend: "-2%", trendDir: "down", stress: "Low", stressClass: "up",
+    lastSeen: "6 days ago", order: "Accipitriformes",
+    insight: "Winter visitor counts stable; marsh grassland mosaics supporting prey base.",
+    x: 0.82, y: 0.30, size: 28, type: "raptor"
+  }
+];
+
+// ── SVG bird shapes ──
+function getBirdSVG(type, size) {
+  const s = size;
+  switch(type) {
+    case "heron":
+      return `<svg width="${s}" height="${s}" viewBox="0 0 40 40">
+        <path class="wing-l" d="M8,18 Q14,10 20,14"/>
+        <path class="wing-r" d="M20,14 Q26,10 32,18"/>
+        <path d="M20,14 L20,28"/>
+        <path d="M20,28 L17,36"/>
+        <path d="M20,28 L23,36"/>
+        <path d="M20,14 L16,11"/>
+        <circle cx="15.5" cy="10.8" r="0.8"/>
+      </svg>`;
+    case "wader":
+      return `<svg width="${s}" height="${s}" viewBox="0 0 40 40">
+        <path class="wing-l" d="M6,17 Q12,9 20,15"/>
+        <path class="wing-r" d="M20,15 Q28,9 34,17"/>
+        <path d="M20,15 L20,28"/>
+        <path d="M20,28 L16,37"/>
+        <path d="M20,28 L24,37"/>
+        <path d="M20,15 Q16,12 12,13"/>
+        <circle cx="13" cy="12.5" r="0.8"/>
+      </svg>`;
+    case "seabird":
+      return `<svg width="${s}" height="${s}" viewBox="0 0 40 40">
+        <path class="wing-l" d="M4,20 Q10,12 20,16"/>
+        <path class="wing-r" d="M20,16 Q30,12 36,20"/>
+        <path d="M20,16 L20,26"/>
+        <path d="M20,26 L18,32"/>
+        <path d="M20,26 L22,32"/>
+        <path d="M20,16 L15,14"/>
+        <circle cx="14.5" cy="13.5" r="0.8"/>
+      </svg>`;
+    case "songbird":
+      return `<svg width="${s}" height="${s}" viewBox="0 0 40 40">
+        <ellipse cx="20" cy="20" rx="7" ry="5" transform="rotate(-10 20 20)"/>
+        <circle cx="14" cy="16" r="3.5"/>
+        <path d="M10.5,16 L7,15.5"/>
+        <circle cx="13" cy="15.2" r="0.7"/>
+        <path d="M27,21 L33,23"/>
+      </svg>`;
+    case "rail":
+      return `<svg width="${s}" height="${s}" viewBox="0 0 40 40">
+        <ellipse cx="20" cy="20" rx="6" ry="7"/>
+        <circle cx="16" cy="14" r="3"/>
+        <path d="M13,14 L8,13"/>
+        <circle cx="15" cy="13.3" r="0.6"/>
+        <path d="M18,27 L16,35"/>
+        <path d="M22,27 L24,35"/>
+      </svg>`;
+    case "raptor":
+      return `<svg width="${s}" height="${s}" viewBox="0 0 40 40">
+        <path class="wing-l" d="M3,19 Q8,8 20,15"/>
+        <path class="wing-r" d="M20,15 Q32,8 37,19"/>
+        <path d="M20,15 L20,25"/>
+        <path d="M20,25 L17,32"/>
+        <path d="M20,25 L23,32"/>
+        <path d="M20,15 L17,12"/>
+        <circle cx="16.5" cy="11.5" r="0.9"/>
+      </svg>`;
+    default:
+      return `<svg width="${s}" height="${s}" viewBox="0 0 40 40">
+        <path d="M5,20 Q12,10 20,16 Q28,10 35,20"/>
+        <circle cx="15" cy="14" r="1"/>
+      </svg>`;
+  }
+}
+
+// ── Generate stars ──
+const starsEl = document.getElementById('stars');
+for (let i = 0; i < 80; i++) {
+  const star = document.createElement('div');
+  star.className = 'star';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top = Math.random() * 45 + '%';
+  star.style.setProperty('--dur', (2 + Math.random() * 4) + 's');
+  star.style.animationDelay = (Math.random() * 5) + 's';
+  if (Math.random() > 0.7) {
+    star.style.width = '3px';
+    star.style.height = '3px';
+  }
+  starsEl.appendChild(star);
+}
+
+// ── Generate bird icons ──
+const birdLayer = document.getElementById('birdLayer');
+const infoPanel = document.getElementById('infoPanel');
+const audioIndicator = document.getElementById('audioIndicator');
+
+// Audio context for bird calls (synthesized)
+let audioCtx = null;
+
+function initAudio() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+}
+
+function playBirdCall(type) {
+  initAudio();
+  const now = audioCtx.currentTime;
+  
+  // Different synthesized calls per bird type
+  const calls = {
+    heron:    { freqs: [1200, 900, 1100], dur: 0.15, gap: 0.08, count: 3 },
+    wader:    { freqs: [1800, 1400, 1600, 1200], dur: 0.1, gap: 0.06, count: 4 },
+    seabird:  { freqs: [800, 1000, 700], dur: 0.2, gap: 0.1, count: 3 },
+    songbird: { freqs: [2200, 2600, 2400, 2800, 2200], dur: 0.08, gap: 0.05, count: 5 },
+    rail:     { freqs: [600, 650, 600, 650, 600], dur: 0.12, gap: 0.04, count: 5 },
+    raptor:   { freqs: [1400, 1100, 900], dur: 0.25, gap: 0.12, count: 3 },
+  };
+  
+  const call = calls[type] || calls.songbird;
+  const masterGain = audioCtx.createGain();
+  masterGain.gain.setValueAtTime(0, now);
+  masterGain.gain.linearRampToValueAtTime(0.08, now + 0.2);
+  masterGain.connect(audioCtx.destination);
+  
+  call.freqs.forEach((freq, i) => {
+    const osc = audioCtx.createOscillator();
+    const noteGain = audioCtx.createGain();
+    
+    osc.type = type === 'songbird' ? 'sine' : 'triangle';
+    osc.frequency.setValueAtTime(freq, now + i * (call.dur + call.gap));
+    osc.frequency.exponentialRampToValueAtTime(
+      freq * (type === 'seabird' ? 0.7 : 0.85),
+      now + i * (call.dur + call.gap) + call.dur
+    );
+    
+    const start = now + i * (call.dur + call.gap);
+    noteGain.gain.setValueAtTime(0, start);
+    noteGain.gain.linearRampToValueAtTime(0.5, start + 0.02);
+    noteGain.gain.exponentialRampToValueAtTime(0.01, start + call.dur);
+    
+    osc.connect(noteGain);
+    noteGain.connect(masterGain);
+    osc.start(start);
+    osc.stop(start + call.dur + 0.05);
+  });
+  
+  const totalDur = call.freqs.length * (call.dur + call.gap);
+  masterGain.gain.linearRampToValueAtTime(0, now + totalDur + 0.3);
+}
+
+// Wing twitch timer
+function startTwitching(el) {
+  const twitch = () => {
+    el.classList.add('twitch');
+    setTimeout(() => el.classList.remove('twitch'), 200);
+  };
+  const interval = 2000 + Math.random() * 4000;
+  const timer = setInterval(twitch, interval);
+  el._twitchTimer = timer;
+}
+
+// Create bird elements
+birds.forEach((bird, i) => {
+  const el = document.createElement('div');
+  el.className = 'bird-icon';
+  el.style.left = (bird.x * 100) + '%';
+  el.style.top = (bird.y * 100) + '%';
+  el.style.setProperty('--bird-size', bird.size + 'px');
+  el.style.setProperty('--float-dur', (3 + Math.random() * 3) + 's');
+  el.style.setProperty('--float-delay', (Math.random() * -5) + 's');
+  el.style.setProperty('--dx', (Math.random() * 6 - 3) + 'px');
+  el.style.setProperty('--dy', (-2 - Math.random() * 6) + 'px');
+  el.style.setProperty('--tilt-a', (Math.random() * 4 - 2) + 'deg');
+  el.style.setProperty('--tilt-b', (Math.random() * 4 - 2) + 'deg');
+  
+  el.innerHTML = `<div class="glow"></div>${getBirdSVG(bird.type, bird.size)}`;
+  
+  el.addEventListener('mouseenter', () => {
+    birdLayer.classList.add('has-hover');
+    audioIndicator.classList.add('active');
+    playBirdCall(bird.type);
+    showPanel(bird, el);
+  });
+  
+  el.addEventListener('mouseleave', () => {
+    birdLayer.classList.remove('has-hover');
+    audioIndicator.classList.remove('active');
+    hidePanel();
+  });
+  
+  birdLayer.appendChild(el);
+  startTwitching(el);
+});
+
+// ── Panel ──
+function showPanel(bird, el) {
+  const rect = el.getBoundingClientRect();
+  const panel = infoPanel;
+  
+  // Position panel
+  let px = rect.right + 16;
+  let py = rect.top - 20;
+  
+  // Keep on screen
+  if (px + 290 > window.innerWidth) px = rect.left - 296;
+  if (py + 280 > window.innerHeight) py = window.innerHeight - 290;
+  if (py < 10) py = 10;
+  
+  panel.style.left = px + 'px';
+  panel.style.top = py + 'px';
+  
+  document.getElementById('panelName').textContent = bird.name;
+  document.getElementById('panelLatin').textContent = bird.latin;
+  
+  const metricsEl = document.getElementById('panelMetrics');
+  metricsEl.innerHTML = `
+    <div class="metric-row">
+      <span class="metric-label">Population trend</span>
+      <span class="metric-value ${bird.trendDir}">${bird.trendDir === 'up' ? '↑' : '↓'} ${bird.trend}</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Habitat stress</span>
+      <span class="metric-value ${bird.stressClass}">${bird.stress}</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Last observed</span>
+      <span class="metric-value">${bird.lastSeen}</span>
+    </div>
+    <div class="metric-row">
+      <span class="metric-label">Order</span>
+      <span class="metric-value">${bird.order}</span>
+    </div>
+  `;
+  
+  document.getElementById('panelInsight').textContent = bird.insight;
+  
+  panel.classList.add('visible');
+}
+
+function hidePanel() {
+  infoPanel.classList.remove('visible');
+}
+</script>
+</body>
+</html>
