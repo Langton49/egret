@@ -34,3 +34,44 @@
     opacity: 0.6;
     cursor: not-allowed;
 }
+
+.results-panel {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    background: white;
+    padding: 1rem;
+    width: 300px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.results-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.result-card {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #eee;
+}
+
+.result-card h4 {
+    margin: 0 0 0.25rem 0;
+}
+
+.result-card p {
+    margin: 0.15rem 0;
+}
