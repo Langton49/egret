@@ -110,3 +110,18 @@
     cursor: pointer;
 }
 
+.sound_toggle {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.sound_toggle:hover {
+    background: rgba(0, 0, 0, 0.8);
+}

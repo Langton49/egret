@@ -136,7 +136,7 @@ async def analyze_aoi(request: AOIRequest):
     matched = results[mask]
 
     if matched.empty:
-        raise HTTPException(
+        return HTTPException(
             status_code=404,
             detail="No data found in this area. Try drawing a larger polygon."
         )
@@ -262,6 +262,12 @@ async def analyze_aoi(request: AOIRequest):
         area_km2=area_km2,
     )
 
+@router.post("/habitat-score")
+async def get_habitat_score(request: AOIRequest):
+    features = request.aoi.get("features", [])
+    if not features:
+        raise HTTPException(status_code=400, detail="No polygon drawn")
+        
 
 if __name__ == "__main__":
     import asyncio
