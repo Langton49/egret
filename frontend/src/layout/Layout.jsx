@@ -1,17 +1,39 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import SideMenu from "../components/SideMenu";
-import MainContent from "../components/MainContent";
+import { useState, useRef } from "react";
 import './Layout.css'
 
 function Layout() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const isMapMode = location.pathname === '/demo/map';
+  const prevPathRef = useRef(location.pathname);
+
+  if (location.pathname !== prevPathRef.current) {
+    prevPathRef.current = location.pathname;
+    if (isMapMode && menuOpen) {
+      setMenuOpen(false);
+    }
+  }
+
   return (
-    <div className='layout' style={{ display: "flex" }}>
-      <SideMenu />
-      <main style={{ flex: 1 }}>
-        <MainContent />
+    <div className="layout">
+      <SideMenu
+        isOpen={menuOpen}
+        onToggle={() => setMenuOpen(!menuOpen)}
+        isMapMode={isMapMode}
+      />
+      <main className={`main-area ${isMapMode ? 'map-mode' : ''}`}>
+        {isMapMode && (
+          <div
+            className={`blur-overlay ${menuOpen ? 'visible' : ''}`}
+            onClick={() => setMenuOpen(false)}
+          />
+        )}
+        <Outlet />
       </main>
     </div>
-  );
+  )
 }
 
-export default Layout;
+export default Layout

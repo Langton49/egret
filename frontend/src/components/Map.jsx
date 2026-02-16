@@ -3,6 +3,7 @@ import mapboxgl from 'mapbox-gl';
 import MapboxDraw from '@mapbox/mapbox-gl-draw';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css';
+import MapToolPanel from './MapToolPanel';
 import './Map.css';
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX;
@@ -37,14 +38,17 @@ const isWithinBounds = (feature) => {
     return true;
 };
 
-function useDraggable() {
+function useDraggableResizable() {
     const elRef = useRef(null);
     const isDragging = useRef(false);
+    const isResizing = useRef(false);
+    const resizeDir = useRef(null);
     const offset = useRef({ x: 0, y: 0 });
+    const startRect = useRef(null);
+    const startMouse = useRef({ x: 0, y: 0 });
     const cleanupRef = useRef(null);
 
     const callbackRef = useCallback((node) => {
-        // Clean up previous listeners
         if (cleanupRef.current) {
             cleanupRef.current();
             cleanupRef.current = null;
@@ -53,14 +57,65 @@ function useDraggable() {
         elRef.current = node;
         if (!node) return;
 
+        const EDGE = 8;
+
+        const getResizeDirection = (e) => {
+            const rect = node.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const w = rect.width;
+            const h = rect.height;
+
+            const left = x < EDGE;
+            const right = x > w - EDGE;
+            const top = y < EDGE;
+            const bottom = y > h - EDGE;
+
+            if (bottom && right) return 'se';
+            if (bottom && left) return 'sw';
+            if (top && right) return 'ne';
+            if (top && left) return 'nw';
+            if (bottom) return 's';
+            if (right) return 'e';
+            if (left) return 'w';
+            if (top) return 'n';
+            return null;
+        };
+
+        const cursorMap = {
+            n: 'ns-resize', s: 'ns-resize',
+            e: 'ew-resize', w: 'ew-resize',
+            ne: 'nesw-resize', sw: 'nesw-resize',
+            nw: 'nwse-resize', se: 'nwse-resize',
+        };
+
         const onMouseDown = (e) => {
             if (e.target.closest('button, a, input, select, textarea')) return;
+
+            const dir = getResizeDirection(e);
+            if (dir) {
+                isResizing.current = true;
+                resizeDir.current = dir;
+                const rect = node.getBoundingClientRect();
+                node.style.left = `${rect.left}px`;
+                node.style.top = `${rect.top}px`;
+                node.style.right = 'auto';
+                node.style.bottom = 'auto';
+                node.style.width = `${rect.width}px`;
+                node.style.height = `${rect.height}px`;
+                startRect.current = { left: rect.left, top: rect.top, width: rect.width, height: rect.height };
+                startMouse.current = { x: e.clientX, y: e.clientY };
+                node.style.userSelect = 'none';
+                document.body.style.cursor = cursorMap[dir];
+                e.preventDefault();
+                return;
+            }
+
             const header = node.querySelector('.results-header');
             if (header && !header.contains(e.target)) return;
 
             isDragging.current = true;
             const rect = node.getBoundingClientRect();
-            // Lock in current position as left/top before dragging
             node.style.left = `${rect.left}px`;
             node.style.top = `${rect.top}px`;
             node.style.right = 'auto';
@@ -72,28 +127,75 @@ function useDraggable() {
         };
 
         const onMouseMove = (e) => {
-            if (!isDragging.current) return;
-            const x = e.clientX - offset.current.x;
-            const y = e.clientY - offset.current.y;
-            node.style.left = `${x}px`;
-            node.style.top = `${y}px`;
-            node.style.right = 'auto';
-            node.style.bottom = 'auto';
+            if (isResizing.current) {
+                const dx = e.clientX - startMouse.current.x;
+                const dy = e.clientY - startMouse.current.y;
+                const s = startRect.current;
+                const dir = resizeDir.current;
+                const MIN_W = 220;
+                const MIN_H = 150;
+
+                let newLeft = s.left, newTop = s.top, newW = s.width, newH = s.height;
+
+                if (dir.includes('e')) newW = Math.max(MIN_W, s.width + dx);
+                if (dir.includes('w')) { newW = Math.max(MIN_W, s.width - dx); newLeft = s.left + s.width - newW; }
+                if (dir.includes('s')) newH = Math.max(MIN_H, s.height + dy);
+                if (dir.includes('n')) { newH = Math.max(MIN_H, s.height - dy); newTop = s.top + s.height - newH; }
+
+                node.style.left = `${newLeft}px`;
+                node.style.top = `${newTop}px`;
+                node.style.width = `${newW}px`;
+                node.style.height = `${newH}px`;
+                node.style.maxHeight = 'none';
+                return;
+            }
+
+            if (isDragging.current) {
+                node.style.left = `${e.clientX - offset.current.x}px`;
+                node.style.top = `${e.clientY - offset.current.y}px`;
+                node.style.right = 'auto';
+                node.style.bottom = 'auto';
+                return;
+            }
+
+            // Update cursor on hover near edges
+            if (!node.contains(e.target)) return;
+            const dir = getResizeDirection(e);
+            if (dir) {
+                node.style.cursor = cursorMap[dir];
+            } else {
+                const header = node.querySelector('.results-header');
+                if (header && header.contains(e.target)) {
+                    node.style.cursor = 'grab';
+                } else {
+                    node.style.cursor = '';
+                }
+            }
         };
 
         const onMouseUp = () => {
-            if (!isDragging.current) return;
-            isDragging.current = false;
-            node.style.cursor = '';
-            node.style.userSelect = '';
+            if (isResizing.current) {
+                isResizing.current = false;
+                resizeDir.current = null;
+                node.style.userSelect = '';
+                document.body.style.cursor = '';
+                return;
+            }
+            if (isDragging.current) {
+                isDragging.current = false;
+                node.style.cursor = '';
+                node.style.userSelect = '';
+            }
         };
 
         node.addEventListener('mousedown', onMouseDown);
+        node.addEventListener('mousemove', onMouseMove);
         window.addEventListener('mousemove', onMouseMove);
         window.addEventListener('mouseup', onMouseUp);
 
         cleanupRef.current = () => {
             node.removeEventListener('mousedown', onMouseDown);
+            node.removeEventListener('mousemove', onMouseMove);
             window.removeEventListener('mousemove', onMouseMove);
             window.removeEventListener('mouseup', onMouseUp);
         };
@@ -102,11 +204,12 @@ function useDraggable() {
     return callbackRef;
 }
 
-function Map() {
+function Map({ onDrawReady }) {
     const mapRef = useRef(null);
     const mapContainerRef = useRef(null);
     const drawRef = useRef(null);
     const pollRef = useRef(null);
+    const [mapLoaded, setMapLoaded] = useState(false);
     const [aoi, setAoi] = useState(null);
     const [loading, setLoading] = useState(false);
     const [results, setResults] = useState(null);
@@ -114,10 +217,8 @@ function Map() {
     const [progress, setProgress] = useState(null);
     const [scoreResults, setScoreResults] = useState(null);
     const [error, setError] = useState(null);
-    const [drawHint, setDrawHint] = useState(true);
-
-    const resultsPanelRef = useDraggable();
-    const scorePanelRef = useDraggable();
+    const resultsPanelRef = useDraggableResizable();
+    const scorePanelRef = useDraggableResizable();
 
     useEffect(() => {
         mapRef.current = new mapboxgl.Map({
@@ -133,6 +234,7 @@ function Map() {
         });
 
         mapRef.current.on('load', () => {
+            setMapLoaded(true);
             mapRef.current.fitBounds(
                 [[SW_LNG, SW_LAT], [NE_LNG, NE_LAT]],
                 { padding: 40, duration: 0 }
@@ -170,17 +272,13 @@ function Map() {
 
         const draw = new MapboxDraw({
             displayControlsDefault: false,
-            controls: {
-                polygon: true,
-                trash: true,
-            },
+            controls: {},
             defaultMode: 'simple_select',
-        });
-
+            });
+        mapRef.current.addControl(draw);
         drawRef.current = draw;
-        mapRef.current.addControl(draw, 'top-left');
-
-        // Shift+drag rectangle drawing
+        if (onDrawReady) onDrawReady(draw);
+      
         const canvas = mapRef.current.getCanvas();
         let rectStart = null;
         let rectBox = null;
@@ -251,7 +349,6 @@ function Map() {
             // Clear previous drawings and add the rectangle
             draw.deleteAll();
             const ids = draw.add(rectFeature);
-            setDrawHint(false);
             setError(null);
             setAoi(draw.getAll());
         };
@@ -263,7 +360,6 @@ function Map() {
         const updateAOI = () => {
             const data = draw.getAll();
             if (data.features.length > 0) {
-                setDrawHint(false);
                 const lastFeature = data.features[data.features.length - 1];
                 if (!isWithinBounds(lastFeature)) {
                     draw.delete(lastFeature.id);
@@ -290,7 +386,14 @@ function Map() {
             canvas.removeEventListener('mousedown', onMouseDown);
             canvas.removeEventListener('mousemove', onMouseMove);
             canvas.removeEventListener('mouseup', onMouseUp);
-            if (mapRef.current) mapRef.current.remove();
+            if (mapRef.current) {
+                if (drawRef.current) {
+                    mapRef.current.removeControl(drawRef.current);
+                    drawRef.current = null;
+                }
+                mapRef.current.remove();
+                mapRef.current = null;
+            }
         };
     }, []);
 
@@ -407,19 +510,15 @@ function Map() {
 
     return (
         <div id="map-container" ref={mapContainerRef}>
-            {drawHint && (
-                <div className="draw-hint">
-                    <div className="draw-hint-content">
-                        <span className="draw-hint-icon">▧</span>
-                        <div>
-                            <strong>Shift + drag</strong> to draw a rectangle over your area of interest.
-                            <br />
-                            <span className="draw-hint-sub">Or use the polygon tool on the left to draw a custom shape (click points, double-click to finish).</span>
+                {!mapLoaded && (
+                    <div className="map-skeleton">
+                        <div className="map-skeleton-shimmer"></div>
+                        <div className="map-skeleton-ui">
+                            <div className="skeleton-block skeleton-toolbar"></div>
+                            <div className="skeleton-block skeleton-hint"></div>
                         </div>
-                        <button className="draw-hint-close" onClick={() => setDrawHint(false)}>✕</button>
                     </div>
-                </div>
-            )}
+                )}
             {aoi && (
                 <div className="action-bar">
                     <button

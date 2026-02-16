@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ───────────────────────────────────────────
+   Map Tool Panel — Egret Design System
+   ─────────────────────────────────────────── */
+
+@keyframes panelContentFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.map-tool-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    gap: 1em;
+    height: 100%;
+    width: 252px;
+    background: var(--egret-surface, #f7f6f3);
+    border-left: 1px solid var(--egret-border, rgba(0, 0, 0, 0.07));
+    padding: 14px;
+    box-sizing: border-box;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+}
+
+.drawing_tools {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.map-tool-panel.collapsed {
+    width: 40px;
+}
+
+/* ── Header ── */
+
+.tool-panel-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 40px;
+    flex-shrink: 0;
+    animation: panelContentFadeIn 0.4s ease-out both;
+}
+
+.tool-panel-heading {
+    font-size: 1.2em;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: var(--egret-text, #2c2c2c);
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 1;
+    flex: 1;
+    margin: 0;
+    letter-spacing: -0.01em;
+    transition: opacity 0.2s 0.15s ease, margin 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-right: 8px;
+}
+
+.map-tool-panel.collapsed .tool-panel-heading {
+    opacity: 0;
+    flex: 0;
+    margin-right: 0;
+    transition: opacity 0.15s ease, flex 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                margin 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Toggle button ── */
+
+.tool-panel-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 8px;
+    gap: 0;
+    padding: 0;
+    position: relative;
+    flex-shrink: 0;
+    margin-left: auto;
+    transition: background-color 0.2s ease;
+}
+
+.tool-panel-toggle:hover {
+    background-color: var(--egret-surface-2, #eeedea);
+}
+
+.tool-panel-toggle .bar {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background-color: var(--egret-text-muted, #8a8a86);
+    border-radius: 1px;
+    position: absolute;
+    left: 9px;
+    transform-origin: center;
+}
+
+.tool-panel-toggle .bar-top {
+    top: 11px;
+    transition: top 0.25s 0.12s ease, transform 0.25s ease;
+}
+
+.tool-panel-toggle .bar-mid {
+    top: 17px;
+    transition: translate 0.2s ease, opacity 0.15s 0.05s ease;
+}
+
+.tool-panel-toggle .bar-bot {
+    top: 23px;
+    transition: top 0.25s 0.14s ease, transform 0.25s 0.08s ease;
+}
+
+.tool-panel-toggle.collapsed .bar-mid {
+    translate: -12px 0;
+    opacity: 0;
+    transition: translate 0.2s ease, opacity 0.15s ease;
+}
+
+.tool-panel-toggle.collapsed .bar-top {
+    top: 17px;
+    transform: rotate(45deg);
+    transition: top 0.25s 0.08s ease, transform 0.25s 0.15s ease;
+}
+
+.tool-panel-toggle.collapsed .bar-bot {
+    top: 17px;
+    transform: rotate(-45deg);
+    transition: top 0.25s 0.14s ease, transform 0.25s 0.2s ease;
+}
+
+/* ── Content cards ── */
+
+.tool-panel-content {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--egret-surface-2, #eeedea);
+    border: 1px solid var(--egret-border, rgba(0, 0, 0, 0.07));
+    border-radius: 10px;
+    padding: 14px;
+    animation: panelContentFadeIn 0.4s ease-out both;
+}
+
+.tool-panel-content:nth-child(1) { animation-delay: 0.1s; }
+.tool-panel-content:nth-child(2) { animation-delay: 0.25s; }
+.tool-panel-content:nth-child(3) { animation-delay: 0.4s; }
+
+.map-tool-panel.collapsed .tool-panel-content {
+    opacity: 0;
+    transform: translateX(-10px);
+    pointer-events: none;
+    animation: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.tool-panel-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.tool-btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 10px 14px;
+    box-sizing: border-box;
+    color: var(--egret-text, #2c2c2c);
+    background: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 0.88em;
+    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.tool-btn:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.tool-btn:active {
+    background-color: rgba(0, 0, 0, 0.07);
+}
+
+.tool_header {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--egret-text-muted, #8a8a86);
+    margin-bottom: 8px;
+    animation: panelContentFadeIn 0.3s ease-out both;
+    animation-delay: 0.05s;
+}
+
+.tool-hint {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--egret-text-muted, #8a8a86);
+    line-height: 1.55;
+    margin: 0 0 0.4rem 0;
+}
+
+.tool-hint:last-child {
+    margin-bottom: 0;
+}
+
+.tool-hint strong {
+    color: var(--egret-text, #2c2c2c);
+    font-weight: 500;
+}

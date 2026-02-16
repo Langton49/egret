@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ───────────────────────────────────────────
+   Footer — Elegant / Academic / Egret
+   ─────────────────────────────────────────── */
+
+.footer {
+    width: 100%;
+    padding: 4em 2em 2em;
+    box-sizing: border-box;
+}
+
+.footer__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ── Top row: brand left, link columns right ── */
+
+.footer__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4em;
+}
+
+/* Brand block */
+
+.footer__brand h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.6em;
+    margin: 0 0 0.35em;
+    letter-spacing: -0.01em;
+}
+
+.footer__brand p {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.9em;
+    opacity: 0.5;
+    margin: 0;
+    max-width: 280px;
+    line-height: 1.5;
+}
+
+/* Link columns */
+
+.footer__links {
+    display: flex;
+    gap: 5em;
+}
+
+.footer__col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.footer__heading {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75em;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-bottom: 0.5em;
+}
+
+.footer__col a {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.92em;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0.65;
+    transition: opacity 0.3s ease;
+}
+
+.footer__col a:hover {
+    opacity: 1;
+}
+
+/* ── Divider ── */
+
+.footer__divider {
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.1;
+    margin: 3em 0 1.5em;
+}
+
+/* ── Bottom row: copyright left, socials right ── */
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__bottom p {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.8em;
+    opacity: 0.4;
+    margin: 0;
+}
+
+.footer__socials {
+    display: flex;
+    gap: 1.25em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__socials a {
+    color: inherit;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+    font-size: 1.1em;
+}
+
+.footer__socials a:hover {
+    opacity: 0.85;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 3em 1.25em 1.5em;
+    }
+
+    .footer__top {
+        flex-direction: column;
+        gap: 2.5em;
+    }
+
+    .footer__links {
+        gap: 3em;
+    }
+
+    .footer__bottom {
+        flex-direction: column-reverse;
+        gap: 1em;
+        align-items: center;
+    }
+}

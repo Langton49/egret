@@ -5,90 +5,134 @@ import hiwVid from '../assets/hiwVid.gif'
 import binoculars from '../assets/binoculars.png'
 import brain from '../assets/brain.png'
 import satelite from '../assets/satelite.png'
-import  copernicusLogo from '../assets/cop_logo.png'
+import copernicusLogo from '../assets/cop_logo.png'
 import ebirdLogo from '../assets/ebird_logo.png'
 import inatLogo from '../assets/inat_logo.png'
 
-function MainSection () {
+function MainSection() {
 
     useEffect(() => {
-        const sections = document.querySelectorAll('.intro, .hiw')
+        const sections = document.querySelectorAll(
+            '.intro, .approach, .pillars, .built-with'
+        )
 
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show')
-                        observer.unobserve(entry.target) // animate once
+                        observer.unobserve(entry.target)
                     }
                 })
             },
-            { threshold: 0.25 }
+            { threshold: 0.2 }
         )
 
         sections.forEach(section => observer.observe(section))
-
         return () => observer.disconnect()
     }, [])
 
     return (
-        <div className="main_section">
-            <div className="intro">
-                <div className="intro_text">
-                    <h1>What Is It?</h1>
+        <div className="main-section">
+
+            {/* ── The Problem ── */}
+            <section className="intro">
+                <div className="intro__text">
+                    <span className="section-label">The Problem</span>
+                    <h2>
+                        Conservation moves slowly.<br />
+                        Habitat loss does not.
+                    </h2>
                     <p>
-                        Conservation efforts are costly and can take weeks to months of research to project scope.
-                        The problem is where would conservation have the highest impact especially for wildlife.
-                        Egret is a new approach to conservation research and prioritization.
+                        Identifying where protection or restoration will yield the greatest
+                        ecological return typically requires months of field surveys,
+                        fragmented datasets, and costly analysis. Meanwhile, critical
+                        landscapes quietly degrade. Egret closes that gap — giving
+                        researchers and decision-makers a faster, evidence-based lens on
+                        habitat potential before the window closes.
                     </p>
                 </div>
 
-                <div className="intro_vid">
-                    <img src={introVid} alt="" />
+                <div className="intro__media">
+                    <img src={introVid} alt="Wetland landscape" />
                 </div>
-            </div>
+            </section>
 
-            <div className="hiw">
-                <div className="hiw_vid">
-                    <img src={hiwVid} alt="" />
+            {/* ── The Approach ── */}
+            <section className="approach">
+                <div className="approach__media">
+                    <img src={hiwVid} alt="Snowy egret in habitat" />
                 </div>
 
-                <div className="hiw_text">
-                    <h1>How It Works?</h1>
+                <div className="approach__text">
+                    <span className="section-label">The Approach</span>
+                    <h2>
+                        Satellite signal meets<br />
+                        ecological ground truth.
+                    </h2>
                     <p>
-                        Pairing high-value satellite imagery data with public bird observations from citizen scientists
-                        and official datasets, Egret makes it easy to evaluate an area for its potential to be a valuable nesting ground.
-                        Using machine learning, the Egret dashboard allows you to get an overview of how an area is behaving and
-                        whether it could be harboring avian species.
+                        Egret models habitat suitability by fusing spectral indices derived
+                        from satellite imagery — vegetation health, surface moisture,
+                        canopy density — with millions of verified bird observations. A
+                        gradient-boosting model learns which environmental signatures
+                        consistently predict nesting activity, then scores unsurveyed
+                        landscapes accordingly.
                     </p>
                 </div>
-            </div>
-           <div className='hiw_panels'>
-                <div className='desc'>
-                    <img src={binoculars} alt="Binoculars" />
-                    <p>Citizen science bird observation data</p>
-                </div>
-                <div className='desc'>
-                    <img src={satelite} alt="Satellite" />
-                    <p>High-resolution satellite imagery</p>
-                </div>
-                <div className='desc'>
-                    <img src={brain} alt="Brain" />
-                    <p>Machine learning habitat analysis</p>
-                </div>
-            </div>
-            <div className='built_with'>
-                <h1>Built With</h1>
-                <div>
-                    <img src={ebirdLogo} alt="" />
-                    <img src={inatLogo} alt="" />
-                    <img src={copernicusLogo} alt="" />
+            </section>
+
+            {/* ── Three Pillars ── */}
+            <section className="pillars">
+                <div className="pillar">
+                    <div className="pillar__icon">
+                        <img src={binoculars} alt="" aria-hidden="true" />
+                    </div>
+                    <h3>Observation Data</h3>
+                    <p>
+                        Millions of georeferenced bird sightings sourced from eBird and iNaturalist,
+                        spanning species, date, and location.
+                    </p>
                 </div>
 
-            </div>
-            <footer>
-                HEllo
-            </footer>
+                <div className="pillar__divider" />
+
+                <div className="pillar">
+                    <div className="pillar__icon">
+                        <img src={satelite} alt="" aria-hidden="true" />
+                    </div>
+                    <h3>Spectral Indices</h3>
+                    <p>
+                        Raw multispectral bands from Copernicus Sentinel-2, processed
+                        locally into indices like NDVI and NDWI to characterize vegetation
+                        vigor and hydrological conditions.
+                    </p>
+                </div>
+
+                <div className="pillar__divider" />
+
+                <div className="pillar">
+                    <div className="pillar__icon">
+                        <img src={brain} alt="" aria-hidden="true" />
+                    </div>
+                    <h3>Predictive Modeling</h3>
+                    <p>
+                        A gradient-boosting classifier trained on paired observation and
+                        spectral data, producing continuous suitability scores across any
+                        target landscape.
+                    </p>
+                </div>
+            </section>
+
+            {/* ── Built With ── */}
+            <section className="built-with">
+                <span className="section-label">Built With</span>
+                <div className="built-with__logos">
+                    <img src={ebirdLogo} alt="eBird" />
+                    <img src={inatLogo} alt="iNaturalist" />
+                    <img src={copernicusLogo} alt="Copernicus" />
+                </div>
+            </section>
+
         </div>
     )
 }

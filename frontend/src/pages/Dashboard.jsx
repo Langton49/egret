@@ -1,13 +1,10 @@
-import './Dashboard.css'
-import SideMenu from '../components/SideMenu';
-
-function Dashboard (){
-
-    return (
-        <div className='dashboard'>
-
-        </div>
-    )
+function Dashboard() {
+  return (
+    <div className="dashboard-page">
+      <h1>Dashboard</h1>
+      <p>Welcome to Egret. Get started by exploring the map or checking your reports.</p>
+    </div>
+  )
 }
 
-export default Dashboard;
+export default Dashboard

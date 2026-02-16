@@ -1,12 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ───────────────────────────────────────────
+   Side Menu — Egret Design System
+   ─────────────────────────────────────────── */
+
+:root {
+    --egret-surface:    #f7f6f3;
+    --egret-surface-2:  #eeedea;
+    --egret-border:     rgba(0, 0, 0, 0.07);
+    --egret-text:       #2c2c2c;
+    --egret-text-muted: #8a8a86;
+    --egret-gold:       #b8960c;
+    --egret-gold-soft:  rgba(184, 150, 12, 0.08);
+}
+
+@keyframes panelContentFadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
 
 .sidemenu {
     display: flex;
     flex-direction: column;
-    width: 280px;
-    gap: 2em;
-    background-color: #cecdcd;
-    padding: 8px;
+    width: 272px;
+    gap: 1.5em;
+    background-color: var(--egret-surface);
+    border-right: 1px solid var(--egret-border);
+    padding: 14px;
     box-sizing: border-box;
     transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
@@ -16,24 +36,27 @@
     width: 56px;
 }
 
-/* Header */
+/* ── Header ── */
+
 .sidemenu_header {
     display: flex;
     flex-direction: row;
     align-items: center;
     min-height: 40px;
     flex-shrink: 0;
+    animation: panelContentFadeIn 0.4s ease-out both;
 }
 
 .brand {
-    font-size: 2em;
-    font-family: 'Cormorant Garamond', sans-serif;
-    font-weight: 600;
-    color: rgb(71, 71, 71);
+    font-size: 1.6em;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    color: var(--egret-text);
     white-space: nowrap;
     overflow: hidden;
     opacity: 1;
     flex: 1;
+    letter-spacing: -0.01em;
     transition: opacity 0.2s 0.15s ease, margin 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     margin-right: 8px;
 }
@@ -42,10 +65,12 @@
     opacity: 0;
     flex: 0;
     margin-right: 0;
-    transition: opacity 0.15s ease, flex 0.35s cubic-bezier(0.4, 0, 0.2, 1), margin 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.15s ease, flex 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                margin 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Collapse button — always visible */
+/* ── Collapse button ── */
+
 .sidemenu_collapse {
     background: none;
     border: none;
@@ -54,39 +79,43 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    gap: 0;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 8px;
     padding: 0;
     position: relative;
     flex-shrink: 0;
+    transition: background-color 0.2s ease;
 }
 
-/* Bars */
+.sidemenu_collapse:hover {
+    background-color: var(--egret-surface-2);
+}
+
 .bar {
     display: block;
-    width: 20px;
-    height: 2px;
-    background-color: rgb(71, 71, 71);
+    width: 18px;
+    height: 1.5px;
+    background-color: var(--egret-text-muted);
     border-radius: 1px;
     position: absolute;
-    left: 10px;
+    left: 9px;
     transform-origin: center;
 }
 
 .bar-top {
-    top: 12px;
+    top: 11px;
     transition: top 0.25s 0.12s ease, transform 0.25s ease;
 }
 
 .bar-mid {
-    top: 19px;
+    top: 17px;
     transition: translate 0.2s ease, opacity 0.15s 0.05s ease;
 }
 
 .bar-bot {
-    top: 26px;
+    top: 23px;
     transition: top 0.25s 0.14s ease, transform 0.25s 0.08s ease;
 }
 
@@ -97,66 +126,117 @@
 }
 
 .sidemenu_collapse.collapsed .bar-top {
-    top: 19px;
+    top: 17px;
     transform: rotate(45deg);
     transition: top 0.25s 0.08s ease, transform 0.25s 0.15s ease;
 }
 
 .sidemenu_collapse.collapsed .bar-bot {
-    top: 19px;
+    top: 17px;
     transform: rotate(-45deg);
     transition: top 0.25s 0.14s ease, transform 0.25s 0.2s ease;
 }
 
-/* Nav panel */
+/* ── Announcement card ── */
+
+.announcement {
+    background-color: var(--egret-surface-2);
+    border: 1px solid var(--egret-border);
+    border-radius: 10px;
+    padding: 14px;
+    animation: panelContentFadeIn 0.4s ease-out both;
+    animation-delay: 0.1s;
+}
+
+.sidemenu.collapsed .announcement {
+    opacity: 0;
+    transform: translateX(-10px);
+    pointer-events: none;
+    animation: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.announcement_header {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--egret-gold);
+    margin-bottom: 10px;
+}
+
+.announcement-hint {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--egret-text-muted);
+    line-height: 1.55;
+    margin: 0 0 0.4rem 0;
+}
+
+.announcement-hint:last-child {
+    margin-bottom: 0;
+}
+
+.announcement-hint strong {
+    color: var(--egret-text);
+    font-weight: 500;
+}
+
+/* ── Nav panel ── */
+
 .nav_panel {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f1f1f1;
+    background-color: var(--egret-surface-2);
+    border: 1px solid var(--egret-border);
     border-radius: 10px;
-    padding: 10px;
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 0.2s 0.1s ease, transform 0.2s 0.1s ease;
+    padding: 6px;
+    animation: panelContentFadeIn 0.4s ease-out both;
+    animation-delay: 0.25s;
 }
 
 .sidemenu.collapsed .nav_panel {
     opacity: 0;
     transform: translateX(-10px);
     pointer-events: none;
+    animation: none;
     transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
 .nav_panel a {
     display: flex;
     width: 100%;
-    justify-content: center;
-    align-items: center;
     text-decoration: none;
 }
 
 .nav-btn {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
-    padding: 12px 16px;
+    padding: 10px 14px;
     box-sizing: border-box;
-    color: #374151;
-    border-radius: 10px;
+    color: var(--egret-text);
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 0.88em;
     font-family: 'DM Sans', sans-serif;
     white-space: nowrap;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    transition: background-color 0.2s ease;
 }
 
 .nav-btn:hover {
-    background-color: #d6d6d6;
+    background-color: rgba(0, 0, 0, 0.04);
 }
 
-.nav-btn:active {
-    transform: translateY(0);
+/* ── Overlay mode (map view) ── */
+
+.sidemenu.overlay-mode {
+    position: absolute;
+    z-index: 20;
+    height: 100vh;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08);
 }
