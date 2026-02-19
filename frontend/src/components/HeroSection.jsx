@@ -201,6 +201,9 @@ function HeroSection() {
                         style={{
                             left: `${hoveredBird.x * 100}%`,
                             top: `${hoveredBird.y * 100}%`,
+                            backgroundColor: `rgba(255, 255, 255, 0.8)`,
+                            padding: '6px 10px',
+                            borderRadius: '4px',
                         }}
                     >
                         <span className="bird-tooltip__name">{hoveredBird.name}</span>

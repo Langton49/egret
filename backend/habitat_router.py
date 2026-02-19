@@ -13,6 +13,7 @@ import numpy as np
 import pandas as pd
 import pickle
 import uuid
+import json
 from datetime import datetime, timedelta
 from pathlib import Path
 from enum import Enum
@@ -24,7 +25,7 @@ router = APIRouter(prefix="/habitat", tags=["habitat"])
 # Config
 # ---------------------------------------------------------------------------
 
-MODEL_PATH = Path("../training_two/suitability_model/suitability_model.pkl")
+MODEL_PATH = Path("./suitability_model/suitability_model.pkl")
 STAC_URL = "https://earth-search.aws.element84.com/v1"
 COLLECTION = "sentinel-2-l2a"
 CLOUD_COVER_MAX = 30
@@ -108,7 +109,6 @@ def load_bands_from_items(items, bbox):
     for item in items:
         scene_date = pd.Timestamp(item.datetime)
         ds_bands = {}
-        ref_band = None
 
         for band_name in BANDS:
             if band_name not in item.assets:
@@ -123,13 +123,6 @@ def load_bands_from_items(items, bbox):
                 )
                 if "band" in da.dims:
                     da = da.squeeze("band", drop=True)
-
-                # Resample 20m bands (SWIR, SCL) to match 10m grid
-                if ref_band is None:
-                    ref_band = da
-                elif da.shape != ref_band.shape:
-                    da = da.rio.reproject_match(ref_band)
-
                 ds_bands[band_name] = da
             except Exception as e:
                 print(f"    Warning: Could not load {band_name} from {item.id}: {e}")
@@ -146,6 +139,8 @@ def load_bands_from_items(items, bbox):
 
     combined = xr.concat(all_datasets, dim="time")
     return combined, scene_dates
+
+
 # ---------------------------------------------------------------------------
 # Spectral index computation
 # ---------------------------------------------------------------------------
@@ -204,10 +199,9 @@ def compute_indices(ds):
     result["GCVI"] = xr.where(green != 0, (nir / green) - 1, np.nan)
 
     if "scl" in ds:
-        # Only exclude definite clouds and no-data
-        invalid = ds["scl"].isin([0, 1, 3, 8, 9])
+        valid = ds["scl"].isin([4, 5, 6, 7, 11])
         for var in result.data_vars:
-            result[var] = result[var].where(~invalid)
+            result[var] = result[var].where(valid)
 
     return result
 
@@ -330,9 +324,14 @@ def score_cells(cell_df, acquisition_date):
         diversity_pred = regressor.predict(X)
         diversity_pred = np.maximum(diversity_pred, 0)
 
+    # Classify into archetypes — separate open water from unsuitable land
     archetype_labels = []
-    for p in proba:
-        if p >= 0.7:
+    water_mask_vals = cell_df["water_mask"].values if "water_mask" in cell_df.columns else np.zeros(len(cell_df))
+
+    for i, p in enumerate(proba):
+        if water_mask_vals[i] > 0.5:
+            archetype_labels.append("Open water")
+        elif p >= 0.7:
             archetype_labels.append("Highly suitable")
         elif p >= 0.4:
             archetype_labels.append("Moderately suitable")
@@ -355,59 +354,110 @@ def score_cells(cell_df, acquisition_date):
 # ---------------------------------------------------------------------------
 
 def run_scoring_job(job_id: str, polygon_geom: dict):
+    print("HELLLLLO")
     try:
-        from shapely.geometry import shape
+        from shapely.geometry import shape, Point
         poly = shape(polygon_geom)
         bbox = list(poly.bounds)
 
-        end_date = datetime.utcnow()
-        start_date = end_date - timedelta(days=30)
+        # ── Cache paths (relative to this file) ──
+        base_dir = Path(__file__).parent
+        cache_path = base_dir / "satellite_cache" / "latest_indices.csv"
+        meta_path = base_dir / "satellite_cache" / "cache_metadata.json"
 
-        jobs[job_id]["status"] = JobStatus.fetching
-        jobs[job_id]["progress"] = f"Searching Sentinel-2 scenes ({start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')})"
+        print(f"CWD: {Path.cwd()}")
+        print(f"Cache path: {cache_path.resolve()}")
+        print(f"Cache exists: {cache_path.exists()}")
+        used_cache = False
+        if cache_path.exists():
+            print(f"Job {job_id}: Loading cached data from {cache_path}")
+            jobs[job_id]["status"] = JobStatus.processing
+            jobs[job_id]["progress"] = "Loading cached satellite data..."
 
-        items = search_stac(bbox, start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d"))
-        if not items:
-            jobs[job_id]["status"] = JobStatus.failed
-            jobs[job_id]["error"] = "No cloud-free Sentinel-2 scenes found in the last 30 days."
-            return
+            cached_df = pd.read_csv(cache_path)
 
-        jobs[job_id]["progress"] = f"Found {len(items)} scenes. Loading imagery..."
+            # Fast bbox pre-filter, then point-in-polygon
+            cell_df = cached_df[
+                (cached_df["cell_x"] >= bbox[0]) & (cached_df["cell_x"] <= bbox[2]) &
+                (cached_df["cell_y"] >= bbox[1]) & (cached_df["cell_y"] <= bbox[3])
+            ].copy()
 
-        ds, scene_dates = load_bands_from_items(items, bbox)
-        if ds is None:
-            jobs[job_id]["status"] = JobStatus.failed
-            jobs[job_id]["error"] = "Failed to load imagery from available scenes."
-            return
+            if not cell_df.empty:
+                # Refine with actual polygon containment
+                mask = cell_df.apply(
+                    lambda row: poly.contains(Point(row["cell_x"], row["cell_y"])),
+                    axis=1
+                )
+                cell_df = cell_df[mask].copy()
 
-        median_date = sorted(scene_dates)[len(scene_dates) // 2]
+            print(f"Cells in polygon: {len(cell_df)}")
 
-        jobs[job_id]["status"] = JobStatus.processing
-        jobs[job_id]["progress"] = "Computing spectral indices..."
+            if not cell_df.empty:
+                used_cache = True
 
-        indices = compute_indices(ds)
-        if indices is None:
-            jobs[job_id]["status"] = JobStatus.failed
-            jobs[job_id]["error"] = "Missing required spectral bands."
-            return
+                # Get cache metadata for dates
+                cache_meta = {}
+                if meta_path.exists():
+                    with open(meta_path) as f:
+                        cache_meta = json.load(f)
 
-        jobs[job_id]["progress"] = "Aggregating to grid cells..."
+                cache_date_str = cache_meta.get("end_date", datetime.utcnow().strftime("%Y-%m-%d"))
+                cache_date = datetime.strptime(cache_date_str, "%Y-%m-%d")
+                start_date_str = cache_meta.get("start_date", "")
+                n_scenes = cache_meta.get("n_scenes", 0)
 
-        cell_df = aggregate_to_cells(indices, bbox)
-        print(f"DEBUG cell_df shape: {cell_df.shape}")
-        print(f"DEBUG cell_df head:\n{cell_df.head(10)}")
-        print(f"DEBUG NDVI unique values: {cell_df['NDVI'].nunique()}")
-        print(f"DEBUG cell_x range: {cell_df['cell_x'].min()} to {cell_df['cell_x'].max()}")
-        print(f"DEBUG cell_y range: {cell_df['cell_y'].min()} to {cell_df['cell_y'].max()}")
-        if cell_df.empty:
-            jobs[job_id]["status"] = JobStatus.failed
-            jobs[job_id]["error"] = "No valid pixels found after cloud masking."
-            return
+                jobs[job_id]["progress"] = f"Scoring {len(cell_df)} cells from cache..."
+            else:
+                jobs[job_id]["progress"] = "No cached cells in this area. Fetching live..."
+
+        # ── Fall back to live STAC fetch ──
+        if not used_cache:
+            end_date = datetime.utcnow()
+            start_date = end_date - timedelta(days=30)
+
+            jobs[job_id]["status"] = JobStatus.fetching
+            jobs[job_id]["progress"] = f"Searching Sentinel-2 scenes ({start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')})"
+
+            items = search_stac(bbox, start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d"))
+            if not items:
+                jobs[job_id]["status"] = JobStatus.failed
+                jobs[job_id]["error"] = "No cloud-free Sentinel-2 scenes found in the last 30 days."
+                return
+
+            jobs[job_id]["progress"] = f"Found {len(items)} scenes. Loading imagery..."
+
+            ds, scene_dates = load_bands_from_items(items, bbox)
+            if ds is None:
+                jobs[job_id]["status"] = JobStatus.failed
+                jobs[job_id]["error"] = "Failed to load imagery from available scenes."
+                return
+
+            cache_date = sorted(scene_dates)[len(scene_dates) // 2]
+            start_date_str = start_date.strftime("%Y-%m-%d")
+            cache_date_str = end_date.strftime("%Y-%m-%d")
+            n_scenes = len(items)
+
+            jobs[job_id]["status"] = JobStatus.processing
+            jobs[job_id]["progress"] = "Computing spectral indices..."
+
+            indices = compute_indices(ds)
+            if indices is None:
+                jobs[job_id]["status"] = JobStatus.failed
+                jobs[job_id]["error"] = "Missing required spectral bands."
+                return
+
+            jobs[job_id]["progress"] = "Aggregating to grid cells..."
+
+            cell_df = aggregate_to_cells(indices, bbox)
+            if cell_df.empty:
+                jobs[job_id]["status"] = JobStatus.failed
+                jobs[job_id]["error"] = "No valid pixels found after cloud masking."
+                return
 
         jobs[job_id]["status"] = JobStatus.scoring
         jobs[job_id]["progress"] = f"Scoring {len(cell_df)} cells..."
 
-        scored = score_cells(cell_df, median_date)
+        scored = score_cells(cell_df, cache_date if used_cache else cache_date)
 
         # Build response
         n_cells = len(scored)
@@ -440,14 +490,25 @@ def run_scoring_job(job_id: str, polygon_geom: dict):
         else:
             summary = f"Moderate habitat potential — mean suitability probability of {mean_prob:.0%}."
 
+        # Build cell polygons for fill layer
+        mid_lat = (bbox[1] + bbox[3]) / 2.0
+        half_lon = (CELL_SIZE_KM / (111.32 * math.cos(math.radians(mid_lat)))) / 2
+        half_lat = (CELL_SIZE_KM / 110.57) / 2
+
         cell_geojson = {
             "type": "FeatureCollection",
             "features": [
                 {
                     "type": "Feature",
                     "geometry": {
-                        "type": "Point",
-                        "coordinates": [float(row["cell_x"]), float(row["cell_y"])],
+                        "type": "Polygon",
+                        "coordinates": [[
+                            [float(row["cell_x"]) - half_lon, float(row["cell_y"]) - half_lat],
+                            [float(row["cell_x"]) + half_lon, float(row["cell_y"]) - half_lat],
+                            [float(row["cell_x"]) + half_lon, float(row["cell_y"]) + half_lat],
+                            [float(row["cell_x"]) - half_lon, float(row["cell_y"]) + half_lat],
+                            [float(row["cell_x"]) - half_lon, float(row["cell_y"]) - half_lat],
+                        ]],
                     },
                     "properties": {
                         "suitability": round(float(row["suitability_pct"]), 1),
@@ -464,9 +525,10 @@ def run_scoring_job(job_id: str, polygon_geom: dict):
         jobs[job_id]["progress"] = "Complete"
         jobs[job_id]["result"] = {
             "n_cells": n_cells,
-            "n_scenes": len(items),
-            "date_range": f"{start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')}",
-            "acquisition_date": median_date.strftime("%Y-%m-%d"),
+            "n_scenes": n_scenes,
+            "date_range": f"{start_date_str} to {cache_date_str}",
+            "acquisition_date": cache_date_str,
+            "source": "cache" if used_cache else "live",
             "mean_suitability": round(mean_prob * 100, 1),
             "max_suitability": round(max_prob * 100, 1),
             "summary": summary,

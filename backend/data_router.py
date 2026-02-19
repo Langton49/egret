@@ -20,7 +20,7 @@ router = APIRouter(prefix="/aoidata", tags=["data"])
 _results_df: Optional[pd.DataFrame] = None
 _profiles_df: Optional[pd.DataFrame] = None
 
-DATA_DIR = Path("../training_two/model_output")
+DATA_DIR = Path("./model_output")
 RESULTS_PATH = DATA_DIR / "habitat_results.csv"
 PROFILES_PATH = DATA_DIR / "cell_profiles.csv"
 

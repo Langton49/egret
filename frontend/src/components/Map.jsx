@@ -457,6 +457,8 @@ function Map({ onDrawReady }) {
                         pollRef.current = null;
                         setScoreResults(data.result);
                         setScoring(false);
+                        console.log('First 3 cells:', data.result.cell_geojson.features.slice(0, 3));
+                        console.log('AOI bounds:', aoi);
 
                         if (data.result.cell_geojson && mapRef.current) {
                             if (mapRef.current.getSource('scored-cells')) {
@@ -466,24 +468,23 @@ function Map({ onDrawReady }) {
                                     type: 'geojson',
                                     data: data.result.cell_geojson,
                                 });
-                                mapRef.current.addLayer({
+                               mapRef.current.addLayer({
                                     id: 'scored-cells-layer',
-                                    type: 'circle',
+                                    type: 'fill',
                                     source: 'scored-cells',
                                     paint: {
-                                        'circle-radius': 6,
-                                        'circle-color': [
-                                            'interpolate', ['linear'],
-                                            ['get', 'suitability'],
-                                            0, '#d73027',
-                                            40, '#fee08b',
-                                            70, '#66bd63',
-                                            100, '#1a9850',
+                                        'fill-color': [
+                                            'match',
+                                            ['get', 'archetype'],
+                                            'Highly suitable', '#1a9850',
+                                            'Moderately suitable', '#91cf60',
+                                            'Marginal', '#fee08b',
+                                            'Unsuitable', '#d73027',
+                                            'Open water', '#2166ac',
+                                            '#999999'
                                         ],
-                                        'circle-opacity': 0.7,
-                                        'circle-stroke-width': 1,
-                                        'circle-stroke-color': '#fff',
-                                        'circle-stroke-opacity': 0.4,
+                                        'fill-opacity': 0.3,
+                                        'fill-outline-color': 'rgba(255,255,255,0.3)',
                                     },
                                 });
                             }

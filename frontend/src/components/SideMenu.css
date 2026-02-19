@@ -20,6 +20,7 @@
 }
 
 .sidemenu {
+    --menu-expand-dur: 0.35s;
     display: flex;
     flex-direction: column;
     width: 272px;
@@ -28,7 +29,7 @@
     border-right: 1px solid var(--egret-border);
     padding: 14px;
     box-sizing: border-box;
-    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width var(--menu-expand-dur) cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
 }
 
@@ -57,7 +58,9 @@
     opacity: 1;
     flex: 1;
     letter-spacing: -0.01em;
-    transition: opacity 0.2s 0.15s ease, margin 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.2s ease, flex 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                margin 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: var(--menu-expand-dur), var(--menu-expand-dur), var(--menu-expand-dur);
     margin-right: 8px;
 }
 
@@ -65,6 +68,7 @@
     opacity: 0;
     flex: 0;
     margin-right: 0;
+    transition-delay: 0s, 0s, 0s;
     transition: opacity 0.15s ease, flex 0.35s cubic-bezier(0.4, 0, 0.2, 1),
                 margin 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -145,7 +149,7 @@
     border-radius: 10px;
     padding: 14px;
     animation: panelContentFadeIn 0.4s ease-out both;
-    animation-delay: 0.1s;
+    animation-delay: calc(var(--menu-expand-dur) + 0.1s);
 }
 
 .sidemenu.collapsed .announcement {
@@ -194,7 +198,7 @@
     border-radius: 10px;
     padding: 6px;
     animation: panelContentFadeIn 0.4s ease-out both;
-    animation-delay: 0.25s;
+    animation-delay: calc(var(--menu-expand-dur) + 0.25s);
 }
 
 .sidemenu.collapsed .nav_panel {

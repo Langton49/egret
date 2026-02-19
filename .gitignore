@@ -6,3 +6,4 @@ training_two/data_cache/
 training_two/model_output/
 training_two/satellite_timeseries/
 training_two/suitability_model/
+*.nc

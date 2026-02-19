@@ -1,0 +1,256 @@
+{
+  "timestamp": "2026-02-14T00:59:23.581739",
+  "input_rows": 19826,
+  "n_cells": 19826,
+  "n_features_original": 131,
+  "n_pca_components": 20,
+  "pca_variance_explained": 0.9529491859309148,
+  "best_k": 13,
+  "cluster_search": [
+    {
+      "k": 4,
+      "bic": 470535.8427670198,
+      "aic": 463248.98899089464,
+      "silhouette": 0.045644528958734165,
+      "calinski_harabasz": 2083.127532349373,
+      "combined_score": 0.28119971454861553
+    },
+    {
+      "k": 5,
+      "bic": 409032.01308412256,
+      "aic": 399921.4721765944,
+      "silhouette": 0.0783504965594562,
+      "calinski_harabasz": 3803.2062364942444,
+      "combined_score": 0.5536912775905323
+    },
+    {
+      "k": 6,
+      "bic": 350866.96186296496,
+      "aic": 339932.7338240339,
+      "silhouette": 0.03867161981502225,
+      "calinski_harabasz": 3629.2744943319954,
+      "combined_score": 0.3952994768232406
+    },
+    {
+      "k": 7,
+      "bic": 313370.33357370493,
+      "aic": 300612.4184033709,
+      "silhouette": 0.05715151414764914,
+      "calinski_harabasz": 3477.616098393331,
+      "combined_score": 0.5528255804550951
+    },
+    {
+      "k": 8,
+      "bic": 301204.8339726447,
+      "aic": 286623.2316709077,
+      "silhouette": 0.08277427506752835,
+      "calinski_harabasz": 4025.1414160080776,
+      "combined_score": 0.7195934240366046
+    },
+    {
+      "k": 9,
+      "bic": 228107.04173446752,
+      "aic": 211701.7523013276,
+      "silhouette": 0.039559979208443716,
+      "calinski_harabasz": 3258.3832305897145,
+      "combined_score": 0.5597331209870421
+    },
+    {
+      "k": 10,
+      "bic": 219583.3196964666,
+      "aic": 201354.34313192373,
+      "silhouette": 0.028084575025204436,
+      "calinski_harabasz": 2857.6350107546045,
+      "combined_score": 0.5031640179723997
+    },
+    {
+      "k": 11,
+      "bic": 188337.9133137114,
+      "aic": 168285.2496177656,
+      "silhouette": 0.03459207146135867,
+      "calinski_harabasz": 2734.068346087485,
+      "combined_score": 0.5820317245247584
+    },
+    {
+      "k": 12,
+      "bic": 183121.2773995307,
+      "aic": 161244.92657218192,
+      "silhouette": 0.06160139152179813,
+      "calinski_harabasz": 2849.871868418317,
+      "combined_score": 0.7479588723827189
+    },
+    {
+      "k": 13,
+      "bic": 162006.74507457367,
+      "aic": 138306.70711582195,
+      "silhouette": 0.06266573308106244,
+      "calinski_harabasz": 2601.5807458167137,
+      "combined_score": 0.7816128305569991
+    },
+    {
+      "k": 14,
+      "bic": 160386.79517662662,
+      "aic": 134863.07008647197,
+      "silhouette": 0.04132631341472897,
+      "calinski_harabasz": 2514.9226111651587,
+      "combined_score": 0.6579634802550298
+    },
+    {
+      "k": 15,
+      "bic": 144657.78796568635,
+      "aic": 117310.37574412873,
+      "silhouette": 0.006277012684817548,
+      "calinski_harabasz": 2323.083218322927,
+      "combined_score": 0.4718208009753858
+    },
+    {
+      "k": 16,
+      "bic": 119902.2041288226,
+      "aic": 90731.10477586204,
+      "silhouette": 0.026303572782101162,
+      "calinski_harabasz": 2197.731577045518,
+      "combined_score": 0.6219382242221505
+    },
+    {
+      "k": 17,
+      "bic": 116821.75666021199,
+      "aic": 85826.97017584849,
+      "silhouette": -0.002074211506507697,
+      "calinski_harabasz": 1948.1013620991594,
+      "combined_score": 0.458706813711436
+    },
+    {
+      "k": 18,
+      "bic": 106971.18202071812,
+      "aic": 74152.70840495167,
+      "silhouette": 0.013350034200981941,
+      "calinski_harabasz": 2152.0723689957676,
+      "combined_score": 0.5623742027019677
+    },
+    {
+      "k": 19,
+      "bic": 84980.10701843028,
+      "aic": 50337.94627126088,
+      "silhouette": 0.02549681614280205,
+      "calinski_harabasz": 1929.2842934788257,
+      "combined_score": 0.66247212372349
+    },
+    {
+      "k": 20,
+      "bic": 95344.21718474943,
+      "aic": 58878.36930617709,
+      "silhouette": 0.004020576343030059,
+      "calinski_harabasz": 1910.1631898811888,
+      "combined_score": 0.5224752309338321
+    }
+  ],
+  "cluster_bird_scores": {
+    "0": {
+      "median_species": 0.013986013986013986,
+      "median_diversity": -6.993007571261335e-13,
+      "median_observations": 0.013986013986013986,
+      "cells_with_data": 41.0,
+      "total_cells": 1415.0
+    },
+    "1": {
+      "median_species": 0.09937888198757763,
+      "median_diversity": 0.02103840406776602,
+      "median_observations": 0.10687022900763359,
+      "cells_with_data": 339.0,
+      "total_cells": 1527.0
+    },
+    "2": {
+      "median_species": 0.042908845540424484,
+      "median_diversity": 0.013323831457188524,
+      "median_observations": 0.051929824561403506,
+      "cells_with_data": 18.0,
+      "total_cells": 2728.0
+    },
+    "3": {
+      "median_species": 0.08125,
+      "median_diversity": 0.018723326697212446,
+      "median_observations": 0.1125,
+      "cells_with_data": 112.0,
+      "total_cells": 739.0
+    },
+    "4": {
+      "median_species": 0.08391608391608392,
+      "median_diversity": 0.018165873270442202,
+      "median_observations": 0.1048951048951049,
+      "cells_with_data": 13.0,
+      "total_cells": 960.0
+    },
+    "5": {
+      "median_species": 0.1,
+      "median_diversity": 0.020826278171095024,
+      "median_observations": 0.1,
+      "cells_with_data": 45.0,
+      "total_cells": 1013.0
+    },
+    "6": {
+      "median_species": 0.022727272727272728,
+      "median_diversity": 0.008322820366425072,
+      "median_observations": 0.032679738562091505,
+      "cells_with_data": 39.0,
+      "total_cells": 1535.0
+    },
+    "7": {
+      "median_species": 0.007633587786259542,
+      "median_diversity": -6.993007571261335e-13,
+      "median_observations": 0.007633587786259542,
+      "cells_with_data": 9.0,
+      "total_cells": 1749.0
+    },
+    "8": {
+      "median_species": 0.054094101408679415,
+      "median_diversity": 0.013627560446414125,
+      "median_observations": 0.06252443208964949,
+      "cells_with_data": 202.0,
+      "total_cells": 1215.0
+    },
+    "9": {
+      "median_species": 0.09158385093167701,
+      "median_diversity": 0.018152489145196335,
+      "median_observations": 0.10559006211180125,
+      "cells_with_data": 260.0,
+      "total_cells": 2684.0
+    },
+    "10": {
+      "median_species": 0.11764705882352941,
+      "median_diversity": 0.022224152650684934,
+      "median_observations": 0.13157894736842105,
+      "cells_with_data": 689.0,
+      "total_cells": 2311.0
+    },
+    "11": {
+      "median_species": 0.13286713286713286,
+      "median_diversity": 0.020590482358506575,
+      "median_observations": 0.17557251908396945,
+      "cells_with_data": 35.0,
+      "total_cells": 1333.0
+    },
+    "12": {
+      "median_species": 0.08074534161490683,
+      "median_diversity": 0.01676437487687279,
+      "median_observations": 0.08496732026143791,
+      "cells_with_data": 95.0,
+      "total_cells": 617.0
+    }
+  },
+  "trajectory_distribution": {
+    "stable": 9912,
+    "degrading": 4957,
+    "improving": 4957
+  },
+  "conservation_priority_stats": {
+    "mean": 56.49090807369087,
+    "std": 28.721501998048378,
+    "min": 0.0,
+    "max": 100.0,
+    "p25": 51.583362195384034,
+    "p75": 80.36743499865352
+  },
+  "bird_validation": {
+    "suitability_diversity_correlation": 0.9999999999999997
+  }
+}

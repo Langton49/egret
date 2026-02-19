@@ -1,0 +1,555 @@
+{
+  "timestamp": "2026-02-15T02:46:16.588969",
+  "input_file": "./model_input.csv",
+  "training_set": {
+    "total_rows": 49023,
+    "positives": 16341,
+    "negatives": 32682,
+    "positive_rate": 0.3333333333333333,
+    "neg_ratio": 2
+  },
+  "features": {
+    "spectral": [
+      "NDVI",
+      "NDWI",
+      "MNDWI",
+      "NDMI",
+      "EVI",
+      "SAVI",
+      "LSWI",
+      "WRI",
+      "wetland_moisture_index",
+      "water_mask",
+      "tc_wetness",
+      "GCVI"
+    ],
+    "engineered": [
+      "NDVI_x_NDWI",
+      "NDVI_x_MNDWI",
+      "EVI_x_NDMI",
+      "GCVI_x_wetmoist",
+      "veg_water_ratio",
+      "moisture_per_veg",
+      "NDVI_sq",
+      "NDWI_sq",
+      "EVI_sq",
+      "month_sin",
+      "month_cos",
+      "doy_sin",
+      "doy_cos"
+    ],
+    "total": 25
+  },
+  "classifier": {
+    "roc_auc": 0.8796906283767628,
+    "average_precision": 0.7781978835964353,
+    "classification_report": {
+      "absent": {
+        "precision": 0.8290873460246361,
+        "recall": 0.9060731222273214,
+        "f1-score": 0.8658723777501645,
+        "support": 6537.0
+      },
+      "present": {
+        "precision": 0.7692596768132282,
+        "recall": 0.6263769889840881,
+        "f1-score": 0.6905043008939112,
+        "support": 3268.0
+      },
+      "accuracy": 0.8128505864354921,
+      "macro avg": {
+        "precision": 0.7991735114189321,
+        "recall": 0.7662250556057048,
+        "f1-score": 0.7781883393220379,
+        "support": 9805.0
+      },
+      "weighted avg": {
+        "precision": 0.8091468235378557,
+        "recall": 0.8128505864354921,
+        "f1-score": 0.807422313990222,
+        "support": 9805.0
+      }
+    },
+    "feature_importance": [
+      {
+        "feature": "tc_wetness",
+        "importance": 0.16360615531301861
+      },
+      {
+        "feature": "water_mask",
+        "importance": 0.140640899208215
+      },
+      {
+        "feature": "EVI",
+        "importance": 0.1393467201969925
+      },
+      {
+        "feature": "wetland_moisture_index",
+        "importance": 0.08280832181855552
+      },
+      {
+        "feature": "MNDWI",
+        "importance": 0.061380830097839754
+      },
+      {
+        "feature": "GCVI",
+        "importance": 0.058972571629869575
+      },
+      {
+        "feature": "EVI_sq",
+        "importance": 0.039242269544552066
+      },
+      {
+        "feature": "SAVI",
+        "importance": 0.029567531357858938
+      },
+      {
+        "feature": "doy_cos",
+        "importance": 0.029243377780174194
+      },
+      {
+        "feature": "doy_sin",
+        "importance": 0.025610282241186895
+      },
+      {
+        "feature": "veg_water_ratio",
+        "importance": 0.02196239660367644
+      },
+      {
+        "feature": "NDVI",
+        "importance": 0.021051551438974178
+      },
+      {
+        "feature": "GCVI_x_wetmoist",
+        "importance": 0.020020891167681527
+      },
+      {
+        "feature": "WRI",
+        "importance": 0.017580051095814373
+      },
+      {
+        "feature": "NDVI_x_MNDWI",
+        "importance": 0.01729991011132723
+      },
+      {
+        "feature": "EVI_x_NDMI",
+        "importance": 0.01722641638744836
+      },
+      {
+        "feature": "NDWI",
+        "importance": 0.017055540092031234
+      },
+      {
+        "feature": "month_sin",
+        "importance": 0.015784112421014452
+      },
+      {
+        "feature": "moisture_per_veg",
+        "importance": 0.015069362386356158
+      },
+      {
+        "feature": "NDWI_sq",
+        "importance": 0.014483004814912496
+      },
+      {
+        "feature": "LSWI",
+        "importance": 0.014186960774409686
+      },
+      {
+        "feature": "NDMI",
+        "importance": 0.01281882931776033
+      },
+      {
+        "feature": "NDVI_x_NDWI",
+        "importance": 0.010073929209259962
+      },
+      {
+        "feature": "NDVI_sq",
+        "importance": 0.009686641808178699
+      },
+      {
+        "feature": "month_cos",
+        "importance": 0.005281443182891746
+      }
+    ]
+  },
+  "regressor": {
+    "mae": 1.0783494042929618,
+    "r2": 0.07640203721178318,
+    "feature_importance": [
+      {
+        "feature": "water_mask",
+        "importance": 0.11192034498034469
+      },
+      {
+        "feature": "tc_wetness",
+        "importance": 0.07443247761174214
+      },
+      {
+        "feature": "EVI",
+        "importance": 0.05417266125420395
+      },
+      {
+        "feature": "veg_water_ratio",
+        "importance": 0.0540866309750642
+      },
+      {
+        "feature": "WRI",
+        "importance": 0.05010434365410949
+      },
+      {
+        "feature": "GCVI",
+        "importance": 0.04827494610448408
+      },
+      {
+        "feature": "doy_cos",
+        "importance": 0.04248526984047922
+      },
+      {
+        "feature": "NDWI",
+        "importance": 0.04165727426668968
+      },
+      {
+        "feature": "SAVI",
+        "importance": 0.04159875485672217
+      },
+      {
+        "feature": "EVI_x_NDMI",
+        "importance": 0.038766993365965494
+      },
+      {
+        "feature": "wetland_moisture_index",
+        "importance": 0.038439438636897375
+      },
+      {
+        "feature": "GCVI_x_wetmoist",
+        "importance": 0.037404035820357284
+      },
+      {
+        "feature": "LSWI",
+        "importance": 0.0368846790514619
+      },
+      {
+        "feature": "EVI_sq",
+        "importance": 0.0361242788961018
+      },
+      {
+        "feature": "MNDWI",
+        "importance": 0.03383938311712161
+      },
+      {
+        "feature": "NDVI_x_MNDWI",
+        "importance": 0.03370308452016673
+      },
+      {
+        "feature": "NDVI_x_NDWI",
+        "importance": 0.03146470850357966
+      },
+      {
+        "feature": "doy_sin",
+        "importance": 0.029564826964278777
+      },
+      {
+        "feature": "NDMI",
+        "importance": 0.029552089358362982
+      },
+      {
+        "feature": "NDVI",
+        "importance": 0.029276246239611867
+      },
+      {
+        "feature": "moisture_per_veg",
+        "importance": 0.028969920631364353
+      },
+      {
+        "feature": "NDVI_sq",
+        "importance": 0.0259479411173462
+      },
+      {
+        "feature": "NDWI_sq",
+        "importance": 0.023607881103192074
+      },
+      {
+        "feature": "month_sin",
+        "importance": 0.020924053282201316
+      },
+      {
+        "feature": "month_cos",
+        "importance": 0.006797735848150925
+      }
+    ]
+  },
+  "cross_validation": {
+    "roc_auc": {
+      "mean": 0.8795725370579122,
+      "std": 0.0032664803158788634,
+      "folds": [
+        0.877976315284002,
+        0.8811388389113173,
+        0.8739519455115584,
+        0.8817680890621419,
+        0.8830274965205419
+      ]
+    },
+    "average_precision": {
+      "mean": 0.7806352254730285,
+      "std": 0.0068330543483757,
+      "folds": [
+        0.7845271625548184,
+        0.7814597580432809,
+        0.77152414163711,
+        0.7749281677943617,
+        0.7907368973355717
+      ]
+    },
+    "f1": {
+      "mean": 0.690250590447155,
+      "std": 0.003634879298699057,
+      "folds": [
+        0.6962570387545545,
+        0.6902860944777113,
+        0.6848585690515807,
+        0.6893348814065351,
+        0.6905163685453932
+      ]
+    }
+  },
+  "archetypes": {
+    "Highly suitable": {
+      "probability_range": [
+        0.7,
+        1.0
+      ],
+      "n_samples": 8986,
+      "n_with_birds": 8028,
+      "avg_species_when_present": 15.7,
+      "spectral_profile": {
+        "NDVI": {
+          "mean": 0.3394797054311373,
+          "std": 0.18191935578045285
+        },
+        "NDWI": {
+          "mean": -0.3332366314954901,
+          "std": 0.18017902925009077
+        },
+        "MNDWI": {
+          "mean": -0.29359466619904184,
+          "std": 0.18493767611058165
+        },
+        "NDMI": {
+          "mean": 0.06324192073329535,
+          "std": 0.08379415490138231
+        },
+        "EVI": {
+          "mean": 0.249771492574004,
+          "std": 2.3976110660259744
+        },
+        "SAVI": {
+          "mean": 0.2200995063252199,
+          "std": 0.0914741425340127
+        },
+        "LSWI": {
+          "mean": 0.06324192073329535,
+          "std": 0.08379415490138231
+        },
+        "WRI": {
+          "mean": 0.871363653780325,
+          "std": 2.175811093712371
+        },
+        "wetland_moisture_index": {
+          "mean": -0.18786320248655797,
+          "std": 0.1273771075233404
+        },
+        "water_mask": {
+          "mean": 0.10403683507678611,
+          "std": 0.1637327693594458
+        },
+        "tc_wetness": {
+          "mean": -0.0707233748816893,
+          "std": 0.02454742742436857
+        },
+        "GCVI": {
+          "mean": 1.8085413883439296,
+          "std": 4.9541319831461434
+        }
+      }
+    },
+    "Moderately suitable": {
+      "probability_range": [
+        0.4,
+        0.7
+      ],
+      "n_samples": 8885,
+      "n_with_birds": 4923,
+      "avg_species_when_present": 16.0,
+      "spectral_profile": {
+        "NDVI": {
+          "mean": 0.34494354166247476,
+          "std": 0.28465924112224744
+        },
+        "NDWI": {
+          "mean": -0.3230562072995711,
+          "std": 0.27515094124179573
+        },
+        "MNDWI": {
+          "mean": -0.23828917302579958,
+          "std": 0.28600719790997026
+        },
+        "NDMI": {
+          "mean": 0.12203262482390165,
+          "std": 0.13470831870659622
+        },
+        "EVI": {
+          "mean": 0.24748052766656314,
+          "std": 4.959167799165402
+        },
+        "SAVI": {
+          "mean": 0.22309359350591393,
+          "std": 0.13791339129910798
+        },
+        "LSWI": {
+          "mean": 0.12203262482390165,
+          "std": 0.13470831870659622
+        },
+        "WRI": {
+          "mean": 1.4721501212645591,
+          "std": 5.231192046865442
+        },
+        "wetland_moisture_index": {
+          "mean": -0.1464380109036236,
+          "std": 0.19450917362043443
+        },
+        "water_mask": {
+          "mean": 0.12689201463140126,
+          "std": 0.20841381693920433
+        },
+        "tc_wetness": {
+          "mean": -0.046089840476139766,
+          "std": 0.03412304409251157
+        },
+        "GCVI": {
+          "mean": 2.2707290304750734,
+          "std": 5.052051180278414
+        }
+      }
+    },
+    "Marginal": {
+      "probability_range": [
+        0.15,
+        0.4
+      ],
+      "n_samples": 13201,
+      "n_with_birds": 2874,
+      "avg_species_when_present": 14.8,
+      "spectral_profile": {
+        "NDVI": {
+          "mean": 0.2300039077394383,
+          "std": 0.32188340402751825
+        },
+        "NDWI": {
+          "mean": -0.2062124064738759,
+          "std": 0.32024142170346875
+        },
+        "MNDWI": {
+          "mean": -0.10305295420913055,
+          "std": 0.3534291202136171
+        },
+        "NDMI": {
+          "mean": 0.14346255258716067,
+          "std": 0.1699998164824478
+        },
+        "EVI": {
+          "mean": 0.1197197724424446,
+          "std": 5.808005059598782
+        },
+        "SAVI": {
+          "mean": 0.1644463094430882,
+          "std": 0.14223406867269245
+        },
+        "LSWI": {
+          "mean": 0.14346255258716067,
+          "std": 0.1699998164824478
+        },
+        "WRI": {
+          "mean": 2.63904006440678,
+          "std": 9.822492428571877
+        },
+        "wetland_moisture_index": {
+          "mean": -0.055268374928712005,
+          "std": 0.2448952450390891
+        },
+        "water_mask": {
+          "mean": 0.17744468032724792,
+          "std": 0.2651560126254077
+        },
+        "tc_wetness": {
+          "mean": -0.026056161067304007,
+          "std": 0.039038373108119216
+        },
+        "GCVI": {
+          "mean": 1.7681140062225942,
+          "std": 5.284129177722167
+        }
+      }
+    },
+    "Unsuitable": {
+      "probability_range": [
+        0.0,
+        0.15
+      ],
+      "n_samples": 17941,
+      "n_with_birds": 507,
+      "avg_species_when_present": 13.0,
+      "spectral_profile": {
+        "NDVI": {
+          "mean": -0.3105982808890505,
+          "std": 0.3432797986227441
+        },
+        "NDWI": {
+          "mean": 0.4028396349410494,
+          "std": 0.37302016511575414
+        },
+        "MNDWI": {
+          "mean": 0.5533912429010451,
+          "std": 0.3969148190457965
+        },
+        "NDMI": {
+          "mean": 0.2632055404553739,
+          "std": 0.364100753400995
+        },
+        "EVI": {
+          "mean": -0.004731340296325103,
+          "std": 3.021438004173306
+        },
+        "SAVI": {
+          "mean": -0.019745550022056923,
+          "std": 0.09944310975334143
+        },
+        "LSWI": {
+          "mean": 0.2632055404553739,
+          "std": 0.364100753400995
+        },
+        "WRI": {
+          "mean": 12.129235849722527,
+          "std": 36.870081085236855
+        },
+        "wetland_moisture_index": {
+          "mean": 0.40647856947268407,
+          "std": 0.3032346145189834
+        },
+        "water_mask": {
+          "mean": 0.8629830360626498,
+          "std": 0.28669229587081557
+        },
+        "tc_wetness": {
+          "mean": 0.016393412597974978,
+          "std": 0.03885696410499476
+        },
+        "GCVI": {
+          "mean": -0.24768976462911024,
+          "std": 2.8731490805678437
+        }
+      }
+    }
+  }
+}

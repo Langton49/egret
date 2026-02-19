@@ -1,0 +1,93 @@
+{
+  "fetched_at": "2026-02-19T06:42:35.857302+00:00",
+  "strategy": "clearest single scene per tile",
+  "max_cloud_pct": 15,
+  "search_days_back": 180,
+  "n_cells": 11803,
+  "index_coverage": 1.0,
+  "aoi_bounds": [
+    -90.628342,
+    28.927421,
+    -89.067224,
+    30.106372
+  ],
+  "cell_size_km": 1.0,
+  "tiles": [
+    {
+      "id": 0,
+      "source": "2026-02-15",
+      "scene_id": "S2A_15RYN_20260215_0_L2A",
+      "cloud_cover": 0.728795,
+      "cells": 1644,
+      "coverage": 1.0
+    },
+    {
+      "id": 1,
+      "source": "2026-02-15",
+      "scene_id": "S2A_15RYN_20260215_0_L2A",
+      "cloud_cover": 0.728795,
+      "cells": 1845,
+      "coverage": 1.0
+    },
+    {
+      "id": 2,
+      "source": "2026-02-15",
+      "scene_id": "S2A_15RYN_20260215_0_L2A",
+      "cloud_cover": 0.728795,
+      "cells": 377,
+      "coverage": 1.0
+    },
+    {
+      "id": 3,
+      "source": "2026-02-15",
+      "scene_id": "S2A_15RYN_20260215_0_L2A",
+      "cloud_cover": 0.728795,
+      "cells": 1198,
+      "coverage": 1.0
+    },
+    {
+      "id": 4,
+      "source": "2026-02-15",
+      "scene_id": "S2A_15RYN_20260215_0_L2A",
+      "cloud_cover": 0.728795,
+      "cells": 1348,
+      "coverage": 1.0
+    },
+    {
+      "id": 5,
+      "source": "2026-02-15",
+      "scene_id": "S2A_15RYN_20260215_0_L2A",
+      "cloud_cover": 0.728795,
+      "cells": 310,
+      "coverage": 1.0
+    },
+    {
+      "id": 6,
+      "source": "2026-02-15",
+      "scene_id": "S2A_16RBT_20260215_0_L2A",
+      "cloud_cover": 0.409362,
+      "cells": 2288,
+      "coverage": 1.0
+    },
+    {
+      "id": 7,
+      "source": "2026-02-15",
+      "scene_id": "S2A_16RBT_20260215_0_L2A",
+      "cloud_cover": 0.409362,
+      "cells": 2295,
+      "coverage": 1.0
+    },
+    {
+      "id": 8,
+      "source": "2026-02-15",
+      "scene_id": "S2A_16RBT_20260215_0_L2A",
+      "cloud_cover": 0.409362,
+      "cells": 591,
+      "coverage": 1.0
+    }
+  ],
+  "oldest_scene": "2026-02-15",
+  "newest_scene": "2026-02-15",
+  "start_date": "2026-02-15",
+  "end_date": "2026-02-15"
+}

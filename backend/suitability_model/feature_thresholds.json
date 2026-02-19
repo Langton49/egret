@@ -1,0 +1,110 @@
+{
+  "NDVI": {
+    "bird_present_mean": 0.3002764265958818,
+    "bird_present_median": 0.3542218,
+    "bird_present_p25": 0.17629720999999998,
+    "bird_present_p75": 0.46800454,
+    "bird_absent_mean": -0.10833768688613839,
+    "bird_absent_median": -0.15501717,
+    "difference": 0.40861411348202015
+  },
+  "NDWI": {
+    "bird_present_mean": -0.28582680470235866,
+    "bird_present_median": -0.35698742,
+    "bird_present_p25": -0.45859300000000003,
+    "bird_present_p75": -0.172771675,
+    "bird_absent_mean": 0.17653773756665292,
+    "bird_absent_median": 0.22197856,
+    "difference": -0.4623645422690116
+  },
+  "MNDWI": {
+    "bird_present_mean": -0.22089995568463083,
+    "bird_present_median": -0.329998,
+    "bird_present_p25": -0.40680305000000005,
+    "bird_present_p75": -0.1115326475,
+    "bird_absent_mean": 0.3050844507480982,
+    "bird_absent_median": 0.36062482,
+    "difference": -0.525984406432729
+  },
+  "NDMI": {
+    "bird_present_mean": 0.09708174510187732,
+    "bird_present_median": 0.06792725,
+    "bird_present_p25": 0.014839771,
+    "bird_present_p75": 0.150391405,
+    "bird_absent_mean": 0.21535156649871418,
+    "bird_absent_median": 0.15605752,
+    "difference": -0.11826982139683685
+  },
+  "EVI": {
+    "bird_present_mean": 0.20414075015407576,
+    "bird_present_median": 0.23284331,
+    "bird_present_p25": 0.14305947000000002,
+    "bird_present_p75": 0.30845044,
+    "bird_absent_mean": 0.06483394788176948,
+    "bird_absent_median": -0.013428473,
+    "difference": 0.1393068022723063
+  },
+  "SAVI": {
+    "bird_present_mean": 0.20331529250646746,
+    "bird_present_median": 0.20956053,
+    "bird_present_p25": 0.12745773,
+    "bird_present_p75": 0.27872488,
+    "bird_absent_mean": 0.05207020828143538,
+    "bird_absent_median": -0.014219577,
+    "difference": 0.15124508422503208
+  },
+  "LSWI": {
+    "bird_present_mean": 0.09708174510187732,
+    "bird_present_median": 0.06792725,
+    "bird_present_p25": 0.014839771,
+    "bird_present_p75": 0.150391405,
+    "bird_absent_mean": 0.21535156649871418,
+    "bird_absent_median": 0.15605752,
+    "difference": -0.11826982139683685
+  },
+  "WRI": {
+    "bird_present_mean": 1.5256615586724682,
+    "bird_present_median": 0.53308827,
+    "bird_present_p25": 0.41344273,
+    "bird_present_p75": 1.09718685,
+    "bird_absent_mean": 8.74786859673702,
+    "bird_absent_median": 2.0587738,
+    "difference": -7.2222070380645516
+  },
+  "wetland_moisture_index": {
+    "bird_present_mean": -0.13654864815821513,
+    "bird_present_median": -0.21540637,
+    "bird_present_p25": -0.2629378,
+    "bird_present_p75": -0.06744578500000001,
+    "bird_absent_mean": 0.23232425437960302,
+    "bird_absent_median": 0.24553376,
+    "difference": -0.3688729025378181
+  },
+  "water_mask": {
+    "bird_present_mean": 0.15030086286029007,
+    "bird_present_median": 0.01725,
+    "bird_present_p25": 0.0003,
+    "bird_present_p75": 0.2081,
+    "bird_absent_mean": 0.5333687893947738,
+    "bird_absent_median": 0.6198,
+    "difference": -0.38306792653448374
+  },
+  "tc_wetness": {
+    "bird_present_mean": -0.055421098557138636,
+    "bird_present_median": -0.06296162,
+    "bird_present_p25": -0.08139483,
+    "bird_present_p75": -0.029737112,
+    "bird_absent_mean": -0.002284097554403413,
+    "bird_absent_median": 0.008733299,
+    "difference": -0.053137001002735225
+  },
+  "GCVI": {
+    "bird_present_mean": 1.851653973686885,
+    "bird_present_median": 1.5620167,
+    "bird_present_p25": 0.91888741,
+    "bird_present_p75": 2.3092433999999997,
+    "bird_absent_mean": 0.4841362249647426,
+    "bird_absent_median": -0.2757873,
+    "difference": 1.3675177487221424
+  }
+}
