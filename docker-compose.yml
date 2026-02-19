@@ -1,0 +1,51 @@
+services:
+  # ── Backend API ──
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Prefetch writes here, backend reads — persists across restarts
+      - satellite_cache:/app/satellite_cache
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+  # ── Frontend ──
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_BACKEND: ""
+        VITE_MAPBOX: ${VITE_MAPBOX}
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # ── Biweekly satellite prefetch ──
+  prefetch:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - satellite_cache:/app/satellite_cache
+    entrypoint: [""]
+    command: >
+      sh -c '
+        while true; do
+          sleep 1209600;
+          echo "Running biweekly prefetch at $$(date)..." &&
+          python prefetch_satellite.py;
+        done
+      '
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+
+volumes:
+  satellite_cache:

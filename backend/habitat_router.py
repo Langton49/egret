@@ -361,9 +361,8 @@ def run_scoring_job(job_id: str, polygon_geom: dict):
         bbox = list(poly.bounds)
 
         # ── Cache paths (relative to this file) ──
-        base_dir = Path(__file__).parent
-        cache_path = base_dir / "satellite_cache" / "latest_indices.csv"
-        meta_path = base_dir / "satellite_cache" / "cache_metadata.json"
+        cache_path = Path("./satellite_cache/latest_indices.csv")
+        meta_path = Path("./satellite_cache/cache_metadata.json")
 
         print(f"CWD: {Path.cwd()}")
         print(f"Cache path: {cache_path.resolve()}")

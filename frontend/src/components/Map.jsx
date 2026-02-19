@@ -483,7 +483,7 @@ function Map({ onDrawReady }) {
                                             'Open water', '#2166ac',
                                             '#999999'
                                         ],
-                                        'fill-opacity': 0.3,
+                                        'fill-opacity': 0.5,
                                         'fill-outline-color': 'rgba(255,255,255,0.3)',
                                     },
                                 });
