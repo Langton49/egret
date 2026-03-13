@@ -161,17 +161,17 @@ async def analyze_aoi(request: AOIRequest):
         species_count = int(profiles_matched["n_species_mean"].max())
 
     # ── Top species (from order-level data) ──
-    top_species = []
-    order_cols = [c for c in profiles_matched.columns
-                  if c.startswith("n_") and c.endswith("_total") and "observation" not in c
-                  and "species" not in c and "individual" not in c]
-    if order_cols:
-        order_totals = profiles_matched[order_cols].sum().sort_values(ascending=False)
-        for col in order_totals.head(5).index:
-            name = col.replace("n_", "").replace("_total", "")
-            count = int(order_totals[col])
-            if count > 0:
-                top_species.append({"order": name, "count": count})
+    ORDER_COLS = [
+        "n_Passeriformes_total", "n_Pelecaniformes_total", "n_Charadriiformes_total",
+        "n_Accipitriformes_total", "n_Anseriformes_total", "n_Columbiformes_total",
+        "n_Suliformes_total", "n_Piciformes_total", "n_Gruiformes_total", "n_Apodiformes_total",
+    ]
+    order_totals = profiles_matched[ORDER_COLS].sum().sort_values(ascending=False)
+    top_species = [
+        {"order": col.replace("n_", "").replace("_total", ""), "count": int(order_totals[col])}
+        for col in order_totals.head(5).index
+        if order_totals[col] > 0
+    ]
 
     # ── Condition (majority vote) ──
     if "trajectory" in matched.columns:
@@ -203,18 +203,17 @@ async def analyze_aoi(request: AOIRequest):
         water_trend = describe_trend(ndwi_slope, "Water presence")
 
     # ── Notable change (biggest absolute trend) ──
+    TREND_COLS = ["NDVI_trend", "NDWI_trend", "NDMI_trend", "wetland_moisture_index_trend", "water_mask_trend", "EVI_trend"]
     notable_change = "No significant changes detected."
-    trend_cols = [c for c in matched.columns if c.endswith("_trend")]
-    if trend_cols:
-        trend_means = matched[trend_cols].mean()
-        biggest_idx = trend_means.abs().idxmax()
-        biggest_val = trend_means[biggest_idx]
-        index_name = biggest_idx.replace("_trend", "").replace("_", " ").upper()
+    trend_means = matched[TREND_COLS].mean()
+    biggest_idx = trend_means.abs().idxmax()
+    biggest_val = trend_means[biggest_idx]
+    index_name = biggest_idx.replace("_trend", "").replace("_", " ").upper()
 
-        if abs(biggest_val) > 0.005:
-            direction = "increasing" if biggest_val > 0 else "decreasing"
-            pct = abs(biggest_val * 6) * 100
-            notable_change = f"{index_name} is the most significant change — {direction} by ~{pct:.0f}% over 6 years."
+    if abs(biggest_val) > 0.005:
+        direction = "increasing" if biggest_val > 0 else "decreasing"
+        pct = abs(biggest_val * 6) * 100
+        notable_change = f"{index_name} is the most significant change — {direction} by ~{pct:.0f}% over 6 years."
 
     # ── Diversity level ──
     diversity_level = "No survey data"
@@ -225,21 +224,17 @@ async def analyze_aoi(request: AOIRequest):
             diversity_level = get_diversity_level(shannon_avg)
 
     # ── Data coverage ──
-    has_data_col = "has_bird_data" if "has_bird_data" in profiles_matched.columns else None
-    if has_data_col:
-        surveyed_count = profiles_matched[has_data_col].sum()
-        total_cells = len(profiles_matched)
-        pct = surveyed_count / total_cells * 100 if total_cells > 0 else 0
-        if pct >= 20:
-            data_coverage = f"Well surveyed — {pct:.0f}% of this area has bird observation data"
-        elif pct >= 5:
-            data_coverage = f"Moderately surveyed — {pct:.0f}% coverage. Deeper analysis recommended."
-        elif pct > 0:
-            data_coverage = f"Sparsely surveyed — only {pct:.0f}% coverage. Results rely heavily on satellite indicators."
-        else:
-            data_coverage = "No bird surveys on record. Assessment based entirely on satellite data."
+    surveyed_count = profiles_matched["has_bird_data"].sum()
+    total_cells = len(profiles_matched)
+    pct = surveyed_count / total_cells * 100 if total_cells > 0 else 0
+    if pct >= 20:
+        data_coverage = f"Well surveyed — {pct:.0f}% of this area has bird observation data"
+    elif pct >= 5:
+        data_coverage = f"Moderately surveyed — {pct:.0f}% coverage. Deeper analysis recommended."
+    elif pct > 0:
+        data_coverage = f"Sparsely surveyed — only {pct:.0f}% coverage. Results rely heavily on satellite indicators."
     else:
-        data_coverage = "Survey coverage data not available."
+        data_coverage = "No bird surveys on record. Assessment based entirely on satellite data."
 
     # ── Area estimate ──
     area_km2 = None

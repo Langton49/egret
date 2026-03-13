@@ -80,6 +80,14 @@ def build_grid_params(cell_size_km: float):
     """
     Compute grid parameters for the AOI.
     Returns cell sizes in degrees and the buffered AOI bounds.
+
+    Param:
+    cell_size_km: desired grid cell size in kilometers (e.g., 1.0 for 1 km cells)
+
+    Returns:
+    cell_lon: grid cell width in degrees longitude
+    cell_lat: grid cell height in degrees latitude
+    buffered: (west, south, east, north) bounds expanded by the assigned buffer
     """
     mid_lat = (AOI_BOUNDS[1] + AOI_BOUNDS[3]) / 2.0
     km_per_deg_lon = 111.32 * np.cos(np.radians(mid_lat))
@@ -101,7 +109,18 @@ def build_grid_params(cell_size_km: float):
 
 
 def assign_grid_cell(lon, lat, cell_lon, cell_lat):
-    """Assign a lon/lat point to its grid cell center."""
+    """Assign a lon/lat point to its grid cell center.
+    
+    Params:
+    lat: latitude of bird sighting
+    long: longitude of bird sighting
+    cell_lon: width of grid cell in degrees longitude
+    cell_lat: height of grid cell in degrees latitude
+
+    Returns:
+    cx: longitude of grid cell center where bird sighting falls
+    cy: latitude of grid cell center where bird sighting falls
+    """
     cx = np.floor(lon / cell_lon) * cell_lon + cell_lon / 2
     cy = np.floor(lat / cell_lat) * cell_lat + cell_lat / 2
     return cx, cy
@@ -109,9 +128,11 @@ def assign_grid_cell(lon, lat, cell_lon, cell_lat):
 
 def assign_dekad(date):
     """
-    Assign a date to its dekadal period.
-    Dekads: 1st-10th, 11th-20th, 21st-end of month.
-    Returns the start date of the dekad.
+    Param:
+    date: datetime or string date of bird sighting
+
+    Returns:
+    Start date of the dekadal period the date falls into
     """
     if isinstance(date, str):
         date = pd.Timestamp(date)
@@ -132,9 +153,15 @@ def load_bird_observations(ebird_path: str, inat_path: str,
                            cell_lon: float, cell_lat: float,
                            buffered_aoi: tuple) -> pd.DataFrame:
     """
-    Load and unify eBird + iNaturalist observations.
-    Filter to AOI (with buffer), date range, and assign grid cells + dekads.
-    Returns DataFrame with: cell_x, cell_y, dekad, species, order, count
+    Params:
+    ebird_path: path to eBird CSV export
+    inat_path: path to iNaturalist CSV export
+    cell_lon: grid cell width in degrees longitude
+    cell_lat: grid cell height in degrees latitude
+    buffered_aoi: (west, south, east, north) bounds expanded by the assigned buffer
+    
+    Returns:
+    
     """
     print("\n" + "=" * 60)
     print("  Loading bird observation data")

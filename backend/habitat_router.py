@@ -354,42 +354,28 @@ def score_cells(cell_df, acquisition_date):
 # ---------------------------------------------------------------------------
 
 def run_scoring_job(job_id: str, polygon_geom: dict):
-    print("HELLLLLO")
     try:
         from shapely.geometry import shape, Point
         poly = shape(polygon_geom)
         bbox = list(poly.bounds)
 
-        # ── Cache paths (relative to this file) ──
+        # ── Try cached data first ──
         cache_path = Path("./satellite_cache/latest_indices.csv")
         meta_path = Path("./satellite_cache/cache_metadata.json")
-
-        print(f"CWD: {Path.cwd()}")
-        print(f"Cache path: {cache_path.resolve()}")
-        print(f"Cache exists: {cache_path.exists()}")
         used_cache = False
+
         if cache_path.exists():
-            print(f"Job {job_id}: Loading cached data from {cache_path}")
             jobs[job_id]["status"] = JobStatus.processing
             jobs[job_id]["progress"] = "Loading cached satellite data..."
 
             cached_df = pd.read_csv(cache_path)
 
-            # Fast bbox pre-filter, then point-in-polygon
-            cell_df = cached_df[
-                (cached_df["cell_x"] >= bbox[0]) & (cached_df["cell_x"] <= bbox[2]) &
-                (cached_df["cell_y"] >= bbox[1]) & (cached_df["cell_y"] <= bbox[3])
-            ].copy()
-
-            if not cell_df.empty:
-                # Refine with actual polygon containment
-                mask = cell_df.apply(
-                    lambda row: poly.contains(Point(row["cell_x"], row["cell_y"])),
-                    axis=1
-                )
-                cell_df = cell_df[mask].copy()
-
-            print(f"Cells in polygon: {len(cell_df)}")
+            # Filter to cells within the AOI polygon
+            mask = cached_df.apply(
+                lambda row: poly.contains(Point(row["cell_x"], row["cell_y"])),
+                axis=1
+            )
+            cell_df = cached_df[mask].copy()
 
             if not cell_df.empty:
                 used_cache = True
@@ -460,11 +446,14 @@ def run_scoring_job(job_id: str, polygon_geom: dict):
 
         # Build response
         n_cells = len(scored)
-        mean_prob = float(scored["suitability_probability"].mean())
-        max_prob = float(scored["suitability_probability"].max())
+        habitat_cells = scored[scored["archetype"] != "Open water"]
+        water_cells = scored[scored["archetype"] == "Open water"]
+
+        mean_prob = float(habitat_cells["suitability_probability"].mean()) if not habitat_cells.empty else 0.0
+        max_prob = float(habitat_cells["suitability_probability"].max()) if not habitat_cells.empty else 0.0
         archetype_counts = scored["archetype"].value_counts().to_dict()
 
-        top_cells = scored.nlargest(5, "suitability_probability")
+        top_cells = habitat_cells.nlargest(5, "suitability_probability")
         top_list = [
             {
                 "lon": float(row["cell_x"]),
@@ -479,15 +468,18 @@ def run_scoring_job(job_id: str, polygon_geom: dict):
         high_pct = archetype_counts.get("Highly suitable", 0) / n_cells * 100
         mod_pct = archetype_counts.get("Moderately suitable", 0) / n_cells * 100
         unsuit_pct = archetype_counts.get("Unsuitable", 0) / n_cells * 100
+        water_pct = archetype_counts.get("Open water", 0) / n_cells * 100
 
-        if high_pct > 30:
-            summary = f"This area shows strong habitat potential — {high_pct:.0f}% of cells are highly suitable for avian species."
+        if water_pct > 60:
+            summary = f"Mostly open water ({water_pct:.0f}%). Of the land cells, mean suitability is {mean_prob:.0%}."
+        elif high_pct > 30:
+            summary = f"Strong habitat potential — {high_pct:.0f}% of cells are highly suitable for avian species."
         elif high_pct + mod_pct > 50:
             summary = f"Mixed habitat quality — {high_pct:.0f}% highly suitable and {mod_pct:.0f}% moderately suitable."
         elif unsuit_pct > 70:
-            summary = f"Limited habitat potential — {unsuit_pct:.0f}% of the area is unsuitable, likely open water or bare ground."
+            summary = f"Limited habitat potential — {unsuit_pct:.0f}% of the area is unsuitable."
         else:
-            summary = f"Moderate habitat potential — mean suitability probability of {mean_prob:.0%}."
+            summary = f"Moderate habitat potential — mean land suitability of {mean_prob:.0%}."
 
         # Build cell polygons for fill layer
         mid_lat = (bbox[1] + bbox[3]) / 2.0
