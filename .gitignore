@@ -7,3 +7,8 @@ training_two/model_output/
 training_two/satellite_timeseries/
 training_two/suitability_model/
 *.nc
+
+# Repo fetched data — downloaded on VM via fetch scripts, not committed
+repo/data/
+repo/*.mdb
+repo/*.accdb
