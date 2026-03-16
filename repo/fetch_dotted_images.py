@@ -150,21 +150,21 @@ def run(year_filter=None, dry_run=False, skip_existing=True):
 
     print()
     fetched = skipped = errors = 0
+    total = len(images)
 
     for i, entry in enumerate(images, 1):
         result = download_image(entry, skip_existing=skip_existing)
 
         if result == "fetched":
             fetched += 1
-            if fetched % 100 == 0:
-                print(f"  [{i}/{len(images)}] fetched: {fetched} | skipped: {skipped} | errors: {errors}")
         elif result == "skipped":
             skipped += 1
         else:
             errors += 1
-            print(f"  FAILED [{i}]: {entry['filename']} ({result})")
 
-    print(f"\nDone. Fetched: {fetched} | Skipped: {skipped} | Errors: {errors}")
+        print(f"\r  {i}/{total} — fetched: {fetched} | skipped: {skipped} | errors: {errors}", end="", flush=True)
+
+    print(f"\n\nDone. Fetched: {fetched} | Skipped: {skipped} | Errors: {errors}")
     print(f"Output: {OUTPUT_DIR}")
 
 
