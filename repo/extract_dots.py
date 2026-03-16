@@ -89,55 +89,52 @@ COLOR_RANGES = [
     # Cyan — MAFR, SATE
     {
         "name": "cyan",
-        "ranges": [((85, 120, 120), (100, 255, 255))],
+        "ranges": [((85, 150, 150), (100, 255, 255))],
         "species_hint": ["MAFR", "SATE"],
     },
     # Red — BRPE Ad, LAGU Stand/Roost, TRHE (two HSV ranges for red)
     {
         "name": "red",
         "ranges": [
-            ((0, 140, 100), (10, 255, 255)),
-            ((165, 140, 100), (179, 255, 255)),
+            ((0, 160, 120), (8, 255, 255)),
+            ((168, 160, 120), (179, 255, 255)),
         ],
         "species_hint": ["BRPE", "LAGU", "TRHE"],
     },
     # Yellow — BRPE Imm
     {
         "name": "yellow",
-        "ranges": [((20, 140, 150), (35, 255, 255))],
+        "ranges": [((22, 160, 160), (32, 255, 255))],
         "species_hint": ["BRPE"],
     },
     # Green — GREG, ROYT, SATE
     {
         "name": "green",
-        "ranges": [((45, 100, 80), (85, 255, 220))],
+        "ranges": [((50, 130, 100), (80, 255, 220))],
         "species_hint": ["GREG", "ROYT", "SATE"],
     },
     # Magenta/Pink — LAGU, TRHE, ROSP
     {
         "name": "magenta",
-        "ranges": [((140, 100, 120), (165, 255, 255))],
+        "ranges": [((143, 130, 130), (163, 255, 255))],
         "species_hint": ["LAGU", "ROSP", "TRHE"],
     },
     # Orange — some BRPE variants
     {
         "name": "orange",
-        "ranges": [((10, 140, 150), (20, 255, 255))],
+        "ranges": [((10, 160, 160), (20, 255, 255))],
         "species_hint": ["BRPE"],
     },
-    # White/light — some open-circle markers
-    {
-        "name": "white",
-        "ranges": [((0, 0, 220), (179, 40, 255))],
-        "species_hint": [],
-    },
+    # White is removed — too many false positives on rock/sand backgrounds
 ]
 
 # Dot detection parameters
-MIN_DOT_AREA = 15        # pixels² — below this is noise
-MAX_DOT_AREA = 2500      # pixels² — above this is likely a line segment or panel element
-MAX_ASPECT_RATIO = 4.0   # width/height — above this is a line, not a dot
-FIXED_BOX_RADIUS = 0.012 # YOLO normalized half-width/height for each label box
+MIN_DOT_AREA = 30         # pixels² — raised to reduce noise and text false positives
+MAX_DOT_AREA = 1800       # pixels² — tightened; above this is a line segment or UI element
+MAX_ASPECT_RATIO = 3.0    # width/height — tightened; dots are more compact than lines
+MIN_CIRCULARITY = 0.15    # 0=line, 1=perfect circle — filters elongated line fragments
+NMS_MIN_DIST = 12         # pixels — merge detections closer than this (duplicate suppression)
+FIXED_BOX_RADIUS = 0.012  # YOLO normalized half-width/height for each label box
 
 
 # ---------------------------------------------------------------------------
@@ -153,29 +150,38 @@ def find_aerial_image_bounds(img):
     - 2010-2021: large fixed sidebar on the right (~25-35% of width)
     - 2023+: small floating window overlaid top-right
 
-    Strategy: scan for large contiguous gray/white UI region on the right edge.
-    If none found wide enough, assume full image width (2023 floating panel case).
+    Strategy: use the saturation channel — the aerial image has high saturation
+    (vegetation, coloured markers) while the gray Windows UI panel has near-zero
+    saturation. Find the rightmost column where mean saturation drops to near zero
+    across a wide-enough strip to confirm it is the panel, not just a gap in
+    the image content.
     """
     h, w = img.shape[:2]
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    sat = hsv[:, :, 1].astype(np.float32)
 
-    # Look for the right-side panel: a vertical strip that is mostly uniform
-    # gray (typical Windows UI background: ~190-230 value, low variance)
-    PANEL_MIN_WIDTH = int(w * 0.15)   # panel must be at least 15% of width
-    PANEL_GRAY_LO = 180
-    PANEL_GRAY_HI = 240
-    PANEL_MAX_STD = 30
+    # Column-wise mean saturation
+    col_sat = sat.mean(axis=0)
 
-    best_x = w  # default: no panel found, use full width
+    PANEL_SAT_THRESH = 25    # panel columns have very low saturation
+    PANEL_MIN_WIDTH = int(w * 0.12)  # panel must span at least 12% of width
 
-    # Scan from right edge inward in 10px steps
-    for x in range(w - 10, PANEL_MIN_WIDTH, -10):
-        strip = gray[:, x:]
-        in_range = ((strip >= PANEL_GRAY_LO) & (strip <= PANEL_GRAY_HI))
-        if in_range.mean() > 0.75 and strip.std() < PANEL_MAX_STD:
-            best_x = x
-        else:
-            break
+    # Find the leftmost x where a contiguous low-saturation strip begins
+    # and extends to the right edge
+    best_x = w  # default: no panel found
+
+    x = w - 1
+    while x >= PANEL_MIN_WIDTH:
+        if col_sat[x] < PANEL_SAT_THRESH:
+            # Check if this low-saturation region extends at least PANEL_MIN_WIDTH
+            x_start = x
+            while x_start > 0 and col_sat[x_start - 1] < PANEL_SAT_THRESH:
+                x_start -= 1
+            strip_width = x - x_start + 1
+            if strip_width >= PANEL_MIN_WIDTH:
+                best_x = x_start
+                break
+        x -= 1
 
     return best_x, 0, h
 
@@ -189,13 +195,37 @@ def crop_to_aerial(img):
 # Dot detection
 # ---------------------------------------------------------------------------
 
+def _circularity(contour, area):
+    perimeter = cv2.arcLength(contour, True)
+    if perimeter == 0:
+        return 0.0
+    return (4 * np.pi * area) / (perimeter ** 2)
+
+
+def _nms(detections, min_dist):
+    """Remove duplicate detections closer than min_dist pixels, keeping one per cluster."""
+    if not detections:
+        return detections
+    kept = []
+    suppressed = set()
+    for i, (x1, y1, c1) in enumerate(detections):
+        if i in suppressed:
+            continue
+        kept.append((x1, y1, c1))
+        for j, (x2, y2, _) in enumerate(detections):
+            if j != i and j not in suppressed:
+                if np.hypot(x2 - x1, y2 - y1) < min_dist:
+                    suppressed.add(j)
+    return kept
+
+
 def detect_dots(img_crop):
     """
     Returns list of (x, y, color_name) in pixel coords of the cropped image.
-    Filters out boundary lines and UI artefacts.
+    Filters out boundary lines and UI artefacts using area, aspect ratio,
+    and circularity. Applies NMS to remove duplicate detections.
     """
     hsv = cv2.cvtColor(img_crop, cv2.COLOR_BGR2HSV)
-    h_crop, w_crop = img_crop.shape[:2]
     detections = []
 
     for color_def in COLOR_RANGES:
@@ -220,6 +250,8 @@ def detect_dots(img_crop):
             area = stats[i, cv2.CC_STAT_AREA]
             bw = stats[i, cv2.CC_STAT_WIDTH]
             bh = stats[i, cv2.CC_STAT_HEIGHT]
+            x0 = stats[i, cv2.CC_STAT_LEFT]
+            y0 = stats[i, cv2.CC_STAT_TOP]
 
             if area < MIN_DOT_AREA or area > MAX_DOT_AREA:
                 continue
@@ -228,9 +260,22 @@ def detect_dots(img_crop):
             if aspect > MAX_ASPECT_RATIO:
                 continue  # elongated — likely a boundary line segment
 
+            # Circularity check — isolate this component and find its contour
+            component_mask = np.zeros(mask.shape, dtype=np.uint8)
+            component_mask[labels == i] = 255
+            contours, _ = cv2.findContours(
+                component_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+            )
+            if contours:
+                circ = _circularity(contours[0], area)
+                if circ < MIN_CIRCULARITY:
+                    continue  # too elongated — boundary line fragment
+
             cx, cy = centroids[i]
             detections.append((float(cx), float(cy), color_def["name"]))
 
+    # Suppress duplicates from overlapping color ranges
+    detections = _nms(detections, NMS_MIN_DIST)
     return detections
 
 
