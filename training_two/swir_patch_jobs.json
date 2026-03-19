@@ -1,0 +1,3314 @@
+[
+  {
+    "job_key": "anderson_point_island_2017_swir",
+    "slug": "anderson_point_island",
+    "year": 2017,
+    "bbox": [
+      -89.4683,
+      29.713,
+      -89.1363,
+      30.1078
+    ],
+    "job_id": "j-26031901155344a0b743338f41172fc7",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2017_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:16:09",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "anderson_point_island_2018_swir",
+    "slug": "anderson_point_island",
+    "year": 2018,
+    "bbox": [
+      -89.4683,
+      29.713,
+      -89.1363,
+      30.1078
+    ],
+    "job_id": "j-2603190116134a4d84464d7500a8617c",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2018_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:16:33",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "anderson_point_island_2019_swir",
+    "slug": "anderson_point_island",
+    "year": 2019,
+    "bbox": [
+      -89.4683,
+      29.713,
+      -89.1363,
+      30.1078
+    ],
+    "job_id": "j-2603190116384cc484b26e6dcb03b19e",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2019_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:17:03",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "anderson_point_island_2020_swir",
+    "slug": "anderson_point_island",
+    "year": 2020,
+    "bbox": [
+      -89.4683,
+      29.713,
+      -89.1363,
+      30.1078
+    ],
+    "job_id": "j-2603190117074936b7e8d5cb1bbae59d",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2020_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:17:27",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "anderson_point_island_2021_swir",
+    "slug": "anderson_point_island",
+    "year": 2021,
+    "bbox": [
+      -89.4683,
+      29.713,
+      -89.1363,
+      30.1078
+    ],
+    "job_id": "j-2603190117324d46a10f2117f861c2a5",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2021_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:17:49",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "anderson_point_island_2022_swir",
+    "slug": "anderson_point_island",
+    "year": 2022,
+    "bbox": [
+      -89.4683,
+      29.713,
+      -89.1363,
+      30.1078
+    ],
+    "job_id": "j-2603190117534c758bd7911c51fb88bc",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2022_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:18:11",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "anderson_point_island_2023_swir",
+    "slug": "anderson_point_island",
+    "year": 2023,
+    "bbox": [
+      -89.4683,
+      29.713,
+      -89.1363,
+      30.1078
+    ],
+    "job_id": "j-26031901181648cc801db09933bcb60a",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2023_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:18:32",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "anderson_point_island_2024_swir",
+    "slug": "anderson_point_island",
+    "year": 2024,
+    "bbox": [
+      -89.4683,
+      29.713,
+      -89.1363,
+      30.1078
+    ],
+    "job_id": "j-26031901183746f793bec623dcfc475e",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\anderson_point_island\\anderson_point_island_2024_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:18:53",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_10_2017_swir",
+    "slug": "barataria_bay_10",
+    "year": 2017,
+    "bbox": [
+      -90.2712,
+      29.0441,
+      -90.0432,
+      29.2136
+    ],
+    "job_id": "j-2603190118584ce386d899f1709f50c7",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2017_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:19:15",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_10_2018_swir",
+    "slug": "barataria_bay_10",
+    "year": 2018,
+    "bbox": [
+      -90.2712,
+      29.0441,
+      -90.0432,
+      29.2136
+    ],
+    "job_id": "j-26031901192041fcb69f4c91da22dc60",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2018_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:19:37",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_10_2019_swir",
+    "slug": "barataria_bay_10",
+    "year": 2019,
+    "bbox": [
+      -90.2712,
+      29.0441,
+      -90.0432,
+      29.2136
+    ],
+    "job_id": "j-260319011941459281703c4cd0c69523",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2019_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:20:06",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_10_2020_swir",
+    "slug": "barataria_bay_10",
+    "year": 2020,
+    "bbox": [
+      -90.2712,
+      29.0441,
+      -90.0432,
+      29.2136
+    ],
+    "job_id": "j-2603190120114ea9aca83f5221885245",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2020_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:20:27",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_10_2021_swir",
+    "slug": "barataria_bay_10",
+    "year": 2021,
+    "bbox": [
+      -90.2712,
+      29.0441,
+      -90.0432,
+      29.2136
+    ],
+    "job_id": "j-2603190120314114a6136369360e3b62",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2021_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:20:48",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_10_2022_swir",
+    "slug": "barataria_bay_10",
+    "year": 2022,
+    "bbox": [
+      -90.2712,
+      29.0441,
+      -90.0432,
+      29.2136
+    ],
+    "job_id": "j-2603190120524af2ae2e7fac30dbb974",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2022_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:21:08",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_10_2023_swir",
+    "slug": "barataria_bay_10",
+    "year": 2023,
+    "bbox": [
+      -90.2712,
+      29.0441,
+      -90.0432,
+      29.2136
+    ],
+    "job_id": "j-2603190121134cf8ab6385fd45e93560",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2023_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:21:37",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_10_2024_swir",
+    "slug": "barataria_bay_10",
+    "year": 2024,
+    "bbox": [
+      -90.2712,
+      29.0441,
+      -90.0432,
+      29.2136
+    ],
+    "job_id": "j-2603190121414eeb93a53205d318a82a",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_10\\barataria_bay_10_2024_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:21:57",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_4_2017_swir",
+    "slug": "barataria_bay_4",
+    "year": 2017,
+    "bbox": [
+      -90.0842,
+      29.2318,
+      -89.78190000000001,
+      29.480800000000002
+    ],
+    "job_id": "j-260319012202491a8c2dec7cff9eca8a",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2017_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:22:18",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_4_2018_swir",
+    "slug": "barataria_bay_4",
+    "year": 2018,
+    "bbox": [
+      -90.0842,
+      29.2318,
+      -89.78190000000001,
+      29.480800000000002
+    ],
+    "job_id": "j-2603190122234f04bb4247ddcbfacf0d",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2018_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:22:40",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_4_2019_swir",
+    "slug": "barataria_bay_4",
+    "year": 2019,
+    "bbox": [
+      -90.0842,
+      29.2318,
+      -89.78190000000001,
+      29.480800000000002
+    ],
+    "job_id": "j-26031901224444d7ac83c17d16ea3d12",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2019_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:23:01",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_4_2020_swir",
+    "slug": "barataria_bay_4",
+    "year": 2020,
+    "bbox": [
+      -90.0842,
+      29.2318,
+      -89.78190000000001,
+      29.480800000000002
+    ],
+    "job_id": "j-2603190123064bdbb0a8b4103875deed",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2020_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:23:26",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_4_2021_swir",
+    "slug": "barataria_bay_4",
+    "year": 2021,
+    "bbox": [
+      -90.0842,
+      29.2318,
+      -89.78190000000001,
+      29.480800000000002
+    ],
+    "job_id": "j-26031901233044e1b81113f47bf3be5f",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2021_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:23:48",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_4_2022_swir",
+    "slug": "barataria_bay_4",
+    "year": 2022,
+    "bbox": [
+      -90.0842,
+      29.2318,
+      -89.78190000000001,
+      29.480800000000002
+    ],
+    "job_id": "j-260319012353492c8b38e14ceacaf146",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2022_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:24:15",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_4_2023_swir",
+    "slug": "barataria_bay_4",
+    "year": 2023,
+    "bbox": [
+      -90.0842,
+      29.2318,
+      -89.78190000000001,
+      29.480800000000002
+    ],
+    "job_id": "j-260319012419407ea28c9012e9dce984",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2023_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:24:35",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "barataria_bay_4_2024_swir",
+    "slug": "barataria_bay_4",
+    "year": 2024,
+    "bbox": [
+      -90.0842,
+      29.2318,
+      -89.78190000000001,
+      29.480800000000002
+    ],
+    "job_id": "j-260319012440402b9821ec0313335f46",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\barataria_bay_4\\barataria_bay_4_2024_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:24:55",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bastian_island_2017_swir",
+    "slug": "bastian_island",
+    "year": 2017,
+    "bbox": [
+      -89.72319999999999,
+      29.2423,
+      -89.6232,
+      29.3423
+    ],
+    "job_id": "j-260319012500404588b177bdd2585f5f",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2017_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:25:16",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bastian_island_2018_swir",
+    "slug": "bastian_island",
+    "year": 2018,
+    "bbox": [
+      -89.72319999999999,
+      29.2423,
+      -89.6232,
+      29.3423
+    ],
+    "job_id": "j-26031901252041a6ba58a0a0ae940873",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2018_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:25:36",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bastian_island_2019_swir",
+    "slug": "bastian_island",
+    "year": 2019,
+    "bbox": [
+      -89.72319999999999,
+      29.2423,
+      -89.6232,
+      29.3423
+    ],
+    "job_id": "j-2603190125414afda8c0147f32da1282",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2019_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:26:01",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bastian_island_2020_swir",
+    "slug": "bastian_island",
+    "year": 2020,
+    "bbox": [
+      -89.72319999999999,
+      29.2423,
+      -89.6232,
+      29.3423
+    ],
+    "job_id": "j-2603190126064481ad915eff281054da",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2020_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:26:22",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bastian_island_2021_swir",
+    "slug": "bastian_island",
+    "year": 2021,
+    "bbox": [
+      -89.72319999999999,
+      29.2423,
+      -89.6232,
+      29.3423
+    ],
+    "job_id": "j-260319012627402d92bfe8549cb1481f",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2021_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:26:44",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bastian_island_2022_swir",
+    "slug": "bastian_island",
+    "year": 2022,
+    "bbox": [
+      -89.72319999999999,
+      29.2423,
+      -89.6232,
+      29.3423
+    ],
+    "job_id": "j-2603190126484acba1f46be4e3870cb8",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2022_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:27:04",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bastian_island_2023_swir",
+    "slug": "bastian_island",
+    "year": 2023,
+    "bbox": [
+      -89.72319999999999,
+      29.2423,
+      -89.6232,
+      29.3423
+    ],
+    "job_id": "j-2603190127094e05b9985b612ef3464b",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2023_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:27:25",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bastian_island_2024_swir",
+    "slug": "bastian_island",
+    "year": 2024,
+    "bbox": [
+      -89.72319999999999,
+      29.2423,
+      -89.6232,
+      29.3423
+    ],
+    "job_id": "j-260319012730431988ccc667d215b524",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bastian_island\\bastian_island_2024_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:27:45",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bayou_platte_island_south_2017_swir",
+    "slug": "bayou_platte_island_south",
+    "year": 2017,
+    "bbox": [
+      -91.9413,
+      29.5569,
+      -91.8413,
+      29.6569
+    ],
+    "job_id": "j-26031901275045698b97cd8b702a33aa",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2017_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:28:10",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bayou_platte_island_south_2018_swir",
+    "slug": "bayou_platte_island_south",
+    "year": 2018,
+    "bbox": [
+      -91.9413,
+      29.5569,
+      -91.8413,
+      29.6569
+    ],
+    "job_id": "j-260319012815446bb4b70628bbbb0545",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2018_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:28:31",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bayou_platte_island_south_2019_swir",
+    "slug": "bayou_platte_island_south",
+    "year": 2019,
+    "bbox": [
+      -91.9413,
+      29.5569,
+      -91.8413,
+      29.6569
+    ],
+    "job_id": "j-2603190128354feeaab2262b83eab654",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2019_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:28:57",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bayou_platte_island_south_2020_swir",
+    "slug": "bayou_platte_island_south",
+    "year": 2020,
+    "bbox": [
+      -91.9413,
+      29.5569,
+      -91.8413,
+      29.6569
+    ],
+    "job_id": "j-2603190129024b6994ae1fd71a871437",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2020_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:29:22",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bayou_platte_island_south_2021_swir",
+    "slug": "bayou_platte_island_south",
+    "year": 2021,
+    "bbox": [
+      -91.9413,
+      29.5569,
+      -91.8413,
+      29.6569
+    ],
+    "job_id": "j-26031901292747f9be96b4b4e611d2f4",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2021_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:29:46",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bayou_platte_island_south_2022_swir",
+    "slug": "bayou_platte_island_south",
+    "year": 2022,
+    "bbox": [
+      -91.9413,
+      29.5569,
+      -91.8413,
+      29.6569
+    ],
+    "job_id": "j-260319012951406fa7a819ae3ea29756",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2022_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:30:07",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bayou_platte_island_south_2023_swir",
+    "slug": "bayou_platte_island_south",
+    "year": 2023,
+    "bbox": [
+      -91.9413,
+      29.5569,
+      -91.8413,
+      29.6569
+    ],
+    "job_id": "j-26031901301240ba869c4b4fdee31019",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2023_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:30:29",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bayou_platte_island_south_2024_swir",
+    "slug": "bayou_platte_island_south",
+    "year": 2024,
+    "bbox": [
+      -91.9413,
+      29.5569,
+      -91.8413,
+      29.6569
+    ],
+    "job_id": "j-2603190130344ed8b010cb683ac16fcf",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bayou_platte_island_south\\bayou_platte_island_south_2024_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:30:53",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "belle_isle_2017_swir",
+    "slug": "belle_isle",
+    "year": 2017,
+    "bbox": [
+      -89.6387,
+      29.452099999999998,
+      -89.30680000000001,
+      29.7939
+    ],
+    "job_id": "j-260319013058411ba394abb694ec4d5b",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2017_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:31:16",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "belle_isle_2018_swir",
+    "slug": "belle_isle",
+    "year": 2018,
+    "bbox": [
+      -89.6387,
+      29.452099999999998,
+      -89.30680000000001,
+      29.7939
+    ],
+    "job_id": "j-2603190131204544ba3392fd0c57e9fb",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2018_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:31:36",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "belle_isle_2019_swir",
+    "slug": "belle_isle",
+    "year": 2019,
+    "bbox": [
+      -89.6387,
+      29.452099999999998,
+      -89.30680000000001,
+      29.7939
+    ],
+    "job_id": "j-2603190131414de9acec773055ff2061",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2019_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:31:57",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "belle_isle_2020_swir",
+    "slug": "belle_isle",
+    "year": 2020,
+    "bbox": [
+      -89.6387,
+      29.452099999999998,
+      -89.30680000000001,
+      29.7939
+    ],
+    "job_id": "j-260319013202411fb1b343619ea8ec2d",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2020_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:32:18",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "belle_isle_2021_swir",
+    "slug": "belle_isle",
+    "year": 2021,
+    "bbox": [
+      -89.6387,
+      29.452099999999998,
+      -89.30680000000001,
+      29.7939
+    ],
+    "job_id": "j-2603190132234237ad579c99c495b70c",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2021_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:32:40",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "belle_isle_2022_swir",
+    "slug": "belle_isle",
+    "year": 2022,
+    "bbox": [
+      -89.6387,
+      29.452099999999998,
+      -89.30680000000001,
+      29.7939
+    ],
+    "job_id": "j-26031901324441f29b0041991f31c203",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2022_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:33:02",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "belle_isle_2023_swir",
+    "slug": "belle_isle",
+    "year": 2023,
+    "bbox": [
+      -89.6387,
+      29.452099999999998,
+      -89.30680000000001,
+      29.7939
+    ],
+    "job_id": "j-2603190133064d06bec388eb048837af",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2023_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:33:23",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "belle_isle_2024_swir",
+    "slug": "belle_isle",
+    "year": 2024,
+    "bbox": [
+      -89.6387,
+      29.452099999999998,
+      -89.30680000000001,
+      29.7939
+    ],
+    "job_id": "j-260319013328426d83e38210be8cc24c",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\belle_isle\\belle_isle_2024_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:33:48",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_lake_b_2_2017_swir",
+    "slug": "biloxi_lake_b_2",
+    "year": 2017,
+    "bbox": [
+      -89.5874,
+      29.8707,
+      -89.48740000000001,
+      29.9707
+    ],
+    "job_id": "j-2603190133534942ba2978a869309ef1",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2017_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:34:09",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_lake_b_2_2018_swir",
+    "slug": "biloxi_lake_b_2",
+    "year": 2018,
+    "bbox": [
+      -89.5874,
+      29.8707,
+      -89.48740000000001,
+      29.9707
+    ],
+    "job_id": "j-2603190134144bb09b548529e6b46182",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2018_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:34:32",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_lake_b_2_2019_swir",
+    "slug": "biloxi_lake_b_2",
+    "year": 2019,
+    "bbox": [
+      -89.5874,
+      29.8707,
+      -89.48740000000001,
+      29.9707
+    ],
+    "job_id": "j-2603190134374bb196491eebab8eb6c7",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2019_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:34:58",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_lake_b_2_2020_swir",
+    "slug": "biloxi_lake_b_2",
+    "year": 2020,
+    "bbox": [
+      -89.5874,
+      29.8707,
+      -89.48740000000001,
+      29.9707
+    ],
+    "job_id": "j-260319013503461094282d125bacb47b",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2020_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:35:19",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_lake_b_2_2021_swir",
+    "slug": "biloxi_lake_b_2",
+    "year": 2021,
+    "bbox": [
+      -89.5874,
+      29.8707,
+      -89.48740000000001,
+      29.9707
+    ],
+    "job_id": "j-2603190135244569ada904fc20ca39b8",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2021_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:35:39",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "birdsfoot_west_1_2018_swir",
+    "slug": "birdsfoot_west_1",
+    "year": 2018,
+    "bbox": [
+      -89.4049,
+      29.1375,
+      -89.2623,
+      29.2554
+    ],
+    "job_id": "j-2603190137584086977b329e21599401",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2018_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:38:24",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "birdsfoot_west_1_2019_swir",
+    "slug": "birdsfoot_west_1",
+    "year": 2019,
+    "bbox": [
+      -89.4049,
+      29.1375,
+      -89.2623,
+      29.2554
+    ],
+    "job_id": "j-26031901382946f4bfda4e6003dbbfa4",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2019_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:38:45",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "birdsfoot_west_1_2020_swir",
+    "slug": "birdsfoot_west_1",
+    "year": 2020,
+    "bbox": [
+      -89.4049,
+      29.1375,
+      -89.2623,
+      29.2554
+    ],
+    "job_id": "j-260319013850495686f1fe95231c0109",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2020_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:39:06",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "breton_island_2024_swir",
+    "slug": "breton_island",
+    "year": 2024,
+    "bbox": [
+      -89.2242,
+      29.4455,
+      -89.0369,
+      29.579900000000002
+    ],
+    "job_id": "j-2603190140104d37ac8ba1e5b701a281",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2024_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:40:27",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "burrwood_bayou_north_2019_swir",
+    "slug": "burrwood_bayou_north",
+    "year": 2019,
+    "bbox": [
+      -89.44369999999999,
+      28.889499999999998,
+      -89.2975,
+      29.022000000000002
+    ],
+    "job_id": "j-26031901404148d18177cffbccf81baa",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2019_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:41:05",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "chandeleur_north_a_2019_swir",
+    "slug": "chandeleur_north_a",
+    "year": 2019,
+    "bbox": [
+      -89.0235,
+      29.7308,
+      -88.781,
+      30.058
+    ],
+    "job_id": "j-260319014146483cb14c36943a038939",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2019_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:42:05",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "chandeleur_north_a_2020_swir",
+    "slug": "chandeleur_north_a",
+    "year": 2020,
+    "bbox": [
+      -89.0235,
+      29.7308,
+      -88.781,
+      30.058
+    ],
+    "job_id": "j-260319014210422ea360e4cb617f8343",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2020_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:42:30",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "chandeleur_north_a_2021_swir",
+    "slug": "chandeleur_north_a",
+    "year": 2021,
+    "bbox": [
+      -89.0235,
+      29.7308,
+      -88.781,
+      30.058
+    ],
+    "job_id": "j-26031901423542e292771a78dbc82bb9",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2021_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:42:51",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "chandeleur_north_a_2022_swir",
+    "slug": "chandeleur_north_a",
+    "year": 2022,
+    "bbox": [
+      -89.0235,
+      29.7308,
+      -88.781,
+      30.058
+    ],
+    "job_id": "j-2603190142564c27b85e7f8bc3367716",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2022_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:43:12",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "felicity_island_2020_swir",
+    "slug": "felicity_island",
+    "year": 2020,
+    "bbox": [
+      -90.4984,
+      29.0937,
+      -90.2975,
+      29.3058
+    ],
+    "job_id": "j-26031901434647f4aa86f7e6930421db",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2020_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:44:05",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "felicity_island_2021_swir",
+    "slug": "felicity_island",
+    "year": 2021,
+    "bbox": [
+      -90.4984,
+      29.0937,
+      -90.2975,
+      29.3058
+    ],
+    "job_id": "j-26031901441043cbb30d1ab2d1015e39",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2021_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:44:32",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "felicity_island_2022_swir",
+    "slug": "felicity_island",
+    "year": 2022,
+    "bbox": [
+      -90.4984,
+      29.0937,
+      -90.2975,
+      29.3058
+    ],
+    "job_id": "j-2603190144374368890ec43112e9b972",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2022_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:44:56",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "felicity_island_2023_swir",
+    "slug": "felicity_island",
+    "year": 2023,
+    "bbox": [
+      -90.4984,
+      29.0937,
+      -90.2975,
+      29.3058
+    ],
+    "job_id": "j-2603190145004a0da00738c264bd04e0",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2023_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:45:22",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "felicity_island_2024_swir",
+    "slug": "felicity_island",
+    "year": 2024,
+    "bbox": [
+      -90.4984,
+      29.0937,
+      -90.2975,
+      29.3058
+    ],
+    "job_id": "j-2603190145264f5e811428fd2dd15641",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2024_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:45:42",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "half_moon_island_2017_swir",
+    "slug": "half_moon_island",
+    "year": 2017,
+    "bbox": [
+      -89.48519999999999,
+      30.0876,
+      -89.3852,
+      30.1876
+    ],
+    "job_id": "j-26031901454647b99749f03d8d274105",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2017_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:46:02",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "half_moon_island_2018_swir",
+    "slug": "half_moon_island",
+    "year": 2018,
+    "bbox": [
+      -89.48519999999999,
+      30.0876,
+      -89.3852,
+      30.1876
+    ],
+    "job_id": "j-2603190146074ff4959711e238d1315f",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2018_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:46:22",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_1_2021_swir",
+    "slug": "louisiana_west_1",
+    "year": 2021,
+    "bbox": [
+      -92.8351,
+      29.5276,
+      -92.51780000000001,
+      29.6907
+    ],
+    "job_id": "j-260319014825406082c174e19ea95308",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2021_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:48:41",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_1_2022_swir",
+    "slug": "louisiana_west_1",
+    "year": 2022,
+    "bbox": [
+      -92.8351,
+      29.5276,
+      -92.51780000000001,
+      29.6907
+    ],
+    "job_id": "j-26031901484646ebaec491c910ed5e56",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2022_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:49:02",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_1_2023_swir",
+    "slug": "louisiana_west_1",
+    "year": 2023,
+    "bbox": [
+      -92.8351,
+      29.5276,
+      -92.51780000000001,
+      29.6907
+    ],
+    "job_id": "j-2603190149074990beed50714c8aee10",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2023_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:49:23",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_1_2024_swir",
+    "slug": "louisiana_west_1",
+    "year": 2024,
+    "bbox": [
+      -92.8351,
+      29.5276,
+      -92.51780000000001,
+      29.6907
+    ],
+    "job_id": "j-26031901492848dfb8bdc23c2769bed6",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2024_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:49:44",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_5_2017_swir",
+    "slug": "louisiana_west_5",
+    "year": 2017,
+    "bbox": [
+      -92.9194,
+      29.6255,
+      -92.8194,
+      29.7255
+    ],
+    "job_id": "j-26031901494945fe8a729f086d68f981",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2017_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:50:05",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_5_2018_swir",
+    "slug": "louisiana_west_5",
+    "year": 2018,
+    "bbox": [
+      -92.9194,
+      29.6255,
+      -92.8194,
+      29.7255
+    ],
+    "job_id": "j-2603190150104a3fa4cfe2253f4f0bf3",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2018_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:50:27",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_5_2019_swir",
+    "slug": "louisiana_west_5",
+    "year": 2019,
+    "bbox": [
+      -92.9194,
+      29.6255,
+      -92.8194,
+      29.7255
+    ],
+    "job_id": "j-2603190150324825917bf0c40d10d699",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2019_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:50:51",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "terrebonne_bay_7_2017_swir",
+    "slug": "terrebonne_bay_7",
+    "year": 2017,
+    "bbox": [
+      -90.4965,
+      29.009999999999998,
+      -90.3965,
+      29.11
+    ],
+    "job_id": "j-2603190153534c29b6a311c312250aa3",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2017_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:54:13",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "terrebonne_bay_7_2018_swir",
+    "slug": "terrebonne_bay_7",
+    "year": 2018,
+    "bbox": [
+      -90.4965,
+      29.009999999999998,
+      -90.3965,
+      29.11
+    ],
+    "job_id": "j-2603190154184869a67721831e0d10db",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2018_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:54:35",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "terrebonne_bay_7_2019_swir",
+    "slug": "terrebonne_bay_7",
+    "year": 2019,
+    "bbox": [
+      -90.4965,
+      29.009999999999998,
+      -90.3965,
+      29.11
+    ],
+    "job_id": "j-2603190154404658a7b9528d04efa257",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2019_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:54:56",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "terrebonne_bay_7_2020_swir",
+    "slug": "terrebonne_bay_7",
+    "year": 2020,
+    "bbox": [
+      -90.4965,
+      29.009999999999998,
+      -90.3965,
+      29.11
+    ],
+    "job_id": "j-26031901550143b2aa9f1d9cd8cd7ffa",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2020_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:55:22",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "terrebonne_bay_7_2021_swir",
+    "slug": "terrebonne_bay_7",
+    "year": 2021,
+    "bbox": [
+      -90.4965,
+      29.009999999999998,
+      -90.3965,
+      29.11
+    ],
+    "job_id": "j-2603190155274dd79adbec739c644a8b",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2021_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:55:43",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "terrebonne_bay_7_2022_swir",
+    "slug": "terrebonne_bay_7",
+    "year": 2022,
+    "bbox": [
+      -90.4965,
+      29.009999999999998,
+      -90.3965,
+      29.11
+    ],
+    "job_id": "j-2603190155484657bbde90ae45643cbe",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2022_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:56:04",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "terrebonne_bay_7_2023_swir",
+    "slug": "terrebonne_bay_7",
+    "year": 2023,
+    "bbox": [
+      -90.4965,
+      29.009999999999998,
+      -90.3965,
+      29.11
+    ],
+    "job_id": "j-2603190156094d21ba0f78a7a407a185",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2023_swir_patch.nc",
+    "submitted_at": "2026-03-18T20:56:24",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "wine_island_2024_swir",
+    "slug": "wine_island",
+    "year": 2024,
+    "bbox": [
+      -90.6608,
+      29.0448,
+      -90.5608,
+      29.1448
+    ],
+    "job_id": "j-260319015709421188a31e49b07646bc",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:57:09Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "wine_island_2023_swir",
+    "slug": "wine_island",
+    "year": 2023,
+    "bbox": [
+      -90.6608,
+      29.0448,
+      -90.5608,
+      29.1448
+    ],
+    "job_id": "j-26031901570245e88d9eb3718b06b530",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:57:02Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "wine_island_2022_swir",
+    "slug": "wine_island",
+    "year": 2022,
+    "bbox": [
+      -90.6608,
+      29.0448,
+      -90.5608,
+      29.1448
+    ],
+    "job_id": "j-2603190156574d059faa56926c26edc6",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2022_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:56:57Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "wine_island_2021_swir",
+    "slug": "wine_island",
+    "year": 2021,
+    "bbox": [
+      -90.6608,
+      29.0448,
+      -90.5608,
+      29.1448
+    ],
+    "job_id": "j-2603190156494cc8901ce0673f74e9b8",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2021_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:56:49Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "wine_island_2020_swir",
+    "slug": "wine_island",
+    "year": 2020,
+    "bbox": [
+      -90.6608,
+      29.0448,
+      -90.5608,
+      29.1448
+    ],
+    "job_id": "j-260319015648441e81d30d24410fefeb",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2020_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:56:48Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "wine_island_2019_swir",
+    "slug": "wine_island",
+    "year": 2019,
+    "bbox": [
+      -90.6608,
+      29.0448,
+      -90.5608,
+      29.1448
+    ],
+    "job_id": "j-2603190156434b5d8f6eb91e0b1f3214",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2019_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:56:43Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "wine_island_2018_swir",
+    "slug": "wine_island",
+    "year": 2018,
+    "bbox": [
+      -90.6608,
+      29.0448,
+      -90.5608,
+      29.1448
+    ],
+    "job_id": "j-2603190156384e1e8627c775f0fa7933",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2018_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:56:38Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "wine_island_2017_swir",
+    "slug": "wine_island",
+    "year": 2017,
+    "bbox": [
+      -90.6608,
+      29.0448,
+      -90.5608,
+      29.1448
+    ],
+    "job_id": "j-2603190156344529bccc6b70fb49b2d2",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\wine_island\\wine_island_2017_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:56:34Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "terrebonne_bay_7_2024_swir",
+    "slug": "terrebonne_bay_7",
+    "year": 2024,
+    "bbox": [
+      -90.4965,
+      29.009999999999998,
+      -90.3965,
+      29.11
+    ],
+    "job_id": "j-260319015629462ba5109789178b34ee",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\terrebonne_bay_7\\terrebonne_bay_7_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:56:29Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "raccoon_island_2024_swir",
+    "slug": "raccoon_island",
+    "year": 2024,
+    "bbox": [
+      -90.99159999999999,
+      29.0005,
+      -90.8766,
+      29.1096
+    ],
+    "job_id": "j-26031901534742518b392d3301965315",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:53:47Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "raccoon_island_2023_swir",
+    "slug": "raccoon_island",
+    "year": 2023,
+    "bbox": [
+      -90.99159999999999,
+      29.0005,
+      -90.8766,
+      29.1096
+    ],
+    "job_id": "j-260319015343438cb359f1674eef4d56",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:53:43Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "raccoon_island_2022_swir",
+    "slug": "raccoon_island",
+    "year": 2022,
+    "bbox": [
+      -90.99159999999999,
+      29.0005,
+      -90.8766,
+      29.1096
+    ],
+    "job_id": "j-2603190153334f929e1edc3e3b8d09fe",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2022_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:53:33Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "raccoon_island_2021_swir",
+    "slug": "raccoon_island",
+    "year": 2021,
+    "bbox": [
+      -90.99159999999999,
+      29.0005,
+      -90.8766,
+      29.1096
+    ],
+    "job_id": "j-26031901532540d79b779e808d9ab2e8",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2021_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:53:25Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "raccoon_island_2020_swir",
+    "slug": "raccoon_island",
+    "year": 2020,
+    "bbox": [
+      -90.99159999999999,
+      29.0005,
+      -90.8766,
+      29.1096
+    ],
+    "job_id": "j-2603190153204e6683cc75e024049f1c",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2020_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:53:20Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "raccoon_island_2019_swir",
+    "slug": "raccoon_island",
+    "year": 2019,
+    "bbox": [
+      -90.99159999999999,
+      29.0005,
+      -90.8766,
+      29.1096
+    ],
+    "job_id": "j-26031901531547c39612b43db26f51e3",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2019_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:53:15Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "raccoon_island_2018_swir",
+    "slug": "raccoon_island",
+    "year": 2018,
+    "bbox": [
+      -90.99159999999999,
+      29.0005,
+      -90.8766,
+      29.1096
+    ],
+    "job_id": "j-2603190153104e34918004d88f268a63",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2018_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:53:10Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "raccoon_island_2017_swir",
+    "slug": "raccoon_island",
+    "year": 2017,
+    "bbox": [
+      -90.99159999999999,
+      29.0005,
+      -90.8766,
+      29.1096
+    ],
+    "job_id": "j-2603190153034b9c824267209e6d7ce2",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\raccoon_island\\raccoon_island_2017_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:53:03Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "rabbit_island_2024_swir",
+    "slug": "rabbit_island",
+    "year": 2024,
+    "bbox": [
+      -93.43299999999999,
+      29.7994,
+      -93.333,
+      29.8994
+    ],
+    "job_id": "j-2603190152544e05990d65ba1972c21e",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:52:54Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "rabbit_island_2023_swir",
+    "slug": "rabbit_island",
+    "year": 2023,
+    "bbox": [
+      -93.43299999999999,
+      29.7994,
+      -93.333,
+      29.8994
+    ],
+    "job_id": "j-26031901524946fbb8c5e3d0bf0436c8",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:52:49Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "rabbit_island_2022_swir",
+    "slug": "rabbit_island",
+    "year": 2022,
+    "bbox": [
+      -93.43299999999999,
+      29.7994,
+      -93.333,
+      29.8994
+    ],
+    "job_id": "j-260319015243404b856efd90064a77c4",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2022_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:52:43Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "rabbit_island_2021_swir",
+    "slug": "rabbit_island",
+    "year": 2021,
+    "bbox": [
+      -93.43299999999999,
+      29.7994,
+      -93.333,
+      29.8994
+    ],
+    "job_id": "j-26031901523847ecb3b699cc9c60841d",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2021_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:52:38Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "rabbit_island_2020_swir",
+    "slug": "rabbit_island",
+    "year": 2020,
+    "bbox": [
+      -93.43299999999999,
+      29.7994,
+      -93.333,
+      29.8994
+    ],
+    "job_id": "j-260319015233450cbbce9057e948c555",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2020_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:52:33Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "rabbit_island_2019_swir",
+    "slug": "rabbit_island",
+    "year": 2019,
+    "bbox": [
+      -93.43299999999999,
+      29.7994,
+      -93.333,
+      29.8994
+    ],
+    "job_id": "j-2603190152254621bd44e81cd2a38606",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2019_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:52:25Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "rabbit_island_2018_swir",
+    "slug": "rabbit_island",
+    "year": 2018,
+    "bbox": [
+      -93.43299999999999,
+      29.7994,
+      -93.333,
+      29.8994
+    ],
+    "job_id": "j-2603190152154b7596bb0e085e02eaaa",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2018_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:52:15Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "rabbit_island_2017_swir",
+    "slug": "rabbit_island",
+    "year": 2017,
+    "bbox": [
+      -93.43299999999999,
+      29.7994,
+      -93.333,
+      29.8994
+    ],
+    "job_id": "j-26031901521047c3af0f82c8c3331523",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\rabbit_island\\rabbit_island_2017_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:52:10Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "point_hunt_island_2024_swir",
+    "slug": "point_hunt_island",
+    "year": 2024,
+    "bbox": [
+      -93.9362,
+      29.6971,
+      -93.8362,
+      29.7971
+    ],
+    "job_id": "j-2603190152054d349b27df75203c9518",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:52:05Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "point_hunt_island_2023_swir",
+    "slug": "point_hunt_island",
+    "year": 2023,
+    "bbox": [
+      -93.9362,
+      29.6971,
+      -93.8362,
+      29.7971
+    ],
+    "job_id": "j-2603190152044253ad53e1ed73acab83",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:52:04Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "point_hunt_island_2022_swir",
+    "slug": "point_hunt_island",
+    "year": 2022,
+    "bbox": [
+      -93.9362,
+      29.6971,
+      -93.8362,
+      29.7971
+    ],
+    "job_id": "j-26031901515940c28706aa4090c5e723",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2022_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:51:59Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "point_hunt_island_2021_swir",
+    "slug": "point_hunt_island",
+    "year": 2021,
+    "bbox": [
+      -93.9362,
+      29.6971,
+      -93.8362,
+      29.7971
+    ],
+    "job_id": "j-26031901515442f1800750a4a0b964e2",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2021_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:51:54Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "point_hunt_island_2020_swir",
+    "slug": "point_hunt_island",
+    "year": 2020,
+    "bbox": [
+      -93.9362,
+      29.6971,
+      -93.8362,
+      29.7971
+    ],
+    "job_id": "j-2603190151444b47b3347579bc248581",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2020_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:51:44Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "point_hunt_island_2019_swir",
+    "slug": "point_hunt_island",
+    "year": 2019,
+    "bbox": [
+      -93.9362,
+      29.6971,
+      -93.8362,
+      29.7971
+    ],
+    "job_id": "j-2603190151424faf8d71f0c9d352183c",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2019_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:51:42Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "point_hunt_island_2018_swir",
+    "slug": "point_hunt_island",
+    "year": 2018,
+    "bbox": [
+      -93.9362,
+      29.6971,
+      -93.8362,
+      29.7971
+    ],
+    "job_id": "j-2603190151384b039e14fbac7258f400",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2018_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:51:38Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "point_hunt_island_2017_swir",
+    "slug": "point_hunt_island",
+    "year": 2017,
+    "bbox": [
+      -93.9362,
+      29.6971,
+      -93.8362,
+      29.7971
+    ],
+    "job_id": "j-26031901512945f8b1c1c830d62b1bf2",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\point_hunt_island\\point_hunt_island_2017_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:51:29Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_5_2024_swir",
+    "slug": "louisiana_west_5",
+    "year": 2024,
+    "bbox": [
+      -92.9194,
+      29.6255,
+      -92.8194,
+      29.7255
+    ],
+    "job_id": "j-2603190151224bd3a08cffa76a5feae9",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:51:22Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_5_2023_swir",
+    "slug": "louisiana_west_5",
+    "year": 2023,
+    "bbox": [
+      -92.9194,
+      29.6255,
+      -92.8194,
+      29.7255
+    ],
+    "job_id": "j-2603190151174fe391b8e6f17e86e7c3",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:51:17Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_5_2022_swir",
+    "slug": "louisiana_west_5",
+    "year": 2022,
+    "bbox": [
+      -92.9194,
+      29.6255,
+      -92.8194,
+      29.7255
+    ],
+    "job_id": "j-2603190151094c2da2d9e4ffa1af698d",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2022_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:51:09Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_5_2021_swir",
+    "slug": "louisiana_west_5",
+    "year": 2021,
+    "bbox": [
+      -92.9194,
+      29.6255,
+      -92.8194,
+      29.7255
+    ],
+    "job_id": "j-2603190151034ad4b15078cf93e6da09",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2021_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:51:03Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_5_2020_swir",
+    "slug": "louisiana_west_5",
+    "year": 2020,
+    "bbox": [
+      -92.9194,
+      29.6255,
+      -92.8194,
+      29.7255
+    ],
+    "job_id": "j-2603190150564b6498d8b8926d4dd2dd",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_5\\louisiana_west_5_2020_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:50:56Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_1_2020_swir",
+    "slug": "louisiana_west_1",
+    "year": 2020,
+    "bbox": [
+      -92.8351,
+      29.5276,
+      -92.51780000000001,
+      29.6907
+    ],
+    "job_id": "j-26031901482045fab5c33b83b846e45f",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2020_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:48:20Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_1_2019_swir",
+    "slug": "louisiana_west_1",
+    "year": 2019,
+    "bbox": [
+      -92.8351,
+      29.5276,
+      -92.51780000000001,
+      29.6907
+    ],
+    "job_id": "j-26031901481548f6acfd951aafa5c5a4",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2019_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:48:15Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_1_2018_swir",
+    "slug": "louisiana_west_1",
+    "year": 2018,
+    "bbox": [
+      -92.8351,
+      29.5276,
+      -92.51780000000001,
+      29.6907
+    ],
+    "job_id": "j-260319014810421aab0123583d5420a0",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2018_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:48:10Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "louisiana_west_1_2017_swir",
+    "slug": "louisiana_west_1",
+    "year": 2017,
+    "bbox": [
+      -92.8351,
+      29.5276,
+      -92.51780000000001,
+      29.6907
+    ],
+    "job_id": "j-2603190148054ab8862ab87b0b29a146",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\louisiana_west_1\\louisiana_west_1_2017_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:48:05Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "heron_island_2024_swir",
+    "slug": "heron_island",
+    "year": 2024,
+    "bbox": [
+      -91.4358,
+      29.2641,
+      -91.2787,
+      29.4782
+    ],
+    "job_id": "j-26031901480047288a1d4210345bd530",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:48:00Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "heron_island_2023_swir",
+    "slug": "heron_island",
+    "year": 2023,
+    "bbox": [
+      -91.4358,
+      29.2641,
+      -91.2787,
+      29.4782
+    ],
+    "job_id": "j-26031901475241d4b57cfc50ac177a28",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:47:52Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "heron_island_2022_swir",
+    "slug": "heron_island",
+    "year": 2022,
+    "bbox": [
+      -91.4358,
+      29.2641,
+      -91.2787,
+      29.4782
+    ],
+    "job_id": "j-2603190147474555b8cca89aedbea467",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2022_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:47:47Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "heron_island_2021_swir",
+    "slug": "heron_island",
+    "year": 2021,
+    "bbox": [
+      -91.4358,
+      29.2641,
+      -91.2787,
+      29.4782
+    ],
+    "job_id": "j-260319014742422bafbe64a1f1367bdb",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2021_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:47:42Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "heron_island_2020_swir",
+    "slug": "heron_island",
+    "year": 2020,
+    "bbox": [
+      -91.4358,
+      29.2641,
+      -91.2787,
+      29.4782
+    ],
+    "job_id": "j-26031901473746219fc1beb62db40ac5",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2020_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:47:37Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "heron_island_2019_swir",
+    "slug": "heron_island",
+    "year": 2019,
+    "bbox": [
+      -91.4358,
+      29.2641,
+      -91.2787,
+      29.4782
+    ],
+    "job_id": "j-26031901473244cea46e52d8607f7cf0",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2019_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:47:32Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "heron_island_2018_swir",
+    "slug": "heron_island",
+    "year": 2018,
+    "bbox": [
+      -91.4358,
+      29.2641,
+      -91.2787,
+      29.4782
+    ],
+    "job_id": "j-2603190147264208a4a9256c92e06a21",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2018_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:47:26Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "heron_island_2017_swir",
+    "slug": "heron_island",
+    "year": 2017,
+    "bbox": [
+      -91.4358,
+      29.2641,
+      -91.2787,
+      29.4782
+    ],
+    "job_id": "j-2603190147174b8d8b9cbeeef3d94d94",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\heron_island\\heron_island_2017_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:47:17Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "half_moon_island_2024_swir",
+    "slug": "half_moon_island",
+    "year": 2024,
+    "bbox": [
+      -89.48519999999999,
+      30.0876,
+      -89.3852,
+      30.1876
+    ],
+    "job_id": "j-260319014702438b8e747efd8e304a00",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:47:02Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "half_moon_island_2023_swir",
+    "slug": "half_moon_island",
+    "year": 2023,
+    "bbox": [
+      -89.48519999999999,
+      30.0876,
+      -89.3852,
+      30.1876
+    ],
+    "job_id": "j-2603190146564d6da62b27e09a26921f",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:46:56Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "half_moon_island_2022_swir",
+    "slug": "half_moon_island",
+    "year": 2022,
+    "bbox": [
+      -89.48519999999999,
+      30.0876,
+      -89.3852,
+      30.1876
+    ],
+    "job_id": "j-26031901465249979d15f524c2e47b23",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2022_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:46:52Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "half_moon_island_2021_swir",
+    "slug": "half_moon_island",
+    "year": 2021,
+    "bbox": [
+      -89.48519999999999,
+      30.0876,
+      -89.3852,
+      30.1876
+    ],
+    "job_id": "j-2603190146414807bc86d80013893835",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2021_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:46:41Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "half_moon_island_2020_swir",
+    "slug": "half_moon_island",
+    "year": 2020,
+    "bbox": [
+      -89.48519999999999,
+      30.0876,
+      -89.3852,
+      30.1876
+    ],
+    "job_id": "j-260319014633427dbbce1a94caf4f372",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2020_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:46:33Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "half_moon_island_2019_swir",
+    "slug": "half_moon_island",
+    "year": 2019,
+    "bbox": [
+      -89.48519999999999,
+      30.0876,
+      -89.3852,
+      30.1876
+    ],
+    "job_id": "j-26031901462749b98abad4d31a1dd163",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\half_moon_island\\half_moon_island_2019_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:46:27Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "felicity_island_2019_swir",
+    "slug": "felicity_island",
+    "year": 2019,
+    "bbox": [
+      -90.4984,
+      29.0937,
+      -90.2975,
+      29.3058
+    ],
+    "job_id": "j-26031901434247c8ac5b6f8c9ac5b895",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2019_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:43:42Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "felicity_island_2018_swir",
+    "slug": "felicity_island",
+    "year": 2018,
+    "bbox": [
+      -90.4984,
+      29.0937,
+      -90.2975,
+      29.3058
+    ],
+    "job_id": "j-26031901433648e88b47ccff47e82f46",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2018_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:43:36Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "felicity_island_2017_swir",
+    "slug": "felicity_island",
+    "year": 2017,
+    "bbox": [
+      -90.4984,
+      29.0937,
+      -90.2975,
+      29.3058
+    ],
+    "job_id": "j-2603190143304cb7b720f9a2f63fa58b",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\felicity_island\\felicity_island_2017_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:43:30Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "chandeleur_north_a_2024_swir",
+    "slug": "chandeleur_north_a",
+    "year": 2024,
+    "bbox": [
+      -89.0235,
+      29.7308,
+      -88.781,
+      30.058
+    ],
+    "job_id": "j-26031901432241e2a0b2ce9425c67df4",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:43:22Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "chandeleur_north_a_2023_swir",
+    "slug": "chandeleur_north_a",
+    "year": 2023,
+    "bbox": [
+      -89.0235,
+      29.7308,
+      -88.781,
+      30.058
+    ],
+    "job_id": "j-2603190143174e2b96700c803cd3f2fd",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:43:17Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "chandeleur_north_a_2018_swir",
+    "slug": "chandeleur_north_a",
+    "year": 2018,
+    "bbox": [
+      -89.0235,
+      29.7308,
+      -88.781,
+      30.058
+    ],
+    "job_id": "j-260319014140408db14c350a0276e73a",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2018_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:41:40Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "chandeleur_north_a_2017_swir",
+    "slug": "chandeleur_north_a",
+    "year": 2017,
+    "bbox": [
+      -89.0235,
+      29.7308,
+      -88.781,
+      30.058
+    ],
+    "job_id": "j-26031901413547a6afbe9227a656bfbf",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\chandeleur_north_a\\chandeleur_north_a_2017_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:41:35Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "burrwood_bayou_north_2024_swir",
+    "slug": "burrwood_bayou_north",
+    "year": 2024,
+    "bbox": [
+      -89.44369999999999,
+      28.889499999999998,
+      -89.2975,
+      29.022000000000002
+    ],
+    "job_id": "j-26031901412640979d8e61598141e63d",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:41:26Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "burrwood_bayou_north_2023_swir",
+    "slug": "burrwood_bayou_north",
+    "year": 2023,
+    "bbox": [
+      -89.44369999999999,
+      28.889499999999998,
+      -89.2975,
+      29.022000000000002
+    ],
+    "job_id": "j-2603190141254d868d5c289c854f3e57",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:41:25Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "burrwood_bayou_north_2022_swir",
+    "slug": "burrwood_bayou_north",
+    "year": 2022,
+    "bbox": [
+      -89.44369999999999,
+      28.889499999999998,
+      -89.2975,
+      29.022000000000002
+    ],
+    "job_id": "j-2603190141204130ac576b017705420c",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2022_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:41:20Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "burrwood_bayou_north_2021_swir",
+    "slug": "burrwood_bayou_north",
+    "year": 2021,
+    "bbox": [
+      -89.44369999999999,
+      28.889499999999998,
+      -89.2975,
+      29.022000000000002
+    ],
+    "job_id": "j-26031901411544d7b805a63aa22239af",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2021_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:41:15Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "burrwood_bayou_north_2020_swir",
+    "slug": "burrwood_bayou_north",
+    "year": 2020,
+    "bbox": [
+      -89.44369999999999,
+      28.889499999999998,
+      -89.2975,
+      29.022000000000002
+    ],
+    "job_id": "j-2603190141104af7b50f23ac0b3bc589",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2020_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:41:10Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "burrwood_bayou_north_2018_swir",
+    "slug": "burrwood_bayou_north",
+    "year": 2018,
+    "bbox": [
+      -89.44369999999999,
+      28.889499999999998,
+      -89.2975,
+      29.022000000000002
+    ],
+    "job_id": "j-2603190140364167a2bd5a1fed9fec19",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2018_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:40:36Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "burrwood_bayou_north_2017_swir",
+    "slug": "burrwood_bayou_north",
+    "year": 2017,
+    "bbox": [
+      -89.44369999999999,
+      28.889499999999998,
+      -89.2975,
+      29.022000000000002
+    ],
+    "job_id": "j-26031901403240c7a464eeb97c41373b",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\burrwood_bayou_north\\burrwood_bayou_north_2017_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:40:32Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "breton_island_2023_swir",
+    "slug": "breton_island",
+    "year": 2023,
+    "bbox": [
+      -89.2242,
+      29.4455,
+      -89.0369,
+      29.579900000000002
+    ],
+    "job_id": "j-2603190140054e10bee49e10615a6248",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:40:05Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "breton_island_2022_swir",
+    "slug": "breton_island",
+    "year": 2022,
+    "bbox": [
+      -89.2242,
+      29.4455,
+      -89.0369,
+      29.579900000000002
+    ],
+    "job_id": "j-260319014000468fb181e7c27126997c",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2022_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:40:00Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "breton_island_2021_swir",
+    "slug": "breton_island",
+    "year": 2021,
+    "bbox": [
+      -89.2242,
+      29.4455,
+      -89.0369,
+      29.579900000000002
+    ],
+    "job_id": "j-260319013954413b83fdd43eb9d2cafb",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2021_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:39:54Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "breton_island_2020_swir",
+    "slug": "breton_island",
+    "year": 2020,
+    "bbox": [
+      -89.2242,
+      29.4455,
+      -89.0369,
+      29.579900000000002
+    ],
+    "job_id": "j-260319013949499ba8a5ba417daf0417",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2020_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:39:49Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "breton_island_2019_swir",
+    "slug": "breton_island",
+    "year": 2019,
+    "bbox": [
+      -89.2242,
+      29.4455,
+      -89.0369,
+      29.579900000000002
+    ],
+    "job_id": "j-2603190139444034b0e8339281946ffd",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2019_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:39:44Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "breton_island_2018_swir",
+    "slug": "breton_island",
+    "year": 2018,
+    "bbox": [
+      -89.2242,
+      29.4455,
+      -89.0369,
+      29.579900000000002
+    ],
+    "job_id": "j-2603190139394f1b8f68934d21792e7c",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2018_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:39:39Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "breton_island_2017_swir",
+    "slug": "breton_island",
+    "year": 2017,
+    "bbox": [
+      -89.2242,
+      29.4455,
+      -89.0369,
+      29.579900000000002
+    ],
+    "job_id": "j-26031901393245a09bc00f111bbc5fb8",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\breton_island\\breton_island_2017_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:39:32Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "birdsfoot_west_1_2024_swir",
+    "slug": "birdsfoot_west_1",
+    "year": 2024,
+    "bbox": [
+      -89.4049,
+      29.1375,
+      -89.2623,
+      29.2554
+    ],
+    "job_id": "j-2603190139284d3bbf50ebd07e0620d2",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:39:28Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "birdsfoot_west_1_2023_swir",
+    "slug": "birdsfoot_west_1",
+    "year": 2023,
+    "bbox": [
+      -89.4049,
+      29.1375,
+      -89.2623,
+      29.2554
+    ],
+    "job_id": "j-26031901392240569332fa54f294831a",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:39:22Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "birdsfoot_west_1_2022_swir",
+    "slug": "birdsfoot_west_1",
+    "year": 2022,
+    "bbox": [
+      -89.4049,
+      29.1375,
+      -89.2623,
+      29.2554
+    ],
+    "job_id": "j-2603190139164864b0ca764d7454b48e",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2022_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:39:16Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "birdsfoot_west_1_2021_swir",
+    "slug": "birdsfoot_west_1",
+    "year": 2021,
+    "bbox": [
+      -89.4049,
+      29.1375,
+      -89.2623,
+      29.2554
+    ],
+    "job_id": "j-26031901391149c09db7c522ea030160",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2021_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:39:11Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "birdsfoot_west_1_2017_swir",
+    "slug": "birdsfoot_west_1",
+    "year": 2017,
+    "bbox": [
+      -89.4049,
+      29.1375,
+      -89.2623,
+      29.2554
+    ],
+    "job_id": "j-2603190137524385854545cf63c14eda",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\birdsfoot_west_1\\birdsfoot_west_1_2017_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:37:52Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bird_island_birdsfoot_2024_swir",
+    "slug": "bird_island_birdsfoot",
+    "year": 2024,
+    "bbox": [
+      -89.36999999999999,
+      29.3322,
+      -89.2403,
+      29.457
+    ],
+    "job_id": "j-26031901374642eb8c0633b9972637ab",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:37:46Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bird_island_birdsfoot_2023_swir",
+    "slug": "bird_island_birdsfoot",
+    "year": 2023,
+    "bbox": [
+      -89.36999999999999,
+      29.3322,
+      -89.2403,
+      29.457
+    ],
+    "job_id": "j-26031901373743deb1956702b8491924",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:37:37Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bird_island_birdsfoot_2022_swir",
+    "slug": "bird_island_birdsfoot",
+    "year": 2022,
+    "bbox": [
+      -89.36999999999999,
+      29.3322,
+      -89.2403,
+      29.457
+    ],
+    "job_id": "j-2603190137284b7aae6e489618cb8ed2",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2022_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:37:28Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bird_island_birdsfoot_2021_swir",
+    "slug": "bird_island_birdsfoot",
+    "year": 2021,
+    "bbox": [
+      -89.36999999999999,
+      29.3322,
+      -89.2403,
+      29.457
+    ],
+    "job_id": "j-2603190137234112b4108682c0094893",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2021_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:37:23Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bird_island_birdsfoot_2020_swir",
+    "slug": "bird_island_birdsfoot",
+    "year": 2020,
+    "bbox": [
+      -89.36999999999999,
+      29.3322,
+      -89.2403,
+      29.457
+    ],
+    "job_id": "j-260319013717440bb56f2b1cd2a18468",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2020_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:37:17Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bird_island_birdsfoot_2019_swir",
+    "slug": "bird_island_birdsfoot",
+    "year": 2019,
+    "bbox": [
+      -89.36999999999999,
+      29.3322,
+      -89.2403,
+      29.457
+    ],
+    "job_id": "j-26031901371341859cd496d443a1066a",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2019_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:37:13Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bird_island_birdsfoot_2018_swir",
+    "slug": "bird_island_birdsfoot",
+    "year": 2018,
+    "bbox": [
+      -89.36999999999999,
+      29.3322,
+      -89.2403,
+      29.457
+    ],
+    "job_id": "j-2603190137064c18a62439e85510975d",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2018_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:37:06Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "bird_island_birdsfoot_2017_swir",
+    "slug": "bird_island_birdsfoot",
+    "year": 2017,
+    "bbox": [
+      -89.36999999999999,
+      29.3322,
+      -89.2403,
+      29.457
+    ],
+    "job_id": "j-2603190137014169899a32d254528659",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\bird_island_birdsfoot\\bird_island_birdsfoot_2017_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:37:01Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_north_4_2024_swir",
+    "slug": "biloxi_north_4",
+    "year": 2024,
+    "bbox": [
+      -89.2818,
+      30.0137,
+      -89.1341,
+      30.2026
+    ],
+    "job_id": "j-260319013656428d80f6a0fa1b214518",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:36:56Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_north_4_2023_swir",
+    "slug": "biloxi_north_4",
+    "year": 2023,
+    "bbox": [
+      -89.2818,
+      30.0137,
+      -89.1341,
+      30.2026
+    ],
+    "job_id": "j-2603190136464898b617f7544b22bac8",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:36:46Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_north_4_2022_swir",
+    "slug": "biloxi_north_4",
+    "year": 2022,
+    "bbox": [
+      -89.2818,
+      30.0137,
+      -89.1341,
+      30.2026
+    ],
+    "job_id": "j-2603190136394aa182877b23318b2cc0",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2022_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:36:39Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_north_4_2021_swir",
+    "slug": "biloxi_north_4",
+    "year": 2021,
+    "bbox": [
+      -89.2818,
+      30.0137,
+      -89.1341,
+      30.2026
+    ],
+    "job_id": "j-260319013635491d8559805a6a6ee261",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2021_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2021_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:36:35Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_north_4_2020_swir",
+    "slug": "biloxi_north_4",
+    "year": 2020,
+    "bbox": [
+      -89.2818,
+      30.0137,
+      -89.1341,
+      30.2026
+    ],
+    "job_id": "j-2603190136304dbc83a8018efb327a45",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2020_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2020_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:36:30Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_north_4_2019_swir",
+    "slug": "biloxi_north_4",
+    "year": 2019,
+    "bbox": [
+      -89.2818,
+      30.0137,
+      -89.1341,
+      30.2026
+    ],
+    "job_id": "j-26031901362241f4ac92ab7be3bcadac",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2019_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2019_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:36:22Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_north_4_2018_swir",
+    "slug": "biloxi_north_4",
+    "year": 2018,
+    "bbox": [
+      -89.2818,
+      30.0137,
+      -89.1341,
+      30.2026
+    ],
+    "job_id": "j-260319013612473f9c598f3cb000e7f6",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2018_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2018_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:36:12Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_north_4_2017_swir",
+    "slug": "biloxi_north_4",
+    "year": 2017,
+    "bbox": [
+      -89.2818,
+      30.0137,
+      -89.1341,
+      30.2026
+    ],
+    "job_id": "j-2603190136074ba6838c3014c2e8120f",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2017_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_north_4\\biloxi_north_4_2017_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:36:07Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_lake_b_2_2024_swir",
+    "slug": "biloxi_lake_b_2",
+    "year": 2024,
+    "bbox": [
+      -89.5874,
+      29.8707,
+      -89.48740000000001,
+      29.9707
+    ],
+    "job_id": "j-2603190136024c68b087a1e05b129b27",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2024_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2024_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:36:02Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_lake_b_2_2023_swir",
+    "slug": "biloxi_lake_b_2",
+    "year": 2023,
+    "bbox": [
+      -89.5874,
+      29.8707,
+      -89.48740000000001,
+      29.9707
+    ],
+    "job_id": "j-26031901355141afbb92d9ea9e13094d",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2023_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2023_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:35:51Z",
+    "downloaded": true,
+    "patched": true
+  },
+  {
+    "job_key": "biloxi_lake_b_2_2022_swir",
+    "slug": "biloxi_lake_b_2",
+    "year": 2022,
+    "bbox": [
+      -89.5874,
+      29.8707,
+      -89.48740000000001,
+      29.9707
+    ],
+    "job_id": "j-26031901354443faa0a9d6d091ecf70c",
+    "status": "finished",
+    "target_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2022_s2.nc",
+    "swir_nc": "C:\\Users\\munas\\project.egret\\egret\\training_two\\satellite_timeseries\\colonies\\biloxi_lake_b_2\\biloxi_lake_b_2_2022_swir_patch.nc",
+    "submitted_at": "2026-03-19T01:35:44Z",
+    "downloaded": true,
+    "patched": true
+  }
+]
