@@ -50,9 +50,7 @@ except ImportError:
 # CONFIGURATION
 # ===========================================================================
 
-AOI_BOUNDS = (-90.628342, 28.927421, -89.067224, 30.106372)
-N_TILES_X = 3
-N_TILES_Y = 3
+COLONY_REGISTRY_PATH = Path("./satellite_timeseries/colonies/colony_registry.json")
 
 STAC_URL = "https://earth-search.aws.element84.com/v1"
 COLLECTION = "sentinel-2-l2a"
@@ -81,22 +79,23 @@ INDEX_NAMES = [
 # ===========================================================================
 
 def get_tiles():
-    min_lon, min_lat, max_lon, max_lat = AOI_BOUNDS
-    lon_step = (max_lon - min_lon) / N_TILES_X
-    lat_step = (max_lat - min_lat) / N_TILES_Y
+    if not COLONY_REGISTRY_PATH.exists():
+        raise FileNotFoundError(
+            f"Colony registry not found at {COLONY_REGISTRY_PATH}. "
+            "Ensure satellite_timeseries is mounted."
+        )
+    with open(COLONY_REGISTRY_PATH) as f:
+        registry = json.load(f)
 
     tiles = []
-    for ix in range(N_TILES_X):
-        for iy in range(N_TILES_Y):
-            tiles.append({
-                "id": ix * N_TILES_Y + iy,
-                "bbox": (
-                    min_lon + ix * lon_step,
-                    min_lat + iy * lat_step,
-                    min_lon + (ix + 1) * lon_step,
-                    min_lat + (iy + 1) * lat_step,
-                ),
-            })
+    for entry in registry:
+        bbox = entry["bbox"]
+        tiles.append({
+            "id": entry["slug"],
+            "slug": entry["slug"],
+            "name": entry["name"],
+            "bbox": tuple(bbox),
+        })
     return tiles
 
 
@@ -399,11 +398,11 @@ def aggregate_to_cells(indices_ds, bbox):
 # ===========================================================================
 
 def process_tile(tile, max_cloud_pct, max_days, refetch=False):
-    tile_id = tile["id"]
+    slug = tile["slug"]
     bbox = tile["bbox"]
-    nc_path = RAW_DIR / f"tile{tile_id}_clear.nc"
+    nc_path = RAW_DIR / f"{slug}_clear.nc"
 
-    print(f"\n  Tile {tile_id}/{N_TILES_X * N_TILES_Y - 1} — "
+    print(f"\n  {tile['name']} — "
           f"({bbox[0]:.3f}, {bbox[1]:.3f}) to ({bbox[2]:.3f}, {bbox[3]:.3f})")
 
     # ── Try cached file ──
@@ -426,7 +425,7 @@ def process_tile(tile, max_cloud_pct, max_days, refetch=False):
                 coverage = check_index_coverage(cell_df)
                 print(f"    {len(cell_df)} cells, {coverage:.0%} complete")
                 return cell_df, {
-                    "id": tile_id, "source": "cached",
+                    "id": slug, "source": "cached",
                     "cells": len(cell_df), "coverage": round(coverage, 3),
                 }
 
@@ -449,7 +448,7 @@ def process_tile(tile, max_cloud_pct, max_days, refetch=False):
 
     if item is None:
         print(f"    No clear scene found within {max_days} days.")
-        return None, {"id": tile_id, "source": "none", "cells": 0}
+        return None, {"id": slug, "source": "none", "cells": 0}
 
     scene_date = item.datetime.strftime("%Y-%m-%d")
     print(f"    Selected: {scene_date} ({item.id})")
@@ -459,7 +458,7 @@ def process_tile(tile, max_cloud_pct, max_days, refetch=False):
     ds = load_scene(item, bbox)
     if ds is None:
         print(f"    Failed to load bands.")
-        return None, {"id": tile_id, "source": "failed", "cells": 0}
+        return None, {"id": slug, "source": "failed", "cells": 0}
 
     # ── Save raw ──
     print(f"    Saving → {nc_path.name}...")
@@ -476,7 +475,7 @@ def process_tile(tile, max_cloud_pct, max_days, refetch=False):
 
     if indices is None:
         print(f"    Missing bands.")
-        return None, {"id": tile_id, "source": scene_date, "cells": 0}
+        return None, {"id": slug, "source": scene_date, "cells": 0}
 
     # ── Aggregate ──
     print(f"    Aggregating to cells...")
@@ -486,13 +485,13 @@ def process_tile(tile, max_cloud_pct, max_days, refetch=False):
 
     if cell_df.empty:
         print(f"    No valid cells.")
-        return None, {"id": tile_id, "source": scene_date, "cells": 0}
+        return None, {"id": slug, "source": scene_date, "cells": 0}
 
     coverage = check_index_coverage(cell_df)
     print(f"    {len(cell_df)} cells, {coverage:.0%} complete")
 
     return cell_df, {
-        "id": tile_id,
+        "id": slug,
         "source": scene_date,
         "scene_id": item.id,
         "cloud_cover": item.properties.get("eo:cloud_cover"),
@@ -511,8 +510,8 @@ def main():
                         help=f"Max cloud %% per tile (default: {MAX_AOI_CLOUD_PCT})")
     parser.add_argument("--max-days", type=int, default=SEARCH_DAYS_BACK,
                         help=f"How far back to search (default: {SEARCH_DAYS_BACK})")
-    parser.add_argument("--tile", type=int, default=None,
-                        help="Process a single tile only")
+    parser.add_argument("--colony", type=str, default=None,
+                        help="Process a single colony by slug")
     parser.add_argument("--refetch", action="store_true",
                         help="Ignore cached tiles and re-fetch everything")
     args = parser.parse_args()
@@ -521,16 +520,17 @@ def main():
     RAW_DIR.mkdir(parents=True, exist_ok=True)
 
     tiles = get_tiles()
-    if args.tile is not None:
-        tiles = [t for t in tiles if t["id"] == args.tile]
+    if args.colony is not None:
+        tiles = [t for t in tiles if t["id"] == args.colony]
         if not tiles:
-            sys.exit(f"Tile {args.tile} not found (valid: 0-{N_TILES_X * N_TILES_Y - 1})")
+            valid = ", ".join(t["id"] for t in get_tiles())
+            sys.exit(f"Colony '{args.colony}' not found. Valid slugs: {valid}")
 
     print("=" * 72)
-    print("  Clear-Scene Sentinel-2 Prefetch")
+    print("  Clear-Scene Sentinel-2 Prefetch — Colony Sites")
     print("=" * 72)
-    print(f"  Study area     : {AOI_BOUNDS}")
-    print(f"  Tiles          : {len(tiles)}")
+    print(f"  Registry       : {COLONY_REGISTRY_PATH}")
+    print(f"  Colonies       : {len(tiles)}")
     print(f"  Max cloud      : {args.max_cloud}%")
     print(f"  Search window  : last {args.max_days} days")
     if args.refetch:
@@ -577,7 +577,7 @@ def main():
         "search_days_back": args.max_days,
         "n_cells": len(full_df),
         "index_coverage": round(total_coverage, 3),
-        "aoi_bounds": list(AOI_BOUNDS),
+        "colony_registry": str(COLONY_REGISTRY_PATH),
         "cell_size_km": CELL_SIZE_KM,
         "tiles": tile_meta,
     }
@@ -611,7 +611,7 @@ def main():
         src = t.get("scene_id", t["source"])
         if isinstance(src, str) and len(src) > 45:
             src = src[:45] + "..."
-        print(f"    Tile {t['id']}: {status} — {src}")
+        print(f"    {t['id']}: {status} — {src}")
     print("=" * 72)
 
 
