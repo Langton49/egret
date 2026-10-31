@@ -218,56 +218,7 @@
     min-width: 0;
 }
 
-/* ── Stat cards ── */
-
-.stat-cards-row {
-    display: flex;
-    gap: 12px;
-}
-
-.stat-card {
-    flex: 1;
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    border-radius: 12px;
-    padding: 14px 16px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-}
-
-.stat-label {
-    font-size: 0.67rem;
-    font-weight: 500;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--egret-text-muted, #8a8a86);
-    margin-bottom: 6px;
-}
-
-.stat-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: var(--egret-text, #2c2c2c);
-    line-height: 1.1;
-}
-
-.stat-sub {
-    font-size: 0.75rem;
-    font-weight: 300;
-    color: var(--egret-text-muted, #8a8a86);
-    margin-top: 4px;
-    line-height: 1.4;
-}
-
-/* ── Chart card ── */
-
-.chart-card {
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    border-radius: 12px;
-    padding: 14px 16px 10px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-}
+/* ── Card titles ── */
 
 .chart-title {
     font-size: 0.67rem;
@@ -278,46 +229,12 @@
     margin-bottom: 10px;
 }
 
-/* ── Info cards ── */
-
-.info-cards-row {
-    display: flex;
-    gap: 12px;
-}
-
-.info-card {
-    flex: 1;
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    border-radius: 12px;
-    padding: 14px 16px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-}
-
-.info-label {
-    font-size: 0.67rem;
-    font-weight: 500;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--egret-text-muted, #8a8a86);
-    margin-bottom: 6px;
-}
-
-.info-card p {
-    font-size: 0.82rem;
-    font-weight: 300;
-    color: var(--egret-text, #2c2c2c);
-    margin: 3px 0;
-    line-height: 1.5;
-}
-
 /* ── Score section ── */
 
 .score-section {
-    flex-shrink: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.07);
     background: var(--egret-surface-2, #eeedea);
-    padding: 18px 24px 20px;
+    border-radius: 12px;
+    padding: 18px 20px 20px;
 }
 
 .score-section-header {
@@ -352,11 +269,13 @@
 
 .score-results-grid {
     display: flex;
+    flex-wrap: wrap;
     gap: 14px;
 }
 
 .score-card {
     flex: 1;
+    min-width: 220px;
     background: #fff;
     border: 1px solid rgba(0, 0, 0, 0.07);
     border-radius: 12px;

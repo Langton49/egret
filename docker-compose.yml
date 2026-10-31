@@ -6,15 +6,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
-    volumes:
-      # Prefetch writes here, backend reads — persists across restarts
-      - satellite_cache:/app/satellite_cache
-      # ChromaDB vector store — persists RAG index across restarts
-      - rag_chroma:/app/data_cache/rag_chroma
-      # Colony timeseries NC files + registry (pre-downloaded, read-only)
-      - ./backend/satellite_timeseries:/app/satellite_timeseries:ro
-      # RAG source data — rag_service.py walks up to repo root to find this
-      - ./training_two:/training_two:ro
     environment:
       - PYTHONUNBUFFERED=1
     restart: unless-stopped
@@ -32,30 +23,3 @@ services:
     depends_on:
       - backend
     restart: unless-stopped
-
-  # ── Biweekly colony prefetch ──
-  prefetch:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    volumes:
-      - satellite_cache:/app/satellite_cache
-      # Reads colony_registry.json to determine fetch targets
-      - ./backend/satellite_timeseries:/app/satellite_timeseries:ro
-    entrypoint: [""]
-    command: >
-      sh -c '
-        while true; do
-          sleep 1209600;
-          echo "Running biweekly colony prefetch at $$(date)..." &&
-          python prefetch_satellite.py;
-        done
-      '
-    environment:
-      - PYTHONUNBUFFERED=1
-    restart: unless-stopped
-
-volumes:
-  satellite_cache:
-  # Persistent ChromaDB vector store for RAG service
-  rag_chroma:

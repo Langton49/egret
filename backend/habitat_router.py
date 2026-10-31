@@ -13,7 +13,6 @@ import numpy as np
 import pandas as pd
 import pickle
 import uuid
-import json
 from datetime import datetime, timedelta
 from pathlib import Path
 from enum import Enum
@@ -355,94 +354,56 @@ def score_cells(cell_df, acquisition_date):
 
 def run_scoring_job(job_id: str, polygon_geom: dict):
     try:
-        from shapely.geometry import shape, Point
+        from shapely.geometry import shape
         poly = shape(polygon_geom)
         bbox = list(poly.bounds)
 
-        # ── Try cached data first ──
-        cache_path = Path("./satellite_cache/latest_indices.csv")
-        meta_path = Path("./satellite_cache/cache_metadata.json")
-        used_cache = False
+        end_date = datetime.utcnow()
+        start_date = end_date - timedelta(days=30)
+        start_date_str = start_date.strftime("%Y-%m-%d")
+        end_date_str = end_date.strftime("%Y-%m-%d")
 
-        if cache_path.exists():
-            jobs[job_id]["status"] = JobStatus.processing
-            jobs[job_id]["progress"] = "Loading cached satellite data..."
+        jobs[job_id]["status"] = JobStatus.fetching
+        jobs[job_id]["progress"] = f"Searching Sentinel-2 scenes ({start_date_str} to {end_date_str})"
 
-            cached_df = pd.read_csv(cache_path)
+        items = search_stac(bbox, start_date_str, end_date_str)
+        if not items:
+            jobs[job_id]["status"] = JobStatus.failed
+            jobs[job_id]["error"] = "No cloud-free Sentinel-2 scenes found in the last 30 days."
+            return
 
-            # Filter to cells within the AOI polygon
-            mask = cached_df.apply(
-                lambda row: poly.contains(Point(row["cell_x"], row["cell_y"])),
-                axis=1
-            )
-            cell_df = cached_df[mask].copy()
+        jobs[job_id]["progress"] = f"Found {len(items)} scenes. Loading imagery..."
 
-            if not cell_df.empty:
-                used_cache = True
+        ds, scene_dates = load_bands_from_items(items, bbox)
+        if ds is None:
+            jobs[job_id]["status"] = JobStatus.failed
+            jobs[job_id]["error"] = "Failed to load imagery from available scenes."
+            return
 
-                # Get cache metadata for dates
-                cache_meta = {}
-                if meta_path.exists():
-                    with open(meta_path) as f:
-                        cache_meta = json.load(f)
+        acquisition_date = sorted(scene_dates)[len(scene_dates) // 2]
+        n_scenes = len(items)
 
-                cache_date_str = cache_meta.get("end_date", datetime.utcnow().strftime("%Y-%m-%d"))
-                cache_date = datetime.strptime(cache_date_str, "%Y-%m-%d")
-                start_date_str = cache_meta.get("start_date", "")
-                n_scenes = cache_meta.get("n_scenes", 0)
+        jobs[job_id]["status"] = JobStatus.processing
+        jobs[job_id]["progress"] = "Computing spectral indices..."
 
-                jobs[job_id]["progress"] = f"Scoring {len(cell_df)} cells from cache..."
-            else:
-                jobs[job_id]["progress"] = "No cached cells in this area. Fetching live..."
+        indices = compute_indices(ds)
+        if indices is None:
+            jobs[job_id]["status"] = JobStatus.failed
+            jobs[job_id]["error"] = "Missing required spectral bands."
+            return
 
-        # ── Fall back to live STAC fetch ──
-        if not used_cache:
-            end_date = datetime.utcnow()
-            start_date = end_date - timedelta(days=30)
+        jobs[job_id]["progress"] = "Aggregating to grid cells..."
 
-            jobs[job_id]["status"] = JobStatus.fetching
-            jobs[job_id]["progress"] = f"Searching Sentinel-2 scenes ({start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')})"
-
-            items = search_stac(bbox, start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d"))
-            if not items:
-                jobs[job_id]["status"] = JobStatus.failed
-                jobs[job_id]["error"] = "No cloud-free Sentinel-2 scenes found in the last 30 days."
-                return
-
-            jobs[job_id]["progress"] = f"Found {len(items)} scenes. Loading imagery..."
-
-            ds, scene_dates = load_bands_from_items(items, bbox)
-            if ds is None:
-                jobs[job_id]["status"] = JobStatus.failed
-                jobs[job_id]["error"] = "Failed to load imagery from available scenes."
-                return
-
-            cache_date = sorted(scene_dates)[len(scene_dates) // 2]
-            start_date_str = start_date.strftime("%Y-%m-%d")
-            cache_date_str = end_date.strftime("%Y-%m-%d")
-            n_scenes = len(items)
-
-            jobs[job_id]["status"] = JobStatus.processing
-            jobs[job_id]["progress"] = "Computing spectral indices..."
-
-            indices = compute_indices(ds)
-            if indices is None:
-                jobs[job_id]["status"] = JobStatus.failed
-                jobs[job_id]["error"] = "Missing required spectral bands."
-                return
-
-            jobs[job_id]["progress"] = "Aggregating to grid cells..."
-
-            cell_df = aggregate_to_cells(indices, bbox)
-            if cell_df.empty:
-                jobs[job_id]["status"] = JobStatus.failed
-                jobs[job_id]["error"] = "No valid pixels found after cloud masking."
-                return
+        cell_df = aggregate_to_cells(indices, bbox)
+        if cell_df.empty:
+            jobs[job_id]["status"] = JobStatus.failed
+            jobs[job_id]["error"] = "No valid pixels found after cloud masking."
+            return
 
         jobs[job_id]["status"] = JobStatus.scoring
         jobs[job_id]["progress"] = f"Scoring {len(cell_df)} cells..."
 
-        scored = score_cells(cell_df, cache_date if used_cache else cache_date)
+        scored = score_cells(cell_df, acquisition_date)
 
         # Build response
         n_cells = len(scored)
@@ -517,9 +478,8 @@ def run_scoring_job(job_id: str, polygon_geom: dict):
         jobs[job_id]["result"] = {
             "n_cells": n_cells,
             "n_scenes": n_scenes,
-            "date_range": f"{start_date_str} to {cache_date_str}",
-            "acquisition_date": cache_date_str,
-            "source": "cache" if used_cache else "live",
+            "date_range": f"{start_date_str} to {end_date_str}",
+            "acquisition_date": end_date_str,
             "mean_suitability": round(mean_prob * 100, 1),
             "max_suitability": round(max_prob * 100, 1),
             "summary": summary,

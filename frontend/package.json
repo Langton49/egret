@@ -12,12 +12,8 @@
   "dependencies": {
     "@mapbox/mapbox-gl-draw": "^1.5.1",
     "mapbox-gl": "^3.18.1",
-    "mapbox-gl-draw-rectangle-mode": "^1.0.4",
-    "maplibre-gl": "^5.18.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-map-gl": "^8.1.0",
-    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.13.0",
     "recharts": "^3.8.0"
   },

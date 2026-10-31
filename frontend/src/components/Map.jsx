@@ -7,7 +7,6 @@ import '@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css';
 import './Map.css';
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX;
-const backendUrl = import.meta.env.VITE_BACKEND;
 
 const AOI_BOUNDS = [-90.628342, 28.927421, -89.067224, 30.106372];
 const [SW_LNG, SW_LAT, NE_LNG, NE_LAT] = AOI_BOUNDS;
@@ -45,7 +44,6 @@ function Map({ onDrawReady }) {
     const drawRef = useRef(null);
     const [mapLoaded, setMapLoaded] = useState(false);
     const [aoi, setAoi] = useState(null);
-    const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -219,37 +217,9 @@ function Map({ onDrawReady }) {
         };
     }, []);
 
-    useEffect(() => {
-        const sidebar = document.querySelector('.sidemenu');
-        if (!sidebar || !mapRef.current) return;
-
-        const handleTransitionEnd = (e) => {
-            if (e.propertyName === 'width') {
-                mapRef.current.resize();
-            }
-        };
-
-        sidebar.addEventListener('transitionend', handleTransitionEnd);
-        return () => sidebar.removeEventListener('transitionend', handleTransitionEnd);
-    }, []);
-
-    const handleSelectAoi = async () => {
+    const handleSelectAoi = () => {
         if (!aoi) return;
-        setLoading(true);
-        setError(null);
-        try {
-            const response = await fetch(`${backendUrl}/aoidata/analyze`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ aoi }),
-            });
-            const results = await response.json();
-            navigate('/demo/aoi', { state: { aoi, results } });
-        } catch (err) {
-            console.error('Analysis failed:', err);
-            setError('Analysis failed. Try again.');
-            setLoading(false);
-        }
+        navigate('/map/score', { state: { aoi } });
     };
 
     return (
@@ -266,16 +236,8 @@ function Map({ onDrawReady }) {
 
             {aoi && (
                 <div className="action-bar">
-                    <button
-                        className="select-aoi-btn"
-                        onClick={handleSelectAoi}
-                        disabled={loading}
-                    >
-                        {loading ? (
-                            <><span className="action-spinner" /> Analyzing...</>
-                        ) : (
-                            'Select AOI'
-                        )}
+                    <button className="select-aoi-btn" onClick={handleSelectAoi}>
+                        Score Habitat
                     </button>
                 </div>
             )}

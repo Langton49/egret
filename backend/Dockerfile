@@ -12,8 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# satellite_cache/, suitability_model/, model_output/ are all
-# included via COPY . . since they're in the backend directory
+# suitability_model/ is included via COPY . .
 
 EXPOSE 8000
 

@@ -252,7 +252,7 @@ function HeroSection() {
                         <NavLink to="/" className="nav_btn nav_btn--secondary">
                             How It Works
                         </NavLink>
-                        <NavLink to="/research" className="nav_btn nav_btn--primary">
+                        <NavLink to="/map" className="nav_btn nav_btn--primary">
                             View Demo
                         </NavLink>
                     </div>

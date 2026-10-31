@@ -1,6 +1,4 @@
 __pycache__
 *.pyc
 .env
-satellite_cache/raw/
-*.nc
 .git
